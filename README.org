@@ -43,7 +43,8 @@ i.e. when darkman switches modes.
 
 To automatically set the appropriate theme *on startup*
 
-Define which theme is associated with which mode like so:
+Define which theme is associated with which mode (by default,
+=modus-themes= are used) like so:
 
 #+begin_src elisp
 (setq darkman-themes '(:light tango :dark tango-dark))
