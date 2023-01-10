@@ -1,0 +1,61 @@
+#+TITLE: darkman.el
+
+=darkman.el= uses the D-Bus protocol to integrate [[https://darkman.whynothugo.nl][darkman]] with Emacs.
+
+* Installing
+
+Begin by cloning the repository:
+
+#+begin_src sh
+git clone https://github.com/grtcdr/darkman.el darkman
+#+end_src
+
+Add the package to the =load-path= and then require it like so:
+
+#+begin_src elisp
+(add-to-list 'load-path "darkman")
+(require 'darkman)
+#+end_src
+
+* Usage
+
+** Automatically switch themes when the mode changes
+
+You should first define what theme is associated with what mode in
+=$XDG_DATA_HOME/dark-mode.d= and =$XDG_DATA_HOME/light-mode.d=.
+
+The following is an example script named =emacs= located in
+=$XDG_DATA_HOME/dark-mode.d= that is responsible for setting the theme
+to =modus-vivendi=.
+
+#+begin_src sh
+#!/bin/bash
+
+if systemctl is-active --user emacs; then
+   emacsclient -e "(load-theme 'modus-vivendi t)"
+fi
+#+end_src
+
+Your themes will automatically switch according to the time of day,
+i.e. when darkman switches modes.
+
+** Automatically set the theme on startup
+
+To automatically set the appropriate theme *on startup*
+
+Define which theme is associated with which mode like so:
+
+#+begin_src elisp
+(setq darkman-themes '(:light 'tango :dark 'tango-dark))
+#+end_src
+
+Place this snippet in your configuration =init.el=:
+
+#+begin_src elisp
+(load-theme (darkman-get-theme))
+#+end_src
+
+** Other functions
+
+Use =M-x darkman-toggle= to toggle the mode of the darkman service
+from within Emacs.
