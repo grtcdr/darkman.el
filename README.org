@@ -41,8 +41,6 @@ i.e. when darkman switches modes.
 
 ** Automatically set the theme on startup
 
-To automatically set the appropriate theme *on startup*
-
 Define which theme is associated with which mode (by default,
 =modus-themes= are used) like so:
 
