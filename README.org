@@ -16,6 +16,12 @@ Add the package to the =load-path= and then require it like so:
 (add-to-list 'load-path "darkman")
 (require 'darkman)
 #+end_src
+** For [[https://github.com/radian-software/straight.el][straight.el]] users:
+
+#+begin_src elisp
+(straight-use-package
+ '(darkman :type git :host github :repo "grtcdr/darkman.el" :branch "main"))
+#+end_src
 
 * Usage
 
