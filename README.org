@@ -1,6 +1,6 @@
 #+TITLE: darkman.el
 
-=darkman.el= uses the D-Bus protocol to integrate [[https://darkman.whynothugo.nl][darkman]] with Emacs.
+This package uses the D-Bus protocol to integrate [[https://darkman.whynothugo.nl][Darkman]] with Emacs.
 
 * Installing
 
@@ -46,7 +46,7 @@ To automatically set the appropriate theme *on startup*
 Define which theme is associated with which mode like so:
 
 #+begin_src elisp
-(setq darkman-themes '(:light 'tango :dark 'tango-dark))
+(setq darkman-themes '(:light tango :dark tango-dark))
 #+end_src
 
 Place this snippet in your configuration =init.el=:

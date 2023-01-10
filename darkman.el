@@ -8,7 +8,7 @@
 (defvar darkman-dbus-service "nl.whynothugo.darkman")
 (defvar darkman-dbus-path "/nl/whynothugo/darkman")
 (defvar darkman-dbus-interface darkman-dbus-service)
-(defvar darkman-themes '(:light 'modus-operandi :dark 'modus-vivendi))
+(defvar darkman-themes '(:light modus-operandi :dark modus-vivendi))
 
 (defun darkman-get-mode ()
   "Get the mode of the darkman service."
