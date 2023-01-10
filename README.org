@@ -2,7 +2,7 @@
 
 This package uses the D-Bus protocol to integrate [[https://darkman.whynothugo.nl][Darkman]] with Emacs.
 
-* Installing
+* Installation
 
 Begin by cloning the repository:
 
