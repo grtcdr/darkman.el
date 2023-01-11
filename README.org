@@ -1,6 +1,12 @@
 #+TITLE: darkman.el
 
-This package uses the D-Bus protocol to integrate [[https://darkman.whynothugo.nl][Darkman]] with Emacs.
+=darkman.el= seamlessly integrates [[https://darkman.whynothugo.nl][Darkman]] with [[https://gnu.org/software/emacs][Emacs]] using the D-Bus protocol.
+
+* Dependencies
+
+- =dbus=: this package relies on the D-Bus protocol to control and
+  communicate with the Darkman service.
+- =darkman=: because that's what we're targeting.
 
 * Installation
 
@@ -57,6 +63,50 @@ from within Emacs.
 
 Additionally, you can use =(darkman-set MODE)= and =(darkman-get)= to
 manually set and get the mode of the darkman service respectively.
+
+* Debugging
+
+** Nothing's working?
+
+*** Is D-Bus running?
+
+Use your service manager to verify whether the =dbus= service is
+running, here's an example using =systemd=:
+
+#+begin_src sh :results raw
+systemctl status dbus
+#+end_src
+
+#+RESULTS:
+● dbus.service - D-Bus System Message Bus
+     Loaded: loaded
+     Active: *active* (running)
+
+*** Is Darkman running?
+
+Use your service manager to verify whether the =darkman= service is
+running, here's an example using =systemd=:
+
+#+begin_src sh :results raw
+systemctl status --user darkman
+#+end_src
+
+#+RESULTS:
+● darkman.service - Framework for dark-mode and light-mode transitions.
+     Loaded: loaded
+     Active: *active* (running)
+
+*** Is Emacs built with D-Bus support?
+
+Usually it is, unless you're building from source, in which case you
+can determine whether or not Emacs was built with D-Bus support like
+so:
+
+#+begin_src elisp
+(numberp (string-match "DBUS" system-configuration-features))
+#+end_src
+
+If non-nil, your Emacs /was/ built with D-Bus support.
 
 * Citing
 
