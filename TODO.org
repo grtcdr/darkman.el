@@ -7,6 +7,9 @@ somewhere external to this repository. A tag immediatelly following
 suggestion.
 
 * Features
-** TODO Listen for D-Bus messages :sug:lastnamebird:
+** DONE Listen for D-Bus messages                         :sug:lastnamebird:
+:PROPERTIES:
+:issue:    https://github.com/grtcdr/darkman.el/pull/2
+:END:
 * Documentation
 * Bugs

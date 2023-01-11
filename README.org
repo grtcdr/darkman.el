@@ -35,14 +35,13 @@ Then, place this snippet in your configuration =init.el=:
 #+end_src
 
 =darkman-get-theme= returns a theme based on the current darkman mode
-as well as the =:dark= and =:flight= themes you specified in the
-=darkman-themes= variable.
+and the themes you specified in the =darkman-themes= variable.
 
 ** Automatically switch themes when the mode changes
 
-=darkman.el= can listen to darkman's signals and changes the theme
-without requiring you to manually create any scripts, you can enable
-this behavior by enabling the minor mode:
+=darkman.el= is able to listen to darkman's signals and changes the
+theme without requiring you to manually create any scripts, you can
+enable this behavior by enabling the minor mode:
 
 #+begin_src elisp
 (darkman-mode)
@@ -56,7 +55,7 @@ switches modes.
 You can use =M-x darkman-toggle= to toggle the mode of the darkman service
 from within Emacs.
 
-Additionally, you can use =(darkman-set-mode MODE)= to manually
+Additionally, you can use =(darkman-set MODE)= to manually
 specify the mode of the darkman service.
 
 * Citing
