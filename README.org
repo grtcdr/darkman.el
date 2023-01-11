@@ -1,10 +1,11 @@
 #+TITLE: darkman.el
+#+EXPORT_FILE_NAME: index.html
 
 =darkman.el= seamlessly integrates [[https://darkman.whynothugo.nl][Darkman]] with [[https://gnu.org/software/emacs][Emacs]] using the D-Bus protocol.
 
 * Installation
 
-If you haven't already, begin by install these dependencies:
+If you haven't already, begin by installing these dependencies:
 - =dbus=
 - =darkman=
 
@@ -78,9 +79,11 @@ here's an example using =systemd=:
 systemctl status dbus
 #+end_src
 
+#+begin_example
 ● dbus.service - D-Bus System Message Bus
      Loaded: loaded
-     Active: *active* (running)
+     Active: active (running)
+#+end_example
 
 *** Is Darkman running?
 
@@ -91,9 +94,11 @@ here's an example using =systemd=:
 systemctl status --user darkman
 #+end_src
 
+#+begin_example
 ● darkman.service - Framework for dark-mode and light-mode transitions.
      Loaded: loaded
-     Active: *active* (running)
+     Active: active (running)
+#+end_example
 
 *** Is Emacs built with D-Bus support?
 
