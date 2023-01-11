@@ -95,6 +95,7 @@ value a symbol name representing the theme.")
 				       darkman--dbus-interface
 				       "ModeChanged"
 				       #'darkman--mode-changed-signal-handler)))
+    (dbus-unregister-object darkman--dbus-signal)
     (setq darkman--dbus-signal nil)))
 
 (provide 'darkman)
