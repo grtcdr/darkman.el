@@ -1,0 +1,12 @@
+#+TITLE: To-dos
+#+TODO: TODO DOING | DONE SCRATCHED
+
+Items tagged with =:sug:= are suggestions received from people from
+somewhere external to this repository. A tag immediatelly following
+=:sug:= represents the pseudonym of the person with the original
+suggestion.
+
+* Features
+** TODO Listen for D-Bus messages :sug:lastnamebird:
+* Documentation
+* Bugs
