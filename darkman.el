@@ -16,6 +16,11 @@
     "Signal an error about an invalid mode. MODE is the name of the invalid mode."
     (error (format "‘%s’ is not a valid mode." mode)))
 
+(defun darkman--dbus-service-unavailable-error ()
+  "Signal an error about an invalid mode. MODE is the name of the invalid mode."
+  (error (format "%s D-Bus service not available."
+		 darkman--dbus-service)))
+
 (defun darkman-get-mode ()
   "Get the mode of the darkman service."
   (interactive)
@@ -62,8 +67,7 @@ or ‘light’."
 (defun darkman--check-dbus-service ()
   "Return non-nil if the darkman service is available."
   (or (dbus-ping :session darkman--dbus-service 100)
-      (error (format "%s D-Bus service not available, automatic theme-switching will depend on standard darkman scripts."
-		     darkman--dbus-service))))
+      (darkman--dbus-service-unavailable-error)))
 
 (define-minor-mode darkman-mode
   "Minor mode providing integration with the darkman utility."
