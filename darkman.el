@@ -89,7 +89,7 @@ value a symbol name representing the theme.")
   (if darkman-mode
       (and (darkman--check-dbus-service)
 	   (setq darkman--dbus-signal
-		 (dbus-register-signal :system
+		 (dbus-register-signal :session
 				       darkman--dbus-service
 				       darkman--dbus-path
 				       darkman--dbus-interface
