@@ -28,14 +28,14 @@ should be running.
 
 ** Automatically set the theme on startup
 
-First, define which theme is associated with which mode (by default,
-=modus-themes= are used) like so:
+In your =init.el=, define which theme is associated with which mode,
+by default =modus-themes= are used.
 
 #+begin_src elisp
 (setq darkman-themes '(:light tango :dark tango-dark))
 #+end_src
 
-Then, place this snippet in your configuration =init.el=:
+Instead of manually configuring a theme, you should do it this way:
 
 #+begin_src elisp
 (load-theme (darkman-get-theme))
