@@ -19,42 +19,55 @@ Add the package to the =load-path= and then require it like so:
 
 * Usage
 
-** Automatically switch themes when the mode changes
-
-You should first define what theme is associated with what mode in
-=$XDG_DATA_HOME/dark-mode.d= and =$XDG_DATA_HOME/light-mode.d=.
-
-The following is an example script named =emacs= located in
-=$XDG_DATA_HOME/dark-mode.d= that is responsible for setting the theme
-to =modus-vivendi=.
-
-#+begin_src sh
-#!/bin/bash
-
-if systemctl is-active --user emacs; then
-   emacsclient -e "(load-theme 'modus-vivendi t)"
-fi
-#+end_src
-
-Your themes will automatically switch according to the time of day,
-i.e. when darkman switches modes.
-
 ** Automatically set the theme on startup
 
-Define which theme is associated with which mode (by default,
+First, define which theme is associated with which mode (by default,
 =modus-themes= are used) like so:
 
 #+begin_src elisp
 (setq darkman-themes '(:light tango :dark tango-dark))
 #+end_src
 
-Place this snippet in your configuration =init.el=:
+Then, place this snippet in your configuration =init.el=:
 
 #+begin_src elisp
 (load-theme (darkman-get-theme))
 #+end_src
 
+=darkman-get-theme= returns a theme based on the current darkman mode
+as well as the =:dark= and =:flight= themes you specified in the
+=darkman-themes= variable.
+
+** Automatically switch themes when the mode changes
+
+=darkman.el= can listen to darkman's signals and changes the theme
+without requiring you to manually create any scripts, you can enable
+this behavior by enabling the minor mode:
+
+#+begin_src elisp
+(darkman-mode)
+#+end_src
+
+Your themes will now be automatically changed as soon as darkman
+switches modes.
+
 ** Other functions
 
-Use =M-x darkman-toggle= to toggle the mode of the darkman service
+You can use =M-x darkman-toggle= to toggle the mode of the darkman service
 from within Emacs.
+
+Additionally, you can use =(darkman-set-mode MODE)= to manually
+specify the mode of the darkman service.
+
+* Citing
+
+You may cite this project in your research like so:
+
+#+begin_src bibtex
+@misc{ABA:darkman,
+  author = {Aziz Ben Ali},
+   title = {Darkman integration with Emacs},
+     url = {https://github.com/grtcdr/darkman.el},
+    year = 2023
+}
+#+end_src
