@@ -32,21 +32,23 @@
 		     darkman--dbus-path
 		     darkman--dbus-interface
 		     "Mode")))
-    (when (called-interactively-p) (message (format "Mode is currently set to %s." mode)))
+    (when (called-interactively-p)
+      (message (format "Mode is currently set to %s." mode)))
     mode))
 
 (defun darkman-set (mode)
-  "Set the mode of the darkman service to MODE. MODE can be ‘dark’
-or ‘light’."
+  "Set the mode of the darkman service to MODE, which can either be
+‘dark’ or ‘light’."
   (dbus-set-property :session
 		     darkman--dbus-service
 		     darkman--dbus-path
 		     darkman--dbus-interface
 		     "Mode" (cond ((member mode '(dark light))
 				   (symbol-name mode))
-				  (t (darkman--invalid-mode-error mode)))))
+				  (t (darkman--invalid-mode-error mode))))
+  (load-theme (darkman--get-assoc-theme mode)))
 
-(defun darkman-toggle-mode-of-service ()
+(defun darkman-toggle ()
   "Toggle the mode of the darkman service."
   (interactive)
   (let ((mode (darkman-get)))
@@ -67,7 +69,7 @@ or ‘light’."
 (defun darkman--mode-changed-signal-handler (new-mode)
   "Signal handler for the ModeChanged signal."
   (message "Darkman changed its mode, the theme will be changed.")
-  (load-theme (darkman--assoc-theme new-mode)))
+  (load-theme (darkman--get-assoc-theme new-mode)))
 
 (defun darkman--check-dbus-service ()
   "Return non-nil if the darkman service is available."
