@@ -61,11 +61,13 @@ specify the mode of the darkman service.
 
 * Citing
 
+You may cite this project in your research like so:
+
 #+begin_src bibtex
-@misc{darkman.el,
-  author = "Aziz Ben Ali",
-  title = "Darkman integration with Emacs",
-  url = "https://github.com/grtcdr/darkman.el",
-  year = 2021,
+@misc{ABA:darkman,
+  author = {Aziz Ben Ali},
+   title = {Darkman integration with Emacs},
+     url = {https://github.com/grtcdr/darkman.el},
+    year = 2023
 }
 #+end_src
