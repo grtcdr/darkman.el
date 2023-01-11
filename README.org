@@ -2,21 +2,19 @@
 
 =darkman.el= seamlessly integrates [[https://darkman.whynothugo.nl][Darkman]] with [[https://gnu.org/software/emacs][Emacs]] using the D-Bus protocol.
 
-* Dependencies
-
-- =dbus=: this package relies on the D-Bus protocol to control and
-  communicate with the Darkman service.
-- =darkman=: because that's what we're targeting.
-
 * Installation
 
-Begin by cloning the repository:
+If you haven't already, begin by install these dependencies:
+- =dbus=
+- =darkman=
+
+Now, clone the repository:
 
 #+begin_src sh
 git clone https://github.com/grtcdr/darkman.el darkman
 #+end_src
 
-Add the package to the =load-path= and then require it like so:
+Finally, add the package to the =load-path= and then require it like so:
 
 #+begin_src elisp
 (add-to-list 'load-path "darkman")
@@ -24,6 +22,9 @@ Add the package to the =load-path= and then require it like so:
 #+end_src
 
 * Usage
+
+For =darkman.el= to work properly, the D-Bus and Darkman services
+should be running.
 
 ** Automatically set the theme on startup
 
@@ -73,11 +74,10 @@ manually set and get the mode of the Darkman service respectively.
 Use your service manager to verify whether the service is running,
 here's an example using =systemd=:
 
-#+begin_src sh :results raw
+#+begin_src sh
 systemctl status dbus
 #+end_src
 
-#+RESULTS:
 ● dbus.service - D-Bus System Message Bus
      Loaded: loaded
      Active: *active* (running)
@@ -87,11 +87,10 @@ systemctl status dbus
 Use your service manager to verify whether the service is running,
 here's an example using =systemd=:
 
-#+begin_src sh :results raw
+#+begin_src sh
 systemctl status --user darkman
 #+end_src
 
-#+RESULTS:
 ● darkman.service - Framework for dark-mode and light-mode transitions.
      Loaded: loaded
      Active: *active* (running)
