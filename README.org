@@ -55,8 +55,8 @@ switches modes.
 You can use =M-x darkman-toggle= to toggle the mode of the darkman service
 from within Emacs.
 
-Additionally, you can use =(darkman-set MODE)= to manually
-specify the mode of the darkman service.
+Additionally, you can use =(darkman-set MODE)= and =(darkman-get)= to
+manually set and get the mode of the darkman service respectively.
 
 * Citing
 
