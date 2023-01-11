@@ -40,8 +40,7 @@ value a symbol name representing the theme.")
 		     darkman--dbus-interface
 		     "Mode" (cond ((member mode '(dark light))
 				   (symbol-name mode))
-				  (t (darkman--invalid-mode-error mode))))
-  (load-theme (darkman--get-assoc-theme mode)))
+				  (t (darkman--invalid-mode-error mode)))))
 
 (defun darkman-toggle ()
   "Toggle the mode of the darkman service."
