@@ -19,23 +19,14 @@ value a symbol name representing the theme.")
 (defvar darkman--dbus-interface darkman--dbus-service)
 (defvar darkman--dbus-signal nil)
 
-(defun darkman--invalid-mode-error (mode)
-  "Signal an error about an invalid mode. MODE is the name of the invalid mode."
-  (error (format "‘%s’ is not a valid mode." mode)))
-
-(defun darkman--dbus-service-unavailable-error ()
-  "Signal an error about an invalid mode. MODE is the name of the invalid mode."
-  (error (format "%s D-Bus service not available."
-		 darkman--dbus-service)))
-
 (defun darkman-get ()
   "Get the mode of the darkman service."
   (interactive)
   (let ((mode (dbus-get-property :session
-		     darkman--dbus-service
-		     darkman--dbus-path
-		     darkman--dbus-interface
-		     "Mode")))
+				 darkman--dbus-service
+				 darkman--dbus-path
+				 darkman--dbus-interface
+				 "Mode")))
     (when (called-interactively-p)
       (message (format "Mode is currently set to %s." mode)))
     mode))
@@ -58,6 +49,15 @@ value a symbol name representing the theme.")
   (let ((mode (darkman-get)))
     (cond ((string= mode "dark") (darkman-set 'light))
 	  ((string= mode "light") (darkman-set 'dark)))))
+
+(defun darkman--invalid-mode-error (mode)
+  "Signal an error about an invalid mode. MODE is the name of the invalid mode."
+  (error (format "‘%s’ is not a valid mode." mode)))
+
+(defun darkman--dbus-service-unavailable-error ()
+  "Signal an error about an invalid mode. MODE is the name of the invalid mode."
+  (error (format "%s D-Bus service not available."
+		 darkman--dbus-service)))
 
 (defun darkman--get-assoc-theme (mode)
   "Return a theme from ‘darkman-themes’ which corresponds to THEME."
