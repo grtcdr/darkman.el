@@ -102,14 +102,8 @@ systemctl status --user darkman
 *** Is Emacs built with D-Bus support?
 
 Usually it is, unless you're building from source, in which case you
-can determine whether or not Emacs was built with D-Bus support like
-so:
-
-#+begin_src elisp
-(numberp (string-match "DBUS" system-configuration-features))
-#+end_src
-
-If non-nil, your Emacs /was/ built with D-Bus support.
+can verify whether or not Emacs was built with D-Bus support using
+=C-h v system-configuration-features ENTER= which should list =DBUS=.
 
 * Citing
 
