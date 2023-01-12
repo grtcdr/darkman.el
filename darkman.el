@@ -9,10 +9,18 @@
 
 (require 'dbus)
 
-(defvar darkman-themes '(:light modus-operandi :dark modus-vivendi)
-  "A property list which defines modes and their corresponding
-theme. The two properties, ‘:light’ and ‘:dark’ accept as their
-value a symbol name representing the theme.")
+(defgroup darkman ()
+  "Darkman integration with Emacs."
+  :group 'convenience)
+
+(defcustom darkman-themes
+  '(:light modus-operandi :dark modus-vivendi)
+  "A property list which maps modes to their corresponding themes.
+
+The two properties, ‘:light’ and ‘:dark’, expect as a value a
+symbol representing the name of the theme."
+  :type '(plist :value-type symbol)
+  :package-version '(darkman . "0.1.0"))
 
 (defvar darkman--dbus-service "nl.whynothugo.darkman")
 (defvar darkman--dbus-path "/nl/whynothugo/darkman")
