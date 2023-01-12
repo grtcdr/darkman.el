@@ -29,8 +29,9 @@ should be running.
 
 ** Automatically set the theme on startup
 
-In your =init.el=, define which theme is associated with which mode,
-by default =modus-themes= are used.
+In your =init.el= file, define which theme is associated with which
+mode, by default =modus-themes= are used, but we'll use the =tango=
+variants in this example.
 
 #+begin_src elisp
 (setq darkman-themes '(:light tango :dark tango-dark))
@@ -47,16 +48,14 @@ themes you specified in the =darkman-themes= variable.
 
 ** Automatically switch themes when the mode changes
 
-=darkman.el= is able to listen to Darkman's signals and changes the
-theme without requiring you to manually create any scripts, you can
-enable this behavior by enabling the minor mode:
+=darkman.el= can listen for any signals to change the theme without
+requiring you to manually create any scripts.
+
+You can enable this behavior by enabling the minor mode:
 
 #+begin_src elisp
 (darkman-mode)
 #+end_src
-
-Your themes will now be automatically changed as soon as Darkman
-switches modes.
 
 ** Other functions
 
