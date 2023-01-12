@@ -15,7 +15,7 @@ theme. The two properties, ‘:light’ and ‘:dark’ accept as their
 value a symbol name representing the theme.")
 
 (defvar darkman--dbus-service "nl.whynothugo.darkman")
-(defvar darkman--dbus-path (car (last (dbus-introspect-get-all-nodes :session darkman--dbus-service "/"))))
+(defvar darkman--dbus-path "/nl/whynothugo/darkman")
 (defvar darkman--dbus-interface darkman--dbus-service)
 (defvar darkman--dbus-signal nil)
 
