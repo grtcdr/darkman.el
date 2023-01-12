@@ -44,6 +44,7 @@ relationship of REL."
    (site/stylesheet "https://grtcdr.tn/css/heading.css")
    (site/stylesheet "https://grtcdr.tn/css/nav.css")
    (site/stylesheet "https://grtcdr.tn/css/org.css")
+   (site/stylesheet "https://grtcdr.tn/css/indent.css")
    (site/stylesheet "https://grtcdr.tn/css/source.css")
    (site/stylesheet "https://grtcdr.tn/css/table.css")
    (site/stylesheet "https://grtcdr.tn/css/figure.css")
