@@ -24,23 +24,32 @@
 (require 'project)
 (require 'shr)
 
-(defun site/link (rel href)
+(defun site/link (href)
   "Format as a ’link’ tag, a resource located at HREF with a
 relationship of REL."
   (shr-dom-to-xml
-   `(link ((rel . ,rel)
+   `(link ((rel . "stylesheet")
 	   (href . ,href)))))
+
+(defun site/stylesheet (filename)
+  "Format filename as a stylesheet."
+  (shr-dom-to-xml
+   `(link ((rel . "stylesheet")
+	   (href . ,filename)))))
 
 (defvar site/html-head
   (concat
-   (site/link "stylesheet" "https://grtcdr.tn/css/common.css")
-   (site/link "stylesheet" "https://grtcdr.tn/css/heading.css")
-   (site/link "stylesheet" "https://grtcdr.tn/css/figure.css")
-   (site/link "stylesheet" "https://grtcdr.tn/css/source.css")
-   (site/link "stylesheet" "https://grtcdr.tn/css/table.css")
-   (site/link "stylesheet" "https://grtcdr.tn/css/nav.css")
-   (site/link "stylesheet" "https://grtcdr.tn/css/org.css")
-   (site/link "icon" "https://grtcdr.tn/assets/favicon.ico"))
+   (site/stylesheet "https://grtcdr.tn/css/def.css")
+   (site/stylesheet "https://grtcdr.tn/css/common.css")
+   (site/stylesheet "https://grtcdr.tn/css/heading.css")
+   (site/stylesheet "https://grtcdr.tn/css/nav.css")
+   (site/stylesheet "https://grtcdr.tn/css/org.css")
+   (site/stylesheet "https://grtcdr.tn/css/source.css")
+   (site/stylesheet "https://grtcdr.tn/css/table.css")
+   (site/stylesheet "https://grtcdr.tn/css/figure.css")
+   (shr-dom-to-xml '(link ((rel . "icon")
+			   (type . "image/x-icon")
+			   (href . "https://grtcdr.tn/assets/favicon.ico")))))
   "HTML headers shared across projects.")
 
 (defvar main-preamble
