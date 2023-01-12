@@ -1,24 +1,26 @@
 #+TITLE: darkman.el
+#+OPTIONS: toc:t
 #+EXPORT_FILE_NAME: index.html
 
-=darkman.el= seamlessly integrates [[https://darkman.whynothugo.nl][Darkman]] with [[https://gnu.org/software/emacs][Emacs]] using the D-Bus protocol.
+=darkman.el= seamlessly integrates [[https://darkman.whynothugo.nl][Darkman]] with [[https://gnu.org/software/emacs][Emacs]] using the [[https://www.freedesktop.org/wiki/Software/dbus/][D-Bus]] protocol.
 
 * Installation
 
-If you haven't already, begin by installing these dependencies:
-- =dbus=
-- =darkman=
-
-Now, clone the repository:
+Begin by cloning the repository:
 
 #+begin_src sh
 git clone https://github.com/grtcdr/darkman.el darkman
 #+end_src
 
-Finally, add the package to the =load-path= and then require it like so:
+Now, add the package to your =load-path=:
 
 #+begin_src elisp
 (add-to-list 'load-path "darkman")
+#+end_src
+
+And require it like so:
+
+#+begin_src elisp
 (require 'darkman)
 #+end_src
 
