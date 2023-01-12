@@ -31,6 +31,7 @@ value a symbol name representing the theme.")
       (message (format "Mode is currently set to %s." mode)))
     mode))
 
+;;;###autoload
 (defun darkman-set (mode)
   "Set the mode of the darkman service to MODE, which can either be
 ‘dark’ or ‘light’."
@@ -64,6 +65,7 @@ value a symbol name representing the theme.")
 	((string= mode "light") (plist-get darkman-themes :light))
 	(t (darkman--invalid-mode-error mode))))
 
+;;;###autoload
 (defun darkman-get-theme ()
   "Get a theme from the ‘darkman-themes’ which corresponds to the current mode."
   (let ((mode (darkman-get)))
