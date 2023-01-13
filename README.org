@@ -106,6 +106,12 @@ Usually it is, unless you're building from source, in which case you
 can verify whether or not Emacs was built with D-Bus support using
 =C-h v system-configuration-features ENTER= which should list =DBUS=.
 
+* Contributors
+
+** Code
+
+- Aleksei Fedotov: <https://github.com/lexa>
+
 * Citing
 
 You may cite this project in your research like so:
