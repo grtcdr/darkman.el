@@ -117,7 +117,7 @@ can verify whether or not Emacs was built with D-Bus support using
 You may cite this project in your research like so:
 
 #+begin_src bibtex
-@misc{ABA:darkman,
+@misc{aba23darkman,
   author = {Aziz Ben Ali},
    title = {Darkman integration with Emacs},
      url = {https://github.com/grtcdr/darkman.el},
