@@ -105,7 +105,8 @@ symbol representing the name of the theme."
 				       darkman--dbus-path
 				       darkman--dbus-interface
 				       "ModeChanged"
-				       #'darkman--mode-changed-signal-handler)))
+				       #'darkman--mode-changed-signal-handler))
+           (load-theme (darkman-get-theme)))
     (dbus-unregister-object darkman--dbus-signal)
     (setq darkman--dbus-signal nil)))
 
