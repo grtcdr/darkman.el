@@ -19,7 +19,9 @@
 
 The two properties, ‘:light’ and ‘:dark’, expect as a value a
 symbol representing the name of the theme."
-  :type '(plist :value-type symbol)
+  :type `(plist :key-type (choice (const :tag "Light theme" :light)
+                                  (const :tag "Dark theme" :dark))
+          :value-type (choice ,@(mapcar (lambda (theme) (list 'const theme)) (custom-available-themes))))
   :package-version '(darkman . "0.1.0"))
 
 (defvar darkman--dbus-service "nl.whynothugo.darkman")
