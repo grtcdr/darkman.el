@@ -38,6 +38,9 @@ variants in this example.
 (setq darkman-themes '(:light tango :dark tango-dark))
 #+end_src
 
+You could also use =M-x customize-group darkman RET= to customize the
+variable.
+
 Instead of manually configuring a theme, you should do it this way:
 
 #+begin_src elisp
@@ -104,7 +107,7 @@ systemctl status --user darkman
 
 Usually it is, unless you're building from source, in which case you
 can verify whether or not Emacs was built with D-Bus support using
-=C-h v system-configuration-features ENTER= which should list =DBUS=.
+=C-h v system-configuration-features RET= which should list =DBUS=.
 
 * Contributors
 
