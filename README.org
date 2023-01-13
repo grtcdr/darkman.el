@@ -1,5 +1,4 @@
 #+TITLE: darkman.el
-#+OPTIONS: toc:t
 #+EXPORT_FILE_NAME: index.html
 
 =darkman.el= seamlessly integrates [[https://darkman.whynothugo.nl][Darkman]] with [[https://gnu.org/software/emacs][Emacs]] using the [[https://www.freedesktop.org/wiki/Software/dbus/][D-Bus]] protocol.

@@ -84,7 +84,6 @@ projects.")
 	     :publishing-function 'org-html-publish-to-html
 	     :html-preamble main-preamble
 	     :html-postamble nil
-	     :html-head site/html-head
-	     :with-toc nil)
+	     :html-head site/html-head)
        (list "all"
 	     :components '("main"))))

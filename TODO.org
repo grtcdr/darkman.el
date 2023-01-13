@@ -1,10 +1,14 @@
 #+TITLE: To-dos
-#+TODO: TODO DOING | DONE SCRATCHED
+#+TODO: TODO(t) DOING(-) | DONE(d) SCRATCHED(s)
+#+TAGS: sug(s) help(h)
+#+OPTIONS: toc:nil
+#+HTML_HEAD_EXTRA: <link rel="stylesheet" href="https://grtcdr.tn/css/indent.css">
 
-Items tagged with =:sug:= are suggestions received from people from
-somewhere external to this repository. A tag immediatelly following
-=:sug:= represents the pseudonym of the person with the original
-suggestion.
+- Items tagged with =sug= are suggestions received from people from
+  somewhere external to this repository. A tag immediatelly following
+  =sug= represents the pseudonym of the person with the original
+  suggestion.
+- Items tagged with =help= are things we could use your help in achieving.
 
 * Features
 ** DONE Listen for D-Bus messages                         :sug:lastnamebird:
