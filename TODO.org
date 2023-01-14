@@ -16,4 +16,6 @@
 :issue:    https://github.com/grtcdr/darkman.el/pull/2
 :END:
 * Documentation
+** TODO Write up a Texinfo manual as an Org document
+- We could use [[https://github.com/grtcdr/liaison/blob/main/doc/manual/liaison.org][this manual]] as a template.
 * Bugs
