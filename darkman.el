@@ -24,6 +24,12 @@ symbol representing the name of the theme."
           :value-type (choice ,@(mapcar (lambda (theme) (list 'const theme)) (custom-available-themes))))
   :package-version '(darkman . "0.1.0"))
 
+(defcustom darkman-switch-themes-silently t
+  "Switch themes silently, as opposed to printing the switch action,
+when the mode is changed."
+  :type 'boolean
+  :package-version '(darkman . "0.2.0"))
+
 (defvar darkman--dbus-service "nl.whynothugo.darkman")
 (defvar darkman--dbus-path "/nl/whynothugo/darkman")
 (defvar darkman--dbus-interface darkman--dbus-service)
@@ -70,7 +76,7 @@ symbol representing the name of the theme."
 		 darkman--dbus-service)))
 
 (defun darkman--get-assoc-theme (mode)
-  "Return a theme from ‘darkman-themes’ which corresponds to THEME."
+  "Return a theme from ‘darkman-themes’ corresponding to MODE (a string)."
   (cond ((string= mode "dark") (plist-get darkman-themes :dark))
 	((string= mode "light") (plist-get darkman-themes :light))
 	(t (darkman--invalid-mode-error mode))))
@@ -83,8 +89,11 @@ symbol representing the name of the theme."
 
 (defun darkman--mode-changed-signal-handler (new-mode)
   "Signal handler for the ModeChanged signal."
-  (message "Darkman changed its mode, the theme will be changed.")
-  (load-theme (darkman--get-assoc-theme new-mode)))
+  (let ((new-theme (darkman--get-assoc-theme new-mode)))
+    (unless (not darkman-switch-themes-silently)
+      (message (format "Darkman switched to %s mode, switching to %s theme."
+		       new-mode new-theme)))
+    (load-theme new-theme)))
 
 (defun darkman--check-dbus-service ()
   "Return non-nil if the darkman service is available."
