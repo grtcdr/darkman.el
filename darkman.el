@@ -73,7 +73,6 @@ when the mode is changed."
       (message (format "Mode is currently set to %s." mode)))
     mode))
 
-;;;###autoload
 (defun darkman-set (mode)
   "Set the mode of the Darkman service to MODE, which can either be
 ‘dark’ or ‘light’."
@@ -85,6 +84,7 @@ when the mode is changed."
 				   (symbol-name mode))
 				  (t (darkman--invalid-mode-error mode)))))
 
+;;;###autoload
 (defun darkman-toggle ()
   "Toggle the mode of the Darkman service."
   (interactive)
@@ -107,7 +107,6 @@ when the mode is changed."
 	((string= mode "light") (plist-get darkman-themes :light))
 	(t (darkman--invalid-mode-error mode))))
 
-;;;###autoload
 (defun darkman-get-theme ()
   "Get a theme from the ‘darkman-themes’ which corresponds to the current mode."
   (let ((mode (darkman-get)))
@@ -126,6 +125,7 @@ when the mode is changed."
   (or (dbus-ping :session darkman--dbus-service 100)
       (darkman--dbus-service-unavailable-error)))
 
+;;;###autoload
 (define-minor-mode darkman-mode
   "Minor mode providing integration with the Darkman utility."
   :global t
