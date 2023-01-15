@@ -1,6 +1,7 @@
 all: build
 
 build:
+	@rm -rvf .cache
 	@emacs --quick --batch --load lisp/publish.el --funcall org-publish-all t t
 
 serve: build

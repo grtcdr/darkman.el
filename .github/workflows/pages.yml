@@ -36,6 +36,12 @@ jobs:
              cd doc/site
              make
 
+      - name: Compile LaTeX documents
+        uses: xu-cheng/latex-action@v2
+        with:
+          working_directory: doc/site/public/
+          root_file: handbook.tex
+
       - name: Upload website
         uses: actions/upload-pages-artifact@v1
         with:

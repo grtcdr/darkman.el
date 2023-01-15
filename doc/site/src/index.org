@@ -1,1 +1,31 @@
-../../../README.org
+#+TITLE: darkman.el
+
+This package provides seamless integration between [[https://darkman.whynothugo.nl][Darkman]] and [[https://gnu.org/software/emacs][Emacs]]
+using the [[https://www.freedesktop.org/wiki/Software/dbus/][D-Bus]] protocol.
+
+Read the [[file:handbook.pdf][handbook]] for instructions on /how to use/ the package in your
+own configuration.
+
+If you're experiencing problems with the package, before [[https://github.com/grtcdr/darkman.el/issues/new][filing an
+issue]] in the development website, consider going over the [[https://github.com/grtcdr/darkman.el#debugging][common
+debugging steps]] and if your issue still persists, [[https://github.com/grtcdr/darkman.el/issues][searching for
+duplicate issues]].
+
+#+begin_export html
+<figure>
+  <img src="https://upload.wikimedia.org/wikipedia/commons/1/11/A_Horseshoe_Einstein_Ring_from_Hubble.JPG">
+  <figcaption>A Horseshoe Einstein Ring from Hubble, ESA/Hubble & NASA (2011, December 12)</figcaption>
+</figure>
+#+end_export
+
+* Installation
+
+#+include: "./README.org::#installation" :only-contents t
+
+* Contributors
+
+#+include: "./README.org::*Contributors" :only-contents t
+
+* Citing
+
+#+include: "README.org::*Citing" :only-contents t

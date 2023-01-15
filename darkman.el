@@ -3,19 +3,17 @@
 ;; Copyright (C) 2023  Aziz Ben Ali
 
 ;; Author: Aziz Ben Ali <tahaaziz.benali@esprit.tn>
-;; Homepage: http://github.com/grtcdr/darkman.el
-;; Version: 0.1
+;; Homepage: https://github.com/grtcdr/darkman.el
+;; Version: 0.2
 ;; Keywords: convenience
 
 ;; This file is not part of GNU Emacs.
 
-;;; License:
-;;
 ;; Permission to use, copy, modify, and/or distribute this software for
 ;; any purpose with or without fee is hereby granted, provided that the
 ;; above copyright notice and this permission notice appear in all
 ;; copies.
-;;
+
 ;; THE SOFTWARE IS PROVIDED "AS IS" AND THE AUTHOR DISCLAIMS ALL
 ;; WARRANTIES WITH REGARD TO THIS SOFTWARE INCLUDING ALL IMPLIED
 ;; WARRANTIES OF MERCHANTABILITY AND FITNESS. IN NO EVENT SHALL THE
@@ -27,13 +25,13 @@
 
 
 ;;; Commentary:
-;;
+
 ;; darkman.el provides seamless integration between Darkman and Emacs
 ;; using the D-Bus protocol.
 
-(require 'dbus)
-
 ;;; Code:
+
+(require 'dbus)
 
 (defgroup darkman ()
   "Seamless integration between Darkman and Emacs."

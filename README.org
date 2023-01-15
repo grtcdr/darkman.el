@@ -1,25 +1,25 @@
 #+title: darkman.el
 #+export_file_name: index.html
 
-#+caption: A Horseshoe Einstein Ring from Hubble, ESA/Hubble & NASA (2011-12-21)
-#+attr_html: :height 300px :align center
-[[https://upload.wikimedia.org/wikipedia/commons/1/11/A_Horseshoe_Einstein_Ring_from_Hubble.JPG]]
-
-Seamless integration between [[https://darkman.whynothugo.nl][Darkman]] and [[https://gnu.org/software/emacs][Emacs]] using the [[https://www.freedesktop.org/wiki/Software/dbus/][D-Bus]] protocol.
+This package provides seamless integration between [[https://darkman.whynothugo.nl][Darkman]] and [[https://gnu.org/software/emacs][Emacs]]
+using the [[https://www.freedesktop.org/wiki/Software/dbus/][D-Bus]] protocol.
 
 * Installation
+:PROPERTIES:
+:CUSTOM_ID: installation
+:END:
 
 If you're using Emacs 29, install the package in one go with
 =package-vc=:
 
-#+begin_src elisp
+#+begin_src emacs-lisp
 (package-vc-install "https://github.com/grtcdr/darkman.el" :last-release)
 (require 'darkman)
 #+end_src
 
 And optionally, using the =use-package= macro:
 
-#+begin_src elisp
+#+begin_src emacs-lisp
 (use-package darkman
   :init
   (package-vc-install "https://github.com/grtcdr/darkman.el" :last-release))
@@ -33,13 +33,13 @@ git clone --branch 0.2 https://github.com/grtcdr/darkman.el darkman
 
 Now, add the package to your =load-path=:
 
-#+begin_src elisp
+#+begin_src emacs-lisp
 (add-to-list 'load-path "darkman")
 #+end_src
 
 Finally, require the package like so:
 
-#+begin_src elisp
+#+begin_src emacs-lisp
 (require 'darkman)
 #+end_src
 
@@ -54,7 +54,7 @@ In your =init.el= file, define which theme is associated with which
 mode, by default =modus-themes= are used, but we'll use the =tango=
 variants in this example.
 
-#+begin_src elisp
+#+begin_src emacs-lisp
 (setq darkman-themes '(:light tango :dark tango-dark))
 #+end_src
 
@@ -63,7 +63,7 @@ variable.
 
 Instead of manually configuring a theme, you should do it this way:
 
-#+begin_src elisp
+#+begin_src emacs-lisp
 (load-theme (darkman-get-theme))
 #+end_src
 
@@ -77,17 +77,18 @@ requiring you to manually create any scripts.
 
 You can enable this behavior by enabling the minor mode:
 
-#+begin_src elisp
+#+begin_src emacs-lisp
 (darkman-mode)
 #+end_src
 
 ** Other functions
 
-You can use =M-x darkman-toggle= to toggle the mode of the Darkman
-service from within Emacs.
+=M-x darkman-toggle= will toggle the mode of the Darkman service from
+within Emacs.
 
-Additionally, you can use =(darkman-set MODE)= and =(darkman-get)= to
-manually set and get the mode of the Darkman service respectively.
+Additionally, you can use the =darkman-get= and =darkman-set=
+functions to manually get and set the mode of the service
+respectively.
 
 * Debugging
 
@@ -150,3 +151,7 @@ You may cite this project in your research like so:
     year = 2023
 }
 #+end_src
+
+* License
+
+#+include: "LICENSE" ascii

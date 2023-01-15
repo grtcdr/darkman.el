@@ -1,71 +1,40 @@
-;;; publish.el --- A minimal publishing script     -*- lexical-binding: t; -*-
+;;; publish.el     -*- lexical-binding: t; -*-
 
 ;; Copyright (C) 2022 Aziz Ben Ali
 
 ;; Author: Aziz Ben Ali <tahaaziz.benali@esprit.tn>
 ;; Homepage: https://github.com/grtcdr/darkman.el
 
-;; publish.el is free software: you can redistribute it and/or modify
-;; it under the terms of the GNU General Public License as published
-;; by the Free Software Foundation, either version 3 of the License,
-;; or (at your option) any later version.
+;; This file is not part of GNU Emacs.
 
-;; publish.el is distributed in the hope that it will be useful, but
-;; WITHOUT ANY WARRANTY; without even the implied warranty of
-;; MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
-;; General Public License for more details.
+;; Permission to use, copy, modify, and/or distribute this software for
+;; any purpose with or without fee is hereby granted, provided that the
+;; above copyright notice and this permission notice appear in all
+;; copies.
 
-;; You should have received a copy of the GNU General Public License
-;; along with publish.el. If not, see <https://www.gnu.org/licenses/>.
+;; THE SOFTWARE IS PROVIDED "AS IS" AND THE AUTHOR DISCLAIMS ALL
+;; WARRANTIES WITH REGARD TO THIS SOFTWARE INCLUDING ALL IMPLIED
+;; WARRANTIES OF MERCHANTABILITY AND FITNESS. IN NO EVENT SHALL THE
+;; AUTHOR BE LIABLE FOR ANY SPECIAL, DIRECT, INDIRECT, OR CONSEQUENTIAL
+;; DAMAGES OR ANY DAMAGES WHATSOEVER RESULTING FROM LOSS OF USE, DATA OR
+;; PROFITS, WHETHER IN AN ACTION OF CONTRACT, NEGLIGENCE OR OTHER
+;; TORTIOUS ACTION, ARISING OUT OF OR IN CONNECTION WITH THE USE OR
+;; PERFORMANCE OF THIS SOFTWARE.
+
+;;; Commentary:
+
+;; publish.el is the publishing specification of http://grtcdr.tn/darkman.el.
 
 ;;; Code:
 
+(add-to-list 'load-path (concat default-directory "lisp/"))
+
+(require 'templates)
 (require 'ox-publish)
 (require 'project)
-(require 'shr)
 
-(defun site/link (href)
-  "Format as a ’link’ tag, a resource located at HREF with a
-relationship of REL."
-  (shr-dom-to-xml
-   `(link ((rel . "stylesheet")
-	   (href . ,href)))))
-
-(defun site/stylesheet (filename)
-  "Format filename as a stylesheet."
-  (shr-dom-to-xml
-   `(link ((rel . "stylesheet")
-	   (href . ,filename)))))
-
-(defvar site/html-head
-  (concat
-   (site/stylesheet "https://grtcdr.tn/css/def.css")
-   (site/stylesheet "https://grtcdr.tn/css/common.css")
-   (site/stylesheet "https://grtcdr.tn/css/heading.css")
-   (site/stylesheet "https://grtcdr.tn/css/nav.css")
-   (site/stylesheet "https://grtcdr.tn/css/org.css")
-   (site/stylesheet "https://grtcdr.tn/css/source.css")
-   (site/stylesheet "https://grtcdr.tn/css/table.css")
-   (site/stylesheet "https://grtcdr.tn/css/figure.css")
-   (shr-dom-to-xml '(link ((rel . "icon")
-			   (type . "image/x-icon")
-			   (href . "https://grtcdr.tn/assets/favicon.ico")))))
-  "HTML headers shared across projects.")
-
-(defvar main-preamble
-  (shr-dom-to-xml
-   '(nav nil
-	 (ul nil
-	     (li nil
-		 (a ((href . "/darkman.el/index.html")) "Home"))
-	     (li nil
-		 (a ((href . "/darkman.el/TODO.html"))
-		    "To-dos"))
-	     (li nil
-		 (a ((href . "https://github.com/grtcdr/darkman.el"))
-		    "Development")))))
-      "Define an HTML snippet/template used as a preamble across all
-projects.")
+(setq user-full-name "Aziz Ben Ali"
+      user-mail-address "tahaaziz.benali@esprit.tn")
 
 (setq org-publish-timestamp-directory ".cache/"
       org-src-fontify-natively nil
@@ -73,7 +42,8 @@ projects.")
       org-html-postamble nil
       org-html-doctype "html5"
       org-html-htmlize-output-type nil
-      org-html-head-include-default-style nil)
+      org-html-head-include-default-style nil
+      org-html-head-include-scripts nil)
 
 (setq org-publish-project-alist
       (list
@@ -82,8 +52,24 @@ projects.")
 	     :base-directory "src/"
 	     :publishing-directory "public/"
 	     :publishing-function 'org-html-publish-to-html
-	     :html-preamble main-preamble
+	     :exclude "handbook.org"
+	     :html-preamble 'site/main-preamble
 	     :html-postamble nil
-	     :html-head site/html-head)
+	     :html-head site/html-head
+	     :with-toc nil)
+       (list "handbook"
+	     :base-extension "org"
+	     :base-directory "src/"
+	     :publishing-directory "public/"
+	     :exclude ".*"
+	     :include '("handbook.org")
+	     :publishing-function 'org-latex-publish-to-latex
+	     :with-author t
+	     :with-email t)
+       (list "css"
+	     :base-extension "css"
+	     :base-directory "src/css/"
+	     :publishing-directory "public/css/"
+	     :publishing-function 'org-publish-attachment)
        (list "all"
-	     :components '("main"))))
+	     :components '("css" "handbook" "main"))))

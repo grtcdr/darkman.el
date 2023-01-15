@@ -1,7 +1,6 @@
 #+title: To-dos
 #+todo: TODO(t) DOING(-) | DONE(d) SCRATCHED(s)
 #+tags: sug(s) help(h)
-#+options: toc:nil
 #+link: pull https://github.com/grtcdr/darkman.el/pull/%s
 #+link: issue https://github.com/grtcdr/darkman.el/issues/%s
 #+html_head_extra: <link rel="stylesheet" href="https://grtcdr.tn/css/indent.css">

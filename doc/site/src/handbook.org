@@ -1,0 +1,6 @@
+#+TITLE: darkman.el
+#+LATEX_HEADER_EXTRA: \usepackage{listings}
+#+LATEX_HEADER_EXTRA: \usepackage{color}
+#+LATEX_HEADER_EXTRA: \setlength{\parindent}{0pt}
+
+#+INCLUDE: "./README.org::*Usage" :only-contents t
