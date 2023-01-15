@@ -1,6 +1,10 @@
 #+title: darkman.el
 #+export_file_name: index.html
 
+#+caption: A Horseshoe Einstein Ring from Hubble, ESA/Hubble & NASA (2011-12-21)
+#+attr_html: :height 300px :align center
+[[https://upload.wikimedia.org/wikipedia/commons/1/11/A_Horseshoe_Einstein_Ring_from_Hubble.JPG]]
+
 Seamless integration between [[https://darkman.whynothugo.nl][Darkman]] and [[https://gnu.org/software/emacs][Emacs]] using the [[https://www.freedesktop.org/wiki/Software/dbus/][D-Bus]] protocol.
 
 * Installation
