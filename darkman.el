@@ -127,7 +127,7 @@ when the mode is changed."
 
 ;;;###autoload
 (define-minor-mode darkman-mode
-  "Minor mode providing integration with the Darkman utility."
+  "Minor mode providing integration with the Darkman service."
   :global t
   :init-value nil
   :require 'dbus

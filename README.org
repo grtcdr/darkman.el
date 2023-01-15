@@ -1,14 +1,21 @@
-#+TITLE: darkman.el
-#+EXPORT_FILE_NAME: index.html
+#+title: darkman.el
+#+export_file_name: index.html
 
 Seamless integration between [[https://darkman.whynothugo.nl][Darkman]] and [[https://gnu.org/software/emacs][Emacs]] using the [[https://www.freedesktop.org/wiki/Software/dbus/][D-Bus]] protocol.
 
 * Installation
 
-Begin by cloning the repository:
+If you're using Emacs 29, install the package (in one go) using
+the new =package-vc= feature:
+
+#+begin_src elisp
+(package-vc-install "https://github.com/grtcdr/darkman.el" :last-release)
+#+end_src
+
+Otherwise, begin by cloning the repository:
 
 #+begin_src sh
-git clone https://github.com/grtcdr/darkman.el darkman
+git clone --branch 0.2 https://github.com/grtcdr/darkman.el darkman
 #+end_src
 
 Now, add the package to your =load-path=:

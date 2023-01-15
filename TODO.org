@@ -1,10 +1,10 @@
-#+TITLE: To-dos
-#+TODO: TODO(t) DOING(-) | DONE(d) SCRATCHED(s)
-#+TAGS: sug(s) help(h)
-#+OPTIONS: toc:nil
-#+LINK: pull https://github.com/grtcdr/darkman.el/pull/%s
-#+LINK: issue https://github.com/grtcdr/darkman.el/issues/%s
-#+HTML_HEAD_EXTRA: <link rel="stylesheet" href="https://grtcdr.tn/css/indent.css">
+#+title: To-dos
+#+todo: TODO(t) DOING(-) | DONE(d) SCRATCHED(s)
+#+tags: sug(s) help(h)
+#+options: toc:nil
+#+link: pull https://github.com/grtcdr/darkman.el/pull/%s
+#+link: issue https://github.com/grtcdr/darkman.el/issues/%s
+#+html_head_extra: <link rel="stylesheet" href="https://grtcdr.tn/css/indent.css">
 
 - Items tagged with =sug= are suggestions received from people from
   somewhere external to this repository. A tag immediatelly following
