@@ -5,11 +5,20 @@ Seamless integration between [[https://darkman.whynothugo.nl][Darkman]] and [[ht
 
 * Installation
 
-If you're using Emacs 29, install the package (in one go) using
-the new =package-vc= feature:
+If you're using Emacs 29, install the package in one go with
+=package-vc=:
 
 #+begin_src elisp
 (package-vc-install "https://github.com/grtcdr/darkman.el" :last-release)
+(require 'darkman)
+#+end_src
+
+And optionally, using the =use-package= macro:
+
+#+begin_src elisp
+(use-package darkman
+  :init
+  (package-vc-install "https://github.com/grtcdr/darkman.el" :last-release))
 #+end_src
 
 Otherwise, begin by cloning the repository:
@@ -24,7 +33,7 @@ Now, add the package to your =load-path=:
 (add-to-list 'load-path "darkman")
 #+end_src
 
-And require it like so:
+Finally, require the package like so:
 
 #+begin_src elisp
 (require 'darkman)
