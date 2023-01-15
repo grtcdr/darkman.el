@@ -1,4 +1,4 @@
-;;; darkman.el --- Darkman integration with Emacs     -*- lexical-binding: t; -*-
+;;; darkman.el --- Seamless integration between Darkman and Emacs     -*- lexical-binding: t; -*-
 
 ;; Copyright (C) 2023  Aziz Ben Ali
 
@@ -10,7 +10,7 @@
 (require 'dbus)
 
 (defgroup darkman ()
-  "Darkman integration with Emacs."
+  "Seamless integration between Darkman and Emacs."
   :group 'convenience)
 
 (defcustom darkman-themes
