@@ -2,6 +2,8 @@
 #+TODO: TODO(t) DOING(-) | DONE(d) SCRATCHED(s)
 #+TAGS: sug(s) help(h)
 #+OPTIONS: toc:nil
+#+LINK: pull https://github.com/grtcdr/darkman.el/pull/%s
+#+LINK: issue https://github.com/grtcdr/darkman.el/issues/%s
 #+HTML_HEAD_EXTRA: <link rel="stylesheet" href="https://grtcdr.tn/css/indent.css">
 
 - Items tagged with =sug= are suggestions received from people from
@@ -12,10 +14,12 @@
 
 * Features
 ** DONE Listen for D-Bus messages                         :sug:lastnamebird:
-:PROPERTIES:
-:issue:    https://github.com/grtcdr/darkman.el/pull/2
-:END:
+Implemented in [[pull:2][#2]].
 * Documentation
 ** TODO Write up a Texinfo manual as an Org document
 - We could use [[https://github.com/grtcdr/liaison/blob/main/doc/manual/liaison.org][this manual]] as a template.
 * Bugs
+** TODO Sometimes themes will switch infinitely
+This causes Emacs to go haywire. The first time this happened was a
+short time after merging [[pull:5][#5]]. I can reproduce it, but I haven't yet
+understood what exactly causes it occur.
