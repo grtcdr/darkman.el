@@ -33,12 +33,9 @@
 (require 'ox-publish)
 (require 'project)
 
-(defun ci/enabled? ()
-  "Return non-nil if running in a CI context."
-  (eq (getenv "CI") "true"))
-
-(defun site/handbook-publisher ()
-  (if (ci/enabled?)
+(defun pub/handbook-function ()
+  "Return the publishing function used by the handbook."
+  (if (eq (getenv "CI") "true")
       'org-latex-publish-to-latex
     'org-latex-publish-to-pdf))
 
@@ -58,8 +55,8 @@
       (list
        (list "main"
 	     :base-extension "org"
-	     :base-directory "src/"
-	     :publishing-directory "public/"
+	     :base-directory "src"
+	     :publishing-directory "public"
 	     :publishing-function 'org-html-publish-to-html
 	     :exclude "handbook.org"
 	     :html-preamble 'site/main-preamble
@@ -68,17 +65,17 @@
 	     :with-toc nil)
        (list "handbook"
 	     :base-extension "org"
-	     :base-directory "src/"
-	     :publishing-directory "public/"
+	     :base-directory "src"
+	     :publishing-directory "public"
 	     :exclude ".*"
-	     :include '("handbook.org")
-	     :publishing-function (site/handbook-publisher)
+	     :include "handbook.org"
+	     :publishing-function (pub/handbook-function)
 	     :with-author t
 	     :with-email t)
        (list "css"
 	     :base-extension "css"
-	     :base-directory "src/css/"
-	     :publishing-directory "public/css/"
+	     :base-directory "src/css"
+	     :publishing-directory "public/css"
 	     :publishing-function 'org-publish-attachment)
        (list "all"
 	     :components '("css" "handbook" "main"))))

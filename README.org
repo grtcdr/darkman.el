@@ -150,7 +150,3 @@ You may cite this project in your research like so:
     year = 2023
 }
 #+end_src
-
-* License
-
-#+include: "LICENSE" ascii

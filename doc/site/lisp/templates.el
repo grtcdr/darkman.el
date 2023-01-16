@@ -54,7 +54,7 @@
 
 (defvar site/html-head
   (concat
-   (site/stylesheet "/darkman.el/css/main.css")
+   (site/stylesheet "/darkman.el/css/custom.css")
    (site/stylesheet "https://grtcdr.tn/css/def.css")
    (site/stylesheet "https://grtcdr.tn/css/common.css")
    (site/stylesheet "https://grtcdr.tn/css/heading.css")

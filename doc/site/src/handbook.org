@@ -1,10 +1,12 @@
-#+TITLE:               darkman.el
+#+TITLE:               darkman.el's handbook
 #+LATEX_CLASS:         article
 #+LATEX_CLASS_OPTIONS: [12pt, a4paper]
 #+LATEX_HEADER_EXTRA:  \usepackage{listings}
-#+LATEX_HEADER_EXTRA:  \usepackage{color}
 #+LATEX_HEADER_EXTRA:  \usepackage[utf8]{inputenc}
-#+LATEX_HEADER:        \usepackage[margin=1in]{geometry}
+#+LATEX_HEADER:        \usepackage[margin=3cm]{geometry}
 #+LATEX_HEADER_EXTRA:  \setlength{\parindent}{0pt}
+#+LATEX_HEADER_EXTRA:  \setlength{\parskip}{0.5em}
+
+@@latex:\clearpage@@
 
 #+INCLUDE: "./README.org::*Usage" :only-contents t
