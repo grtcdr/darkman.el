@@ -33,6 +33,15 @@
 (require 'ox-publish)
 (require 'project)
 
+(defun ci/enabled? ()
+  "Return non-nil if running in a CI context."
+  (eq (getenv "CI") "true"))
+
+(defun site/handbook-publisher ()
+  (if (ci/enabled?)
+      'org-latex-publish-to-latex
+    'org-latex-publish-to-pdf))
+
 (setq user-full-name "Aziz Ben Ali"
       user-mail-address "tahaaziz.benali@esprit.tn")
 
@@ -63,7 +72,7 @@
 	     :publishing-directory "public/"
 	     :exclude ".*"
 	     :include '("handbook.org")
-	     :publishing-function 'org-latex-publish-to-latex
+	     :publishing-function (site/handbook-publisher)
 	     :with-author t
 	     :with-email t)
        (list "css"

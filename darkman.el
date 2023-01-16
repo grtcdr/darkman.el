@@ -99,7 +99,7 @@ when the mode is changed."
   (error (format "%s D-Bus service not available."
 		 darkman--dbus-service)))
 
-(defun darkman--get-assoc-theme (mode)
+(defun darkman--lookup-theme (mode)
   "Return a theme from ‘darkman-themes’ corresponding to MODE (a string)."
   (cond ((string= mode "dark") (plist-get darkman-themes :dark))
 	((string= mode "light") (plist-get darkman-themes :light))
@@ -108,11 +108,11 @@ when the mode is changed."
 (defun darkman-get-theme ()
   "Get a theme from the ‘darkman-themes’ which corresponds to the current mode."
   (let ((mode (darkman-get)))
-    (darkman--get-assoc-theme mode)))
+    (darkman--lookup-theme mode)))
 
 (defun darkman--mode-changed-signal-handler (new-mode)
   "Signal handler for the ModeChanged signal.  NEW-MODE is the new mode."
-  (let ((new-theme (darkman--get-assoc-theme new-mode)))
+  (let ((new-theme (darkman--lookup-theme new-mode)))
     (unless (not darkman-switch-themes-silently)
       (message (format "Darkman switched to %s mode, switching to %s theme."
 		       new-mode new-theme)))
