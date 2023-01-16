@@ -76,9 +76,7 @@ respectively.
 
 * Debugging
 
-** Nothing's working?
-
-*** Is D-Bus running?
+** Is D-Bus running?
 
 Use your service manager to verify whether the service is running,
 here's an example using =systemd=:
@@ -93,7 +91,7 @@ systemctl status dbus
      Active: active (running)
 #+end_example
 
-*** Is Darkman running?
+** Is Darkman running?
 
 Use your service manager to verify whether the service is running,
 here's an example using =systemd=:
@@ -108,7 +106,7 @@ systemctl status --user darkman
      Active: active (running)
 #+end_example
 
-*** Is Emacs built with D-Bus support?
+** Is Emacs built with D-Bus support?
 
 Usually it is, unless you're building from source, in which case you
 can verify whether or not Emacs was built with D-Bus support using

@@ -37,7 +37,7 @@
 
 (defun pub/handbook-function (plist filename pub-dir)
   "Execute one of the two publishing functions used by the handbook."
-  (if (eq (getenv "CI") "true")
+  (if (string= (getenv "CI") "true")
       (org-latex-publish-to-latex plist filename pub-dir)
     (org-latex-publish-to-pdf plist filename pub-dir)))
 
@@ -69,7 +69,7 @@
        (list "handbook"
 	     :base-extension "org"
 	     :base-directory "src"
-	     :publishing-directory "public/doc"
+	     :publishing-directory "public"
 	     :publishing-function 'pub/handbook-function
 	     :exclude ".*"
 	     :include '("handbook.org")

@@ -39,7 +39,7 @@ jobs:
       - name: Compile LaTeX documents
         uses: xu-cheng/latex-action@v2
         with:
-          working_directory: doc/site/public/
+          working_directory: doc/site/public
           root_file: handbook.tex
 
       - name: Upload website

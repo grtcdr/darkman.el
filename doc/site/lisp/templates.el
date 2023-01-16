@@ -41,7 +41,8 @@
    '(nav nil
 	 (ul nil
 	     (li nil
-		 (a ((href . "/darkman.el/index.html")) "Home"))
+		 (a ((href . "/darkman.el/index.html"))
+		    "Home"))
 	     (li nil
 		 (a ((href . "/darkman.el/TODO.html"))
 		    "To-dos"))
