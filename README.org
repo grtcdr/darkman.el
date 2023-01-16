@@ -1,5 +1,4 @@
 #+title: darkman.el
-#+export_file_name: index.html
 
 This package provides seamless integration between [[https://darkman.whynothugo.nl][Darkman]] and [[https://gnu.org/software/emacs][Emacs]]
 using the [[https://www.freedesktop.org/wiki/Software/dbus/][D-Bus]] protocol.
