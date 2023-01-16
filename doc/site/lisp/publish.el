@@ -23,21 +23,23 @@
 
 ;;; Commentary:
 
-;; publish.el is the publishing specification of http://grtcdr.tn/darkman.el.
+;; publish.el is the publishing specification of https://grtcdr.tn/darkman.el.
+;;
+;; Please do not attempt to interact with this file interactively as
+;; it depends heavily on the build system.
 
 ;;; Code:
 
 (add-to-list 'load-path (concat default-directory "lisp/"))
 
-(require 'templates)
 (require 'ox-publish)
-(require 'project)
+(require 'templates)
 
-(defun pub/handbook-function ()
-  "Return the publishing function used by the handbook."
+(defun pub/handbook-function (plist filename pub-dir)
+  "Execute one of the two publishing functions used by the handbook."
   (if (eq (getenv "CI") "true")
-      'org-latex-publish-to-latex
-    'org-latex-publish-to-pdf))
+      (org-latex-publish-to-latex plist filename pub-dir)
+    (org-latex-publish-to-pdf plist filename pub-dir)))
 
 (setq user-full-name "Aziz Ben Ali"
       user-mail-address "tahaaziz.benali@esprit.tn")
@@ -53,7 +55,7 @@
 
 (setq org-publish-project-alist
       (list
-       (list "main"
+       (list "root"
 	     :base-extension "org"
 	     :base-directory "src"
 	     :publishing-directory "public"
@@ -62,14 +64,15 @@
 	     :html-preamble 'site/main-preamble
 	     :html-postamble nil
 	     :html-head site/html-head
-	     :with-toc nil)
+	     :with-toc nil
+	     :section-numbers nil)
        (list "handbook"
 	     :base-extension "org"
 	     :base-directory "src"
-	     :publishing-directory "public"
+	     :publishing-directory "public/doc"
+	     :publishing-function 'pub/handbook-function
 	     :exclude ".*"
-	     :include "handbook.org"
-	     :publishing-function (pub/handbook-function)
+	     :include '("handbook.org")
 	     :with-author t
 	     :with-email t)
        (list "css"
@@ -78,4 +81,4 @@
 	     :publishing-directory "public/css"
 	     :publishing-function 'org-publish-attachment)
        (list "all"
-	     :components '("css" "handbook" "main"))))
+	     :components '("root" "handbook" "css"))))

@@ -43,9 +43,6 @@
 	     (li nil
 		 (a ((href . "/darkman.el/index.html")) "Home"))
 	     (li nil
-		 (a ((href . "/darkman.el/handbook.pdf"))
-		    "Handbook"))
-	     (li nil
 		 (a ((href . "/darkman.el/TODO.html"))
 		    "To-dos"))
 	     (li nil
