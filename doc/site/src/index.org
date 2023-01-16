@@ -8,7 +8,7 @@ own configuration.
 
 If you're experiencing problems with the package, before [[https://github.com/grtcdr/darkman.el/issues/new][filing an
 issue]] in the development website, consider going over the [[https://github.com/grtcdr/darkman.el#debugging][common
-debugging steps]] and if your issue still persists, [[https://github.com/grtcdr/darkman.el/issues][searching for
+debugging steps]], and if your issue still persists, [[https://github.com/grtcdr/darkman.el/issues][searching for
 duplicate issues]].
 
 #+begin_export html
