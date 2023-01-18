@@ -59,6 +59,7 @@ when the mode is changed."
 (defvar darkman--dbus-interface darkman--dbus-service)
 (defvar darkman--dbus-signal nil)
 
+;;;###autoload
 (defun darkman-get ()
   "Get the mode of the Darkman service."
   (interactive)
