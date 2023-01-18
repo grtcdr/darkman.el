@@ -2,9 +2,9 @@
 #+link:  pull https://github.com/grtcdr/darkman.el/pull/%s
 #+link:  user https://github.com/%s
 
-This document tracks the changes of this package throughout time (in
-descending chronological order) and in between releases. Note that the
-changes listed here may not be exhaustive.
+This document tracks the most important changes of this package
+throughout time (in descending chronological order) and in between
+releases.
 
 * 0.3.0
 
