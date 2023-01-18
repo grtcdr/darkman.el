@@ -129,7 +129,7 @@ You may cite this project in your research like so:
 @misc{aba23darkman,
   author = {Aziz Ben Ali},
    title = {Seamless integration between Darkman and Emacs},
-     url = {https://github.com/grtcdr/darkman.el},
+     url = {https://grtcdr.tn/darkman.el/},
     year = 2023
 }
 #+end_src
