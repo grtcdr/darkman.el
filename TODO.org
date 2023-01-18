@@ -6,7 +6,7 @@
 #+html_head_extra: <link rel="stylesheet" href="https://grtcdr.tn/css/indent.css">
 
 - Items tagged with =sug= are suggestions received from people from
-  somewhere external to this repository. A tag immediatelly following
+  somewhere external to this repository. A tag immediately following
   =sug= represents the pseudonym of the person with the original
   suggestion.
 - Items tagged with =help= are things we could use your help in

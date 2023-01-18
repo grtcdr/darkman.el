@@ -15,7 +15,7 @@ method through which you can install the package, only the most basic.
 With that in mind, begin by cloning the repository:
 
 #+begin_src sh
-git clone --branch 0.2 https://github.com/grtcdr/darkman.el darkman
+git clone --branch 0.3.0 https://github.com/grtcdr/darkman.el darkman
 #+end_src
 
 Next, add the package to your =load-path=:
