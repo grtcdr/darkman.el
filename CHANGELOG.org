@@ -1,0 +1,33 @@
+#+title: Changelog
+#+link:  pull https://github.com/grtcdr/darkman.el/pull/%s
+#+link:  user https://github.com/%s
+
+This document tracks the changes of this package throughout time (in
+descending chronological order) and in between releases. Note that the
+changes listed here may not be exhaustive.
+
+* 0.3.0
+
++ Refactor website structure
++ Rename =darkman--get-assoc-theme= function to =darkman--lookup-theme=
++ Add a variable, =darkman-switch-themes-silently=, that determines
+  whether an entry is logged to the =*Messages*= buffer when the mode
+  is toggled
++ General improvements to documentation
+
+* 0.2.0
+
++ Conform to [[info:elisp#Coding Conventions][Emacs Lisp code conventions]]
++ Move to an ISC License
++ [[user:lexa][Aleksei Fedotov]]: Switch to the appropriate theme when =darkman-mode=
+  is enabled ([[pull:5]])
++ [[user:lexa][Aleksei Fedotov]]: Implement choosing the values of =darkman-themes=
+  from the =customize= menu ([[pull:4]])
++ Define a =customize= group
++ [[user:lexa][Aleksei Fedotov]]: Lazy-loaded functions ([[pull:1]])
++ Avoid loading themes twice when =darkman-toggle= is called
++ Create a presentation website
+
+* 0.1.0
+
++ Release the source code under the MIT licence

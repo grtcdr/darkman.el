@@ -1,5 +1,5 @@
 #+title:           To-dos
-#+todo:            TODO(t) DOING(-) | DONE(d) SCRATCHED(s)
+#+todo:            TODO(t) DOING(-) BUG(b) | FIXED(f) DONE(d)
 #+tags:            sug(s) help(h)
 #+link:            pull https://github.com/grtcdr/darkman.el/pull/%s
 #+link:            issue https://github.com/grtcdr/darkman.el/issues/%s
@@ -9,16 +9,14 @@
   somewhere external to this repository. A tag immediatelly following
   =sug= represents the pseudonym of the person with the original
   suggestion.
-- Items tagged with =help= are things we could use your help in achieving.
+- Items tagged with =help= are things we could use your help in
+  achieving.
 
-* Features
-** DONE Listen for D-Bus messages                         :sug:lastnamebird:
+* DONE Listen for D-Bus messages                           :sug:lastnamebird:
 Implemented in [[pull:2][#2]].
-* Documentation
-** TODO Write up a Texinfo manual as an Org document
-- We could use [[https://github.com/grtcdr/liaison/blob/main/doc/manual/liaison.org][this manual]] as a template.
-* Bugs
-** TODO Sometimes themes will switch infinitely                       :help:
+* TODO Write up a Texinfo manual as an Org document
+We could use [[https://github.com/grtcdr/liaison/blob/main/doc/manual/liaison.org][this manual]] as a template.
+* BUG Sometimes themes will switch infinitely                          :help:
 This causes Emacs to go haywire. The first time this happened was a
 short time after merging [[pull:5][#5]]. I can reproduce it, but I haven't yet
 understood what exactly causes it occur.

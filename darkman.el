@@ -52,7 +52,7 @@ symbol representing the name of the theme."
   "Switch themes silently, as opposed to printing the switch action,
 when the mode is changed."
   :type 'boolean
-  :package-version '(darkman . "0.2.0"))
+  :package-version '(darkman . "0.3.0"))
 
 (defvar darkman--dbus-service "nl.whynothugo.darkman")
 (defvar darkman--dbus-path "/nl/whynothugo/darkman")

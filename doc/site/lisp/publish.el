@@ -35,7 +35,7 @@
 (require 'ox-publish)
 (require 'templates)
 
-(defun pub/handbook-function (plist filename pub-dir)
+(defun publish/handbook-function (plist filename pub-dir)
   "Execute one of the two publishing functions used by the handbook."
   (if (string= (getenv "CI") "true")
       (org-latex-publish-to-latex plist filename pub-dir)
@@ -70,15 +70,15 @@
 	     :base-extension "org"
 	     :base-directory "src"
 	     :publishing-directory "public"
-	     :publishing-function 'pub/handbook-function
+	     :publishing-function 'publish/handbook-function
 	     :exclude ".*"
 	     :include '("handbook.org")
 	     :with-author t
 	     :with-email t)
-       (list "css"
+       (list "stylesheets"
 	     :base-extension "css"
 	     :base-directory "src/css"
 	     :publishing-directory "public/css"
 	     :publishing-function 'org-publish-attachment)
        (list "all"
-	     :components '("root" "handbook" "css"))))
+	     :components '("root" "handbook" "stylesheets"))))
