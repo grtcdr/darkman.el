@@ -44,11 +44,11 @@
 		 (a ((href . "/darkman.el/index.html"))
 		    "Home"))
 	     (li nil
-		 (a ((href . "/darkman.el/TODO.html"))
-		    "To-dos"))
-	     (li nil
 		 (a ((href . "/darkman.el/CHANGELOG.html"))
 		    "Changelog"))
+	     (li nil
+		 (a ((href . "/darkman.el/TODO.html"))
+		    "To-dos"))
 	     (li nil
 		 (a ((href . "https://github.com/grtcdr/darkman.el"))
 		    "Development"))))))
