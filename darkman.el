@@ -68,7 +68,7 @@ when the mode is changed."
 				 darkman--dbus-path
 				 darkman--dbus-interface
 				 "Mode")))
-    (when (called-interactively-p)
+    (when (called-interactively-p 'interactive)
       (message (format "Mode is currently set to %s." mode)))
     mode))
 
