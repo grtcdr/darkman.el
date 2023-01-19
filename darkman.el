@@ -140,7 +140,7 @@ when the mode is changed."
 				       darkman--dbus-interface
 				       "ModeChanged"
 				       #'darkman--mode-changed-signal-handler))
-           (load-theme (darkman-get-theme)))
+           (load-theme (darkman-get-theme) t))
     (dbus-unregister-object darkman--dbus-signal)
     (setq darkman--dbus-signal nil)))
 
