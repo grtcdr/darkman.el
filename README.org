@@ -74,6 +74,16 @@ Additionally, you can use the =darkman-get= and =darkman-set=
 functions to manually get and set the mode of the service
 respectively.
 
+** Change the default behaviour
+
+*** No confirmation of Lisp code execution
+
+=darkman.el= uses =load-theme= calls to update the desired theme, which requires user confirmation if it's not included in the =custom-safe-themes= variable. In order to avoid this manual confirmation every time a theme change, you can set a variable in your configuration:
+
+#+begin_src emacs-lisp
+(setq darkman-load-theme-no-confirm t)
+#+end_src
+
 * Debugging
 
 ** Is D-Bus running?

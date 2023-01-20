@@ -54,6 +54,10 @@ when the mode is changed."
   :type 'boolean
   :package-version '(darkman . "0.3.0"))
 
+(defcustom darkman-load-theme-no-confirm nil
+  "Disables Lisp code execution confirmation on calls to ‘load-theme’."
+  :type 'boolean)
+
 (defvar darkman--dbus-service "nl.whynothugo.darkman")
 (defvar darkman--dbus-path "/nl/whynothugo/darkman")
 (defvar darkman--dbus-interface darkman--dbus-service)
@@ -117,7 +121,7 @@ when the mode is changed."
     (unless (not darkman-switch-themes-silently)
       (message (format "Darkman switched to %s mode, switching to %s theme."
 		       new-mode new-theme)))
-    (load-theme new-theme)))
+    (load-theme new-theme) darkman-load-theme-no-confirm))
 
 (defun darkman--check-dbus-service ()
   "Return non-nil if the Darkman service is available."
@@ -140,9 +144,10 @@ when the mode is changed."
 				       darkman--dbus-interface
 				       "ModeChanged"
 				       #'darkman--mode-changed-signal-handler))
-           (load-theme (darkman-get-theme) t))
+           (load-theme (darkman-get-theme) darkman-load-theme-no-confirm))
     (dbus-unregister-object darkman--dbus-signal)
     (setq darkman--dbus-signal nil)))
 
 (provide 'darkman)
-;; darkman.el ends here
+
+;;; darkman.el ends here
