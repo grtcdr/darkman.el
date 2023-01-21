@@ -51,8 +51,12 @@ Instead of manually configuring a theme, you should do it this way:
 (load-theme (darkman-get-theme))
 #+end_src
 
-=darkman-get-theme= returns a theme based on the current mode and the
-themes you specified in the =darkman-themes= variable.
+=darkman-get-theme= returns a theme based on the current mode and its
+corresponding theme which we previously specified.
+
+=load-theme= will, for [[#safety][safety reasons]], ask you for confirmation if the
+theme you're about to load is not included in its hashed form in the
+=custom-safe-themes= variable.
 
 ** Automatically switch themes when the mode changes
 
@@ -73,6 +77,30 @@ within Emacs.
 Additionally, you can use the =darkman-get= and =darkman-set=
 functions to manually get and set the mode of the service
 respectively.
+
+** Working alongside the safety mechanisms of =custom.el=
+:PROPERTIES:
+:CUSTOM_ID: safety
+:END:
+
+=load-theme= is part of the =custom.el= library and it comes with
+certain [[https://www.gnu.org/software/emacs/manual/html_node/emacs/Custom-Themes.html][security features]] that you may regard as inconvenient, but
+they're absolutely necessary to preserve the security of your
+system. We have decided to work hand in hand with these pre-existing
+safety mechanisms in favor of implementing our own.
+
+Loading a theme never before loaded will result in a prompt which you
+must answer with a "yes" in order to load the theme; however, that's
+not feasible when you're using [[https://www.gnu.org/software/emacs/manual/html_node/emacs/Emacs-Server.html][Emacs as a Server]].
+
+You should verify that the themes which you have previously specified
+in the =darkman-themes= variable have all been loaded at some point in
+the past, and you can do this by loading them manually using =M-x
+load-theme RET=.
+
+* Configuration
+
+** Enabling themes 
 
 * Debugging
 
