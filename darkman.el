@@ -96,7 +96,7 @@ when the mode is changed."
   (error (format "‘%s’ is not a valid mode." mode)))
 
 (defun darkman--dbus-service-unavailable-error ()
-  "Signal an error about an invalid mode.  MODE is the name of the invalid mode."
+  "Signal an error about the service being unavailable."
   (error (format "%s D-Bus service not available."
 		 darkman--dbus-service)))
 
