@@ -78,6 +78,8 @@ Additionally, you can use the =darkman-get= and =darkman-set=
 functions to manually get and set the mode of the service
 respectively.
 
+* Tips
+
 ** Working alongside the safety mechanisms of =custom.el=
 :PROPERTIES:
 :CUSTOM_ID: safety
@@ -98,9 +100,18 @@ in the =darkman-themes= variable have all been loaded at some point in
 the past, and you can do this by loading them manually using =M-x
 load-theme RET=.
 
-* Configuration
+** Disabling existing themes
 
-** Enabling themes 
+Emacs does not (by default) disable the current theme when another one
+is loaded, this behavior may be annoying to some, but we can advise
+=darkman-set= (and by extension =darkman-toggle=) to take into account
+these preferences of ours.
+
+#+begin_src elisp
+(defadvice darkman-set (before no-theme-stacking activate)
+  "Disable the previous theme before loading a new one."
+  (mapc #'disable-theme custom-enabled-themes))
+#+end_src
 
 * Debugging
 
