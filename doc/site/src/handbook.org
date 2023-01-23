@@ -10,3 +10,4 @@
 @@latex:\clearpage@@
 
 #+INCLUDE: "./README.org::*Usage" :only-contents t
+#+INCLUDE: "./README.org::*Tips" :only-contents t

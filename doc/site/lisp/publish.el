@@ -36,10 +36,11 @@
 (require 'templates)
 
 (defun publish/handbook-function (plist filename pub-dir)
-  "Execute one of the two publishing functions used by the handbook."
+  "Call the publishing functions used by the handbook."
   (if (string= (getenv "CI") "true")
       (org-latex-publish-to-latex plist filename pub-dir)
-    (org-latex-publish-to-pdf plist filename pub-dir)))
+    (org-latex-publish-to-pdf plist filename pub-dir)
+    (org-html-publish-to-html plist filename pub-dir)))
 
 (setq user-full-name "Aziz Ben Ali"
       user-mail-address "tahaaziz.benali@esprit.tn")
@@ -74,7 +75,10 @@
 	     :exclude ".*"
 	     :include '("handbook.org")
 	     :with-author t
-	     :with-email t)
+	     :with-email t
+	     :html-head site/html-head
+	     :html-preamble 'site/main-preamble
+	     :html-postamble nil)
        (list "stylesheets"
 	     :base-extension "css"
 	     :base-directory "src/css"

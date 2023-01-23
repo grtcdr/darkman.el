@@ -4,9 +4,6 @@ This package provides seamless integration between [[https://darkman.whynothugo.
 using the [[https://www.freedesktop.org/wiki/Software/dbus/][D-Bus]] protocol.
 
 * Installation
-:PROPERTIES:
-:CUSTOM_ID: installation
-:END:
 
 In an effort to keep the instructions concise, portable and applicable
 no matter the situation, this section will not list every possible
@@ -18,7 +15,7 @@ With that in mind, begin by cloning the repository:
 git clone --branch 0.3.0 https://github.com/grtcdr/darkman.el darkman
 #+end_src
 
-Next, add the package to your =load-path=:
+Next, add the package to your [[https://www.gnu.org/software/emacs/manual/html_node/emacs/Lisp-Libraries.html][load path]]:
 
 #+begin_src emacs-lisp
 (add-to-list 'load-path "darkman")

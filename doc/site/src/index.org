@@ -3,8 +3,8 @@
 This package provides seamless integration between [[https://darkman.whynothugo.nl][Darkman]] and [[https://gnu.org/software/emacs][Emacs]]
 using the [[https://www.freedesktop.org/wiki/Software/dbus/][D-Bus]] protocol.
 
-Read the [[file:handbook.pdf][handbook]] for instructions on /how to use/ the package in your
-own configuration.
+Read the handbook ([[file:handbook.html][HTML]], [[file:handbook.pdf][PDF]]) for instructions on /how to use/ the
+package in your own configuration.
 
 If you're experiencing problems with the package, before [[https://github.com/grtcdr/darkman.el/issues/new][filing an
 issue]] in the development website, consider going over the [[https://github.com/grtcdr/darkman.el#debugging][common
@@ -20,7 +20,7 @@ duplicates]].
 
 * Installation
 
-#+include: "./README.org::#installation" :only-contents t
+#+include: "./README.org::Installation" :only-contents t
 
 * Contributors
 
