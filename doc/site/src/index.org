@@ -11,21 +11,6 @@ issue]] in the development website, consider going over the [[https://github.com
 debugging steps]], and if your issue still persists, [[https://github.com/grtcdr/darkman.el/issues][searching for any
 duplicates]].
 
-#+begin_export html
-<figure>
-  <img src="https://upload.wikimedia.org/wikipedia/commons/1/11/A_Horseshoe_Einstein_Ring_from_Hubble.JPG">
-  <figcaption>A Horseshoe Einstein Ring from Hubble, ESA/Hubble & NASA (2011, December 12)</figcaption>
-</figure>
-#+end_export
-
 * Installation
 
 #+include: "./README.org::Installation" :only-contents t
-
-* Contributors
-
-#+include: "./README.org::*Contributors" :only-contents t
-
-* Citing
-
-#+include: "README.org::*Citing" :only-contents t
