@@ -80,7 +80,7 @@ respectively.
 
 * Tips
 
-** Working alongside the safety mechanisms of =custom.el=
+** Working alongside the built-in safety features
 :PROPERTIES:
 :CUSTOM_ID: safety
 :END:
