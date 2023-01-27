@@ -12,8 +12,6 @@
 - Items tagged with =help= are things we could use your help in
   achieving.
 
-* DONE Listen for D-Bus messages                           :sug:lastnamebird:
-Implemented in [[pull:2][#2]].
 * TODO Write up a Texinfo manual as an Org document
 We could use [[https://github.com/grtcdr/liaison/blob/main/doc/manual/liaison.org][this manual]] as a template.
 * BUG Sometimes themes will switch infinitely                          :help:

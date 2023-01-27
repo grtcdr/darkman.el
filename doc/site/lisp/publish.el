@@ -33,7 +33,7 @@
 (add-to-list 'load-path (concat default-directory "lisp/"))
 
 (require 'ox-publish)
-(require 'templates)
+(require 'site/templates "templates")
 
 (defun publish/handbook-function (plist filename pub-dir)
   "Call the publishing functions used by the handbook."
@@ -62,9 +62,9 @@
 	     :publishing-directory "public"
 	     :publishing-function 'org-html-publish-to-html
 	     :exclude "handbook.org"
-	     :html-preamble 'site/main-preamble
+	     :html-preamble 'templates/main-preamble
 	     :html-postamble nil
-	     :html-head site/html-head
+	     :html-head (templates/html-head)
 	     :with-toc nil
 	     :section-numbers nil)
        (list "handbook"
@@ -72,12 +72,12 @@
 	     :base-directory "src"
 	     :publishing-directory "public"
 	     :publishing-function 'publish/handbook-function
-	     :exclude ".*"
 	     :include '("handbook.org")
+	     :exclude ".*"
 	     :with-author t
 	     :with-email t
-	     :html-head site/html-head
-	     :html-preamble 'site/main-preamble
+	     :html-head (templates/html-head)
+	     :html-preamble 'templates/main-preamble
 	     :html-postamble nil)
        (list "stylesheets"
 	     :base-extension "css"

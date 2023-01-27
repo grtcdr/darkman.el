@@ -29,15 +29,17 @@
 
 (require 'shr)
 
-(defun site/stylesheet (href)
+(defalias 'sexp->xml #'shr-dom-to-xml)
+
+(defun templates/stylesheet (href)
   "Format HREF as an HTML stylesheet."
-  (shr-dom-to-xml
+  (sexp->xml
    `(link ((rel . "stylesheet")
 	   (href . ,href)))))
 
-(defun site/main-preamble (_)
+(defun templates/main-preamble (_)
   "Define an XML template to be used as a preamble among publishing projects."
-  (shr-dom-to-xml
+  (sexp->xml
    '(nav nil
 	 (ul nil
 	     (li nil
@@ -53,21 +55,21 @@
 		 (a ((href . "https://github.com/grtcdr/darkman.el"))
 		    "Development"))))))
 
-(defvar site/html-head
+(defun templates/html-head ()
+  "Define an XML template to be included as headers among publishing projects."
   (concat
-   (site/stylesheet "/darkman.el/css/custom.css")
-   (site/stylesheet "https://grtcdr.tn/css/def.css")
-   (site/stylesheet "https://grtcdr.tn/css/common.css")
-   (site/stylesheet "https://grtcdr.tn/css/heading.css")
-   (site/stylesheet "https://grtcdr.tn/css/nav.css")
-   (site/stylesheet "https://grtcdr.tn/css/org.css")
-   (site/stylesheet "https://grtcdr.tn/css/source.css")
-   (site/stylesheet "https://grtcdr.tn/css/table.css")
-   (site/stylesheet "https://grtcdr.tn/css/figure.css")
-   (shr-dom-to-xml '(link ((rel . "icon")
-			   (type . "image/x-icon")
-			   (href . "https://grtcdr.tn/assets/favicon.ico")))))
-  "Define an XML template to be included as headers among publishing projects.")
+   (templates/stylesheet "/darkman.el/css/custom.css")
+   (templates/stylesheet "https://grtcdr.tn/css/def.css")
+   (templates/stylesheet "https://grtcdr.tn/css/common.css")
+   (templates/stylesheet "https://grtcdr.tn/css/heading.css")
+   (templates/stylesheet "https://grtcdr.tn/css/nav.css")
+   (templates/stylesheet "https://grtcdr.tn/css/org.css")
+   (templates/stylesheet "https://grtcdr.tn/css/source.css")
+   (templates/stylesheet "https://grtcdr.tn/css/table.css")
+   (templates/stylesheet "https://grtcdr.tn/css/figure.css")
+   (sexp->xml '(link ((rel . "icon")
+		      (type . "image/x-icon")
+		      (href . "https://grtcdr.tn/assets/favicon.ico"))))))
 
-(provide 'templates)
+(provide 'site/templates)
 ;; templates.el ends here
