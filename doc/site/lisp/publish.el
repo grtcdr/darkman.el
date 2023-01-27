@@ -39,8 +39,8 @@
   "Call the publishing functions used by the handbook."
   (if (string= (getenv "CI") "true")
       (org-latex-publish-to-latex plist filename pub-dir)
-    (org-latex-publish-to-pdf plist filename pub-dir)
-    (org-html-publish-to-html plist filename pub-dir)))
+    (org-latex-publish-to-pdf plist filename pub-dir))
+  (org-html-publish-to-html plist filename pub-dir))
 
 (setq user-full-name "Aziz Ben Ali"
       user-mail-address "tahaaziz.benali@esprit.tn")
@@ -49,7 +49,6 @@
       org-src-fontify-natively nil
       org-html-preamble nil
       org-html-postamble nil
-      org-html-doctype "html5"
       org-html-htmlize-output-type nil
       org-html-head-include-default-style nil
       org-html-head-include-scripts nil)
