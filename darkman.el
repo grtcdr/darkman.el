@@ -114,7 +114,7 @@ when the mode is changed."
 (defun darkman--mode-changed-signal-handler (new-mode)
   "Signal handler for the ModeChanged signal.  NEW-MODE is the new mode."
   (let ((new-theme (darkman--lookup-theme new-mode)))
-    (unless (not darkman-switch-themes-silently)
+    (unless darkman-switch-themes-silently
       (message (format "Darkman switched to %s mode, switching to %s theme."
 		       new-mode new-theme)))
     (load-theme new-theme)))
