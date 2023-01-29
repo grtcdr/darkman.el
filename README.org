@@ -51,9 +51,9 @@ Instead of manually configuring a theme, you should do it this way:
 =darkman-get-theme= returns a theme based on the current mode and its
 corresponding theme which we previously specified.
 
-=load-theme= will, for [[#safety][safety reasons]], ask you for confirmation if the
-theme you're about to load is not included in its hashed form in the
-=custom-safe-themes= variable.
+Keep in mind that =load-theme= will ask for your confirmation (for
+[[#safety][safety reasons]]) when the theme that is about to be loaded is not
+included in its hashed form in the =custom-safe-themes= variable.
 
 ** Automatically switch themes when the mode changes
 
@@ -65,6 +65,9 @@ You can enable this behavior by enabling the minor mode:
 #+begin_src emacs-lisp
 (darkman-mode)
 #+end_src
+
+You should not call =load-theme= in your configuration as
+=darkman-mode= when enabled will do that for you.
 
 ** Other functions
 
