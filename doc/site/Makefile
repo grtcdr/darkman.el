@@ -2,7 +2,7 @@ all: build
 
 build:
 	@rm -rf .cache/
-	@emacs --quick --batch --load lisp/publish.el --funcall org-publish-all t t
+	@emacs --quick --batch --load lisp/op-publish.el --funcall org-publish-all t t
 
 serve: build
 	@miniserve public/ --route-prefix=darkman.el --index=index.html

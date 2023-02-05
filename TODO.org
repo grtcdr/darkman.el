@@ -1,8 +1,8 @@
-#+title:           To-dos
-#+todo:            TODO(t) DOING(-) BUG(b) | FIXED(f) DONE(d)
-#+tags:            sug(s) help(h)
-#+link:            pull https://github.com/grtcdr/darkman.el/pull/%s
-#+link:            issue https://github.com/grtcdr/darkman.el/issues/%s
+#+title: To-dos
+#+todo: TODO(t) DOING(-) BUG(b) | FIXED(f) DONE(d)
+#+tags: sug(s) help(h)
+#+link: pull https://github.com/grtcdr/darkman.el/pull/%s
+#+link: issue https://github.com/grtcdr/darkman.el/issues/%s
 #+html_head_extra: <link rel="stylesheet" href="https://grtcdr.tn/css/indent.css">
 
 - Items tagged with =sug= are suggestions received from people from

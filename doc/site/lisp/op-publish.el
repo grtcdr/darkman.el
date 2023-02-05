@@ -1,4 +1,4 @@
-;;; publish.el     -*- lexical-binding: t; -*-
+;;; op-publish.el  -*- lexical-binding: t; -*-
 
 ;; Copyright (C) 2022 Aziz Ben Ali
 
@@ -23,19 +23,20 @@
 
 ;;; Commentary:
 
-;; publish.el is the publishing specification of https://grtcdr.tn/darkman.el.
-;;
-;; Please do not attempt to interact with this file interactively as
-;; it depends heavily on the build system.
+;; op-publish.el defines the specification of https://grtcdr.tn/darkman.el
+;; and should be used in conjunction with a build system.
 
 ;;; Code:
 
-(add-to-list 'load-path (concat default-directory "lisp/"))
+(add-to-list 'load-path (file-name-concat default-directory "lisp/"))
 
 (require 'ox-publish)
-(require 'site/templates "templates")
+(require 'op-template)
+(require 'op-package)
 
-(defun publish/handbook-function (plist filename pub-dir)
+(op-package-install '(htmlize))
+
+(defun op-publish-handbook-function (plist filename pub-dir)
   "Call the publishing functions used by the handbook."
   (if (string= (getenv "CI") "true")
       (org-latex-publish-to-latex plist filename pub-dir)
@@ -46,12 +47,13 @@
       user-mail-address "tahaaziz.benali@esprit.tn")
 
 (setq org-publish-timestamp-directory ".cache/"
-      org-src-fontify-natively nil
+      org-src-fontify-natively t
       org-html-preamble nil
       org-html-postamble nil
       org-html-htmlize-output-type nil
       org-html-head-include-default-style nil
-      org-html-head-include-scripts nil)
+      org-html-head-include-scripts nil
+      org-html-htmlize-output-type 'css)
 
 (setq org-publish-project-alist
       (list
@@ -61,22 +63,22 @@
 	     :publishing-directory "public"
 	     :publishing-function 'org-html-publish-to-html
 	     :exclude "handbook.org"
-	     :html-preamble 'templates/main-preamble
+	     :html-preamble 'op-template-navbar
 	     :html-postamble nil
-	     :html-head (templates/html-head)
+	     :html-head (op-template-metadata)
 	     :with-toc nil
 	     :section-numbers nil)
        (list "handbook"
 	     :base-extension "org"
 	     :base-directory "src"
 	     :publishing-directory "public"
-	     :publishing-function 'publish/handbook-function
+	     :publishing-function 'op-publish-handbook-function
 	     :include '("handbook.org")
 	     :exclude ".*"
 	     :with-author t
 	     :with-email t
-	     :html-head (templates/html-head)
-	     :html-preamble 'templates/main-preamble
+	     :html-head (op-template-metadata)
+	     :html-preamble 'op-template-navbar
 	     :html-postamble nil)
        (list "stylesheets"
 	     :base-extension "css"

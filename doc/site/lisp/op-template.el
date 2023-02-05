@@ -1,4 +1,4 @@
-;;; templates.el
+;;; op-template.el  -*- lexical-binding:t -*-
 
 ;; Copyright (C) 2023  Aziz Ben Ali
 
@@ -23,7 +23,7 @@
 
 ;;; Commentary:
 
-;; templates.el provides the XML templates of http://grtcdr.tn/darkman.el.
+;; op-template.el provides the HTML templates of http://grtcdr.tn/darkman.el.
 
 ;;; Code:
 
@@ -31,13 +31,13 @@
 
 (defalias 'sexp->xml #'shr-dom-to-xml)
 
-(defun templates/stylesheet (href)
+(defun op-template-stylesheet (href)
   "Format HREF as an HTML stylesheet."
   (sexp->xml
    `(link ((rel . "stylesheet")
 	   (href . ,href)))))
 
-(defun templates/main-preamble (_)
+(defun op-template-navbar (_)
   "Define an XML template to be used as a preamble among publishing projects."
   (sexp->xml
    '(nav nil
@@ -55,21 +55,21 @@
 		 (a ((href . "https://github.com/grtcdr/darkman.el"))
 		    "Development"))))))
 
-(defun templates/html-head ()
+(defun op-template-metadata ()
   "Define an XML template to be included as headers among publishing projects."
   (concat
-   (templates/stylesheet "/darkman.el/css/custom.css")
-   (templates/stylesheet "https://grtcdr.tn/css/def.css")
-   (templates/stylesheet "https://grtcdr.tn/css/common.css")
-   (templates/stylesheet "https://grtcdr.tn/css/heading.css")
-   (templates/stylesheet "https://grtcdr.tn/css/nav.css")
-   (templates/stylesheet "https://grtcdr.tn/css/org.css")
-   (templates/stylesheet "https://grtcdr.tn/css/source.css")
-   (templates/stylesheet "https://grtcdr.tn/css/table.css")
-   (templates/stylesheet "https://grtcdr.tn/css/figure.css")
+   (op-template-stylesheet "/darkman.el/css/custom.css")
+   (op-template-stylesheet "https://grtcdr.tn/css/def.css")
+   (op-template-stylesheet "https://grtcdr.tn/css/common.css")
+   (op-template-stylesheet "https://grtcdr.tn/css/heading.css")
+   (op-template-stylesheet "https://grtcdr.tn/css/nav.css")
+   (op-template-stylesheet "https://grtcdr.tn/css/org.css")
+   (op-template-stylesheet "https://grtcdr.tn/css/source.css")
+   (op-template-stylesheet "https://grtcdr.tn/css/table.css")
+   (op-template-stylesheet "https://grtcdr.tn/css/figure.css")
    (sexp->xml '(link ((rel . "icon")
 		      (type . "image/x-icon")
 		      (href . "https://grtcdr.tn/assets/favicon.ico"))))))
 
-(provide 'site/templates)
-;; templates.el ends here
+(provide 'op-template)
+;; op-template.el ends here

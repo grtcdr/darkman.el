@@ -73,8 +73,8 @@ when the mode is changed."
     mode))
 
 (defun darkman-set (mode)
-  "Set the mode of the Darkman service to MODE, which can either be
-‘dark’ or ‘light’."
+  "Set the mode of the Darkman service to MODE which can either be
+‘light’ or ‘dark’."
   (dbus-set-property :session
 		     darkman--dbus-service
 		     darkman--dbus-path
@@ -126,23 +126,29 @@ when the mode is changed."
 
 ;;;###autoload
 (define-minor-mode darkman-mode
-  "Minor mode providing integration with the Darkman service."
+  "Minor mode providing integration with Darkman."
   :global t
   :init-value nil
   :require 'dbus
   :version "0.1"
   (if darkman-mode
-      (and (darkman--check-dbus-service)
-	   (setq darkman--dbus-signal
-		 (dbus-register-signal :session
-				       darkman--dbus-service
-				       darkman--dbus-path
-				       darkman--dbus-interface
-				       "ModeChanged"
-				       #'darkman--mode-changed-signal-handler))
-           (load-theme (darkman-get-theme)))
+      (progn
+	(and (darkman--check-dbus-service)
+	     (setq darkman--dbus-signal
+		   (dbus-register-signal
+		    :session
+		    darkman--dbus-service
+		    darkman--dbus-path
+		    darkman--dbus-interface
+		    "ModeChanged"
+		    #'darkman--mode-changed-signal-handler))
+	     (load-theme (darkman-get-theme)))	
+	(when (daemonp)
+	  (remove-hook 'server-after-make-frame-hook #'darkman-mode)))
     (dbus-unregister-object darkman--dbus-signal)
     (setq darkman--dbus-signal nil)))
+
+(when (daemonp) (add-hook 'server-after-make-frame-hook #'darkman-mode))
 
 (provide 'darkman)
 ;; darkman.el ends here
