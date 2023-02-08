@@ -6,13 +6,21 @@ This document tracks the most important changes of this package
 throughout time (in descending chronological order) and in between
 releases.
 
+* 0.4.0
+
++ [[user:aerz][Agustín Cisneros]]: Defer loading untrusted themes until the daemon is
+  fully initialized
++ Fix opposing behavior of =darkman-switch-themes-silently=
++ General improvements and more helpful additions to the documentation
+  and the website which now supports syntax highlighting
+
 * 0.3.0
 
 + Refactor website structure
 + Rename =darkman--get-assoc-theme= function to =darkman--lookup-theme=
-+ Add a variable, =darkman-switch-themes-silently=, that determines
-  whether an entry is logged to the =*Messages*= buffer when the mode
-  is toggled
++ Add a new variable called =darkman-switch-themes-silently= which
+  determines whether an entry is logged to the =*Messages*= buffer
+  when the mode is toggled
 + General improvements to documentation
 
 * 0.2.0

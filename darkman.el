@@ -1,10 +1,10 @@
-;;; darkman.el --- Seamless integration between Darkman and Emacs     -*- lexical-binding: t; -*-
+;;; darkman.el --- Seamless integration between Darkman and Emacs  -*- lexical-binding: t; -*-
 
 ;; Copyright (C) 2023  Aziz Ben Ali
 
 ;; Author: Aziz Ben Ali <tahaaziz.benali@esprit.tn>
-;; Homepage: https://github.com/grtcdr/darkman.el
-;; Version: 0.4
+;; Homepage: https://grtcdr.tn/darkman.el/
+;; Version: 0.4.0
 ;; Keywords: convenience
 
 ;; This file is not part of GNU Emacs.
@@ -22,7 +22,6 @@
 ;; PROFITS, WHETHER IN AN ACTION OF CONTRACT, NEGLIGENCE OR OTHER
 ;; TORTIOUS ACTION, ARISING OUT OF OR IN CONNECTION WITH THE USE OR
 ;; PERFORMANCE OF THIS SOFTWARE.
-
 
 ;;; Commentary:
 
@@ -130,7 +129,7 @@ when the mode is changed."
   :global t
   :init-value nil
   :require 'dbus
-  :version "0.1"
+  :version "0.1.0"
   (if darkman-mode
       (progn
 	(and (darkman--check-dbus-service)
