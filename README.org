@@ -156,8 +156,7 @@ can verify whether or not Emacs was built with D-Bus support using
 Hey (future-)contributors, your help means so much to me, whether it
 be code, documentation, general advice or constructive feedback!
 
-** Code
-
+- Agustín Cisneros
 - Aleksei Fedotov
 
 * Citing
