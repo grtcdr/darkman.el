@@ -44,7 +44,8 @@ The two properties, ‘:light’ and ‘:dark’, expect as a value a
 symbol representing the name of the theme."
   :type `(plist :key-type (choice (const :tag "Light theme" :light)
                                   (const :tag "Dark theme" :dark))
-          :value-type (choice ,@(mapcar (lambda (theme) (list 'const theme)) (custom-available-themes))))
+          :value-type (choice ,@(mapcar (lambda (theme) (list 'const theme))
+					(custom-available-themes))))
   :package-version '(darkman . "0.1.0"))
 
 (defcustom darkman-switch-themes-silently t
@@ -141,7 +142,7 @@ when the mode is changed."
 		    darkman--dbus-interface
 		    "ModeChanged"
 		    #'darkman--mode-changed-signal-handler))
-	     (load-theme (darkman-get-theme)))	
+	     (load-theme (darkman-get-theme)))
 	(when (daemonp)
 	  (remove-hook 'server-after-make-frame-hook #'darkman-mode)))
     (dbus-unregister-object darkman--dbus-signal)
