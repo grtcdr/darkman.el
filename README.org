@@ -79,11 +79,6 @@ Loading a theme that's never been loaded before will result in a
 prompt which you must answer with a "yes" in order to use it; however,
 that's not feasible when you're using [[https://www.gnu.org/software/emacs/manual/html_node/emacs/Emacs-Server.html][Emacs as a Server]].
 
-You should verify that the themes which you have previously specified
-in the =darkman-themes= variable have all been loaded at some point in
-the past, and you can do this by loading them manually using =M-x
-load-theme RET=.
-
 Problems will arise if the package is loaded too early during the
 initialization phase, but you can [[https://github.com/grtcdr/darkman.el/pull/7#issuecomment-1422666665][delay it]] by activating the mode only
 when the session has been fully initialized.
