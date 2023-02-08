@@ -29,45 +29,27 @@ Finally, require the package like so:
 
 * Usage
 
-** Automatically set the theme on startup
-
 In your =init.el= file, define which theme is associated with which
-mode, by default =modus-themes= are used, but we'll use the =tango=
-variants in this example.
+mode. By default, =modus-themes= will be used, but we'll choose the
+/tango/ variants in this example.
 
 #+begin_src emacs-lisp
 (setq darkman-themes '(:light tango :dark tango-dark))
 #+end_src
 
-You could also use =M-x customize-group darkman RET= to customize the
+You can also use =M-x customize-group darkman RET= to customize the
 variable.
 
-Instead of manually configuring a theme, you should do it this way:
-
-#+begin_src emacs-lisp
-(load-theme (darkman-get-theme))
-#+end_src
-
-=darkman-get-theme= returns a theme based on the current mode and its
-corresponding theme which we previously specified.
-
-Keep in mind that =load-theme= will ask for your confirmation (for
-[[#safety][safety reasons]]) when the theme that is about to be loaded is not
-included in its hashed form in the =custom-safe-themes= variable.
-
-** Automatically switch themes when the mode changes
-
 =darkman.el= can listen for any signals to change the theme without
-requiring you to manually create any scripts.
-
-You can enable this behavior by enabling the minor mode:
+requiring you to manually create any scripts. You can enable this
+behavior by enabling the minor mode:
 
 #+begin_src emacs-lisp
 (darkman-mode)
 #+end_src
 
 You should not call =load-theme= in your configuration as
-=darkman-mode= when enabled will do that for you.
+=darkman-mode= when enabled will do that for you, even on startup.
 
 ** Other functions
 
