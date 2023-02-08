@@ -5,11 +5,13 @@ using the [[https://www.freedesktop.org/wiki/Software/dbus/][D-Bus]] protocol.
 
 * Installation
 
+#+begin_quote
 In an effort to keep the instructions concise, portable and applicable
 no matter the situation, this section will not list every possible
 method through which you can install the package, only the most basic.
+#+end_quote
 
-With that in mind, begin by cloning the repository:
+Begin by cloning the repository:
 
 #+begin_src sh
 git clone --branch 0.3.0 https://github.com/grtcdr/darkman.el darkman
@@ -30,7 +32,7 @@ Finally, require the package like so:
 * Usage
 
 In your =init.el= file, define which theme is associated with which
-mode. By default, =modus-themes= will be used, but we'll choose the
+mode. By default, /modus-themes/ will be used, but we'll choose the
 /tango/ variants in this example.
 
 #+begin_src emacs-lisp
@@ -151,7 +153,7 @@ If your research involves this project in any way, you may cite it
 like so:
 
 #+begin_src bibtex
-@misc{aba23darkman,
+@misc{ab23darkman,
   author = {Aziz Ben Ali},
    title = {Seamless integration between Darkman and Emacs using the D-Bus protocol},
      url = {https://grtcdr.tn/darkman.el/},
