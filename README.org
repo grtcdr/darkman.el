@@ -147,12 +147,13 @@ be code, documentation, general advice or constructive feedback!
 
 * Citing
 
-You may cite this project in your research like so:
+If your research involves this project in any way, you may cite it
+like so:
 
 #+begin_src bibtex
 @misc{aba23darkman,
   author = {Aziz Ben Ali},
-   title = {Seamless integration between Darkman and Emacs},
+   title = {Seamless integration between Darkman and Emacs using the D-Bus protocol},
      url = {https://grtcdr.tn/darkman.el/},
     year = 2023
 }
