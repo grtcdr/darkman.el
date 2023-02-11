@@ -1,8 +1,9 @@
 ;;; darkman.el --- Seamless integration between Darkman and Emacs  -*- lexical-binding: t; -*-
 
-;; Copyright (C) 2023  Aziz Ben Ali
+;; Copyright (C) 2023 Aziz Ben Ali
 
 ;; Author: Aziz Ben Ali <tahaaziz.benali@esprit.tn>
+;; Maintainer: Aziz Ben Ali <tahaaziz.benali@esprit.tn>
 ;; Homepage: https://grtcdr.tn/darkman.el/
 ;; Version: 0.4.0
 ;; Keywords: convenience
@@ -148,7 +149,8 @@ when the mode is changed."
     (dbus-unregister-object darkman--dbus-signal)
     (setq darkman--dbus-signal nil)))
 
+;;;###autoload
 (when (daemonp) (add-hook 'server-after-make-frame-hook #'darkman-mode))
 
 (provide 'darkman)
-;; darkman.el ends here
+;;; darkman.el ends here
