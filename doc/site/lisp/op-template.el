@@ -58,7 +58,6 @@
 (defun op-template-metadata ()
   "Define an XML template to be included as headers among publishing projects."
   (concat
-   (op-template-stylesheet "/darkman.el/css/custom.css")
    (op-template-stylesheet "https://grtcdr.tn/css/def.css")
    (op-template-stylesheet "https://grtcdr.tn/css/common.css")
    (op-template-stylesheet "https://grtcdr.tn/css/heading.css")

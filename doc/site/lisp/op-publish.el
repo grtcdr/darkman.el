@@ -34,8 +34,6 @@
 (require 'op-template)
 (require 'op-package)
 
-(op-package-install '(htmlize))
-
 (defun op-publish-handbook-function (plist filename pub-dir)
   "Call the publishing functions used by the handbook."
   (if (string= (getenv "CI") "true")
