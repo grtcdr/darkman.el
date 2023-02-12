@@ -76,7 +76,7 @@
 	     :include '("handbook.org")
 	     :exclude ".*"
 	     :with-author t
-	     :with-email t
+	     :with-date nil
 	     :html-head (op-template-metadata)
 	     :html-preamble 'op-template-navbar
 	     :html-postamble nil)

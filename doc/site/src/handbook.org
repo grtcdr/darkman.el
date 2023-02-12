@@ -1,4 +1,4 @@
-#+TITLE:               darkman.el's handbook
+#+TITLE:               darkman.el handbook
 #+LATEX_CLASS:         article
 #+LATEX_CLASS_OPTIONS: [12pt, a4paper]
 #+LATEX_HEADER_EXTRA:  \usepackage{listings}
