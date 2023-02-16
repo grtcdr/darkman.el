@@ -46,6 +46,7 @@
 
 (setq org-publish-timestamp-directory ".cache/"
       org-src-fontify-natively t
+      org-latex-src-block-backend 'engraved
       org-html-preamble nil
       org-html-postamble nil
       org-html-htmlize-output-type nil

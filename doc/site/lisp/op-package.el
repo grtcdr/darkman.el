@@ -42,6 +42,6 @@
     (unless (package-installed-p pkg)
       (package-install pkg))))
 
-(op-package-install '(htmlize))
+(op-package-install '(htmlize engrave-faces))
 
 (provide 'op-package)
