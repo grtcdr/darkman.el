@@ -21,7 +21,7 @@
 ;;; Commentary:
 
 ;; op-package.el provides helper functions to handle the dependencies of
-;; https://grtcdr.tn.
+;; https://grtcdr.tn/darkman.el.
 
 ;;; Code:
 

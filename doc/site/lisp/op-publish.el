@@ -41,8 +41,7 @@
     (org-latex-publish-to-pdf plist filename pub-dir))
   (org-html-publish-to-html plist filename pub-dir))
 
-(setq user-full-name "Aziz Ben Ali"
-      user-mail-address "tahaaziz.benali@esprit.tn")
+(setq user-full-name "Aziz Ben Ali")
 
 (setq org-publish-timestamp-directory ".cache/"
       org-src-fontify-natively t
@@ -63,7 +62,6 @@
 	     :publishing-function 'org-html-publish-to-html
 	     :exclude "handbook.org"
 	     :html-preamble 'op-template-navbar
-	     :html-postamble nil
 	     :html-head (op-template-metadata)
 	     :with-toc nil
 	     :section-numbers nil)
@@ -77,8 +75,7 @@
 	     :with-author t
 	     :with-date nil
 	     :html-head (op-template-metadata)
-	     :html-preamble 'op-template-navbar
-	     :html-postamble nil)
+	     :html-preamble 'op-template-navbar)
        (list "stylesheets"
 	     :base-extension "css"
 	     :base-directory "src/css"
