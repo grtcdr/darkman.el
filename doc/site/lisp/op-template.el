@@ -58,14 +58,7 @@
 (defun op-template-metadata ()
   "Define an XML template to be included as headers among publishing projects."
   (concat
-   (op-template-stylesheet "https://grtcdr.tn/css/def.css")
    (op-template-stylesheet "https://grtcdr.tn/css/common.css")
-   (op-template-stylesheet "https://grtcdr.tn/css/heading.css")
-   (op-template-stylesheet "https://grtcdr.tn/css/nav.css")
-   (op-template-stylesheet "https://grtcdr.tn/css/org.css")
-   (op-template-stylesheet "https://grtcdr.tn/css/source.css")
-   (op-template-stylesheet "https://grtcdr.tn/css/table.css")
-   (op-template-stylesheet "https://grtcdr.tn/css/figure.css")
    (sexp->xml '(link ((rel . "icon")
 		      (type . "image/x-icon")
 		      (href . "https://grtcdr.tn/assets/favicon.ico"))))))
