@@ -82,10 +82,10 @@ fully initialized.
 
 ** Disabling existing themes
 
-Emacs does not disable the current theme when another one is loaded by
-default, this behavior may be annoying to some but we can advise
-=darkman-set= (and by extension =darkman-toggle=) to take into account
-these preferences of ours by evaluating the following:
+Emacs does not by default disable the current theme when another one
+is loaded, and while this behavior might seem unintuitive, we can
+always advise =darkman-set= (and by extension =darkman-toggle=), or
+even =load-theme= if you prefer, to disable any existing themes first.
 
 #+begin_src elisp
 (defadvice darkman-set (before no-theme-stacking activate)
