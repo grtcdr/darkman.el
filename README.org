@@ -140,8 +140,9 @@ can verify whether or not Emacs was built with D-Bus support using
 Hey (future-)contributor, your help means so much to me, whether it be
 code, documentation, general advice or constructive feedback!
 
-We maintain a list of tasks to be done in [[file:TODO.org][TODO.org]], start there if
-you'd like to help out.
+We maintain a list of to-dos in =TODO.org=, which is best viewed from
+[[https://grtcdr.tn/darkman.el/TODO.html][the website]] or inside Emacs. Pick something to work on if you'd
+like to help improve this package.
 #+end_quote
 
 * Citing
