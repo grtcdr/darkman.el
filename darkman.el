@@ -64,14 +64,13 @@ when the mode is changed."
 (defun darkman-get ()
   "Get the mode of the Darkman service."
   (interactive)
-  (let ((mode (dbus-get-property :session
-				 darkman--dbus-service
-				 darkman--dbus-path
-				 darkman--dbus-interface
-				 "Mode")))
-    (when (called-interactively-p 'interactive)
-      (message (format "Mode is currently set to %s." mode)))
-    mode))
+  (when (called-interactively-p 'interactive)
+    (message (format "Mode is currently set to %s." mode)))
+  (dbus-get-property :session
+		     darkman--dbus-service
+		     darkman--dbus-path
+		     darkman--dbus-interface
+		     "Mode"))
 
 (defun darkman-set (mode)
   "Set the mode of the Darkman service to MODE which can either be
@@ -80,8 +79,7 @@ when the mode is changed."
 		     darkman--dbus-service
 		     darkman--dbus-path
 		     darkman--dbus-interface
-		     "Mode" (cond ((member mode '(dark light))
-				   (symbol-name mode))
+		     "Mode" (cond ((member mode '(dark light)) (symbol-name mode))
 				  (t (darkman--invalid-mode-error mode)))))
 
 ;;;###autoload
@@ -102,7 +100,7 @@ when the mode is changed."
 		 darkman--dbus-service)))
 
 (defun darkman--lookup-theme (mode)
-  "Return a theme from ‘darkman-themes’ corresponding to MODE (a string)."
+  "Return a theme from ‘darkman-themes’ that corresponds to string MODE."
   (cond ((string= mode "dark") (plist-get darkman-themes :dark))
 	((string= mode "light") (plist-get darkman-themes :light))
 	(t (darkman--invalid-mode-error mode))))
