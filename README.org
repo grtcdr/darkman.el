@@ -139,6 +139,9 @@ can verify whether or not Emacs was built with D-Bus support using
 #+begin_quote
 Hey (future-)contributor, your help means so much to me, whether it be
 code, documentation, general advice or constructive feedback!
+
+We maintain a list of tasks to be done in [[file:TODO.org][TODO.org]], start there if
+you'd like to help out.
 #+end_quote
 
 * Citing
