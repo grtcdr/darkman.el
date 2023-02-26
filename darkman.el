@@ -107,8 +107,7 @@ when the mode is changed."
 
 (defun darkman-get-theme ()
   "Get a theme from the ‘darkman-themes’ which corresponds to the current mode."
-  (let ((mode (darkman-get)))
-    (darkman--lookup-theme mode)))
+  (darkman--lookup-theme (darkman-get)))
 
 (defun darkman--mode-changed-signal-handler (new-mode)
   "Signal handler for the ModeChanged signal.  NEW-MODE is the new mode."
