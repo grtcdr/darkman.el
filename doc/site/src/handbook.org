@@ -1,13 +1,13 @@
-#+TITLE:               darkman.el handbook
-#+LATEX_CLASS:         article
-#+LATEX_CLASS_OPTIONS: [12pt, a4paper]
-#+LATEX_HEADER_EXTRA:  \usepackage{listings}
-#+LATEX_HEADER_EXTRA:  \usepackage[utf8]{inputenc}
-#+LATEX_HEADER:        \usepackage[margin=3cm]{geometry}
-#+LATEX_HEADER_EXTRA:  \setlength{\parindent}{0pt}
-#+LATEX_HEADER_EXTRA:  \setlength{\parskip}{0.5em}
+#+title:               darkman.el handbook
+#+latex_class:         article
+#+latex_class_options: [12pt, a4paper]
+#+latex_header_extra:  \usepackage{listings}
+#+latex_header_extra:  \usepackage[utf8]{inputenc}
+#+latex_header:        \usepackage[margin=3cm]{geometry}
+#+latex_header_extra:  \setlength{\parindent}{0pt}
+#+latex_header_extra:  \setlength{\parskip}{0.5em}
 
 @@latex:\clearpage@@
 
-#+INCLUDE: "./README.org::*Usage" :only-contents t
-#+INCLUDE: "./README.org::*Tips" :only-contents t
+#+include: "./README.org::*Usage" :only-contents t
+#+include: "./README.org::*Tips" :only-contents t
