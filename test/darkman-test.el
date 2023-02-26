@@ -1,10 +1,10 @@
-;;; darkman.el --- Unit tests for darkman.el  -*- lexical-binding: t; -*-
+;;; darkman-test.el --- Unit tests for darkman.el  -*- lexical-binding: t; -*-
 
 ;; Copyright (C) 2023 Aziz Ben Ali
 
 ;; Author: Aziz Ben Ali <tahaaziz.benali@esprit.tn>
 ;; Maintainer: Aziz Ben Ali <tahaaziz.benali@esprit.tn>
-;; Homepage: https://grtcdr.tn/darkman.el/
+;; Homepage: https://grtcdr.tn/darkman.el
 ;; Version: 0.4.0
 ;; Keywords: convenience
 
@@ -27,12 +27,12 @@
 ;;; Commentary:
 
 ;; darkman-test.el provides a set of unit tests to ensure that
-;; darkman.el is working as it should.
+;; darkman.el works as expected.
 
 ;;; Code:
 
-(require 'darkman)
 (require 'ert)
+(require 'darkman)
 
 (ert-deftest darkman-test-lookup-theme ()
   "Test the return value of ‘darkman--lookup-theme’."
