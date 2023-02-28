@@ -36,17 +36,12 @@ Finally, require the package like so:
 
 * Contributors
 
-Whether it is code, documentation, advice and constructive feedback,
-the following people have helped improve this software:
-
 - Agustín Cisneros
 - Aleksei Fedotov
 
 #+begin_quote
-We maintain a list of to-dos in =TODO.org=, which is best viewed from
-[[https://grtcdr.tn/darkman.el/TODO.html][the website]] or inside Emacs. Pick something to work on if you'd
-like to help improve this package.
-#+end_quote  
+Want to contribute to the package? Pick something from the [[https://grtcdr.tn/darkman.el/TODO.html][to-do list]].
+#+end_quote
 
 * Citing
 
