@@ -5,7 +5,7 @@
 ;; Author: Aziz Ben Ali <tahaaziz.benali@esprit.tn>
 ;; Maintainer: Aziz Ben Ali <tahaaziz.benali@esprit.tn>
 ;; Homepage: https://grtcdr.tn/darkman.el
-;; Version: 0.4.0
+;; Version: 0.5.0
 ;; Keywords: convenience
 
 ;; This file is not part of GNU Emacs.
