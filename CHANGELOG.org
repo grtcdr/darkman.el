@@ -12,6 +12,8 @@ releases.
   twice when =ModeChanged= is signaled ([[pull:11][#11]])
 + Write a multi-format manual replacing the single-format handbook
 + Simplify the README file
++ Integrate engrave-faces in the documentation
++ Add the first unit test
 
 * 0.4.0
 
