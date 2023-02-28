@@ -19,8 +19,8 @@ darkman.el
 This manual is a reference guide for Darkman 0.5.0, first released on
 2023-02-28.
 
-   • Homepage: <https://grtcdr.tn/darkman>
-   • Repository: <https://github.com/grtcdr/darkman>
+   • Homepage: <https://grtcdr.tn/darkman.el>
+   • Repository: <https://github.com/grtcdr/darkman.el>
 
 * Menu:
 
@@ -213,16 +213,16 @@ system-configuration-features RET’ which should list ‘DBUS’.
 
 Tag Table:
 Node: Top510
-Node: Installation1093
-Node: Usage1779
-Node: Other functions2569
-Node: Tips2903
-Node: Working alongside the built-in safety features3086
-Node: Disabling existing themes4022
-Node: Debugging4672
-Node: Is D-Bus running?4855
-Node: Is Darkman running?5239
-Node: Is Emacs built with D-Bus support?5710
+Node: Installation1099
+Node: Usage1785
+Node: Other functions2575
+Node: Tips2909
+Node: Working alongside the built-in safety features3092
+Node: Disabling existing themes4028
+Node: Debugging4678
+Node: Is D-Bus running?4861
+Node: Is Darkman running?5245
+Node: Is Emacs built with D-Bus support?5716
 
 End Tag Table
 

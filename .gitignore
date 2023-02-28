@@ -2,5 +2,6 @@ doc/site/public/
 doc/site/.cache/
 
 *.elc
+*.texi
 *.tex
 *.pdf

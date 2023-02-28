@@ -17,8 +17,8 @@
 This manual is a reference guide for Darkman {{{version}}}, first
 released on {{{release-date}}}.
 
-- Homepage: [[https://grtcdr.tn/darkman]]
-- Repository: [[https://github.com/grtcdr/darkman]]
+- Homepage: [[https://grtcdr.tn/darkman.el]]
+- Repository: [[https://github.com/grtcdr/darkman.el]]
 
 * Copying
 :PROPERTIES:
