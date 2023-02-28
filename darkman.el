@@ -6,6 +6,7 @@
 ;; Maintainer: Aziz Ben Ali <tahaaziz.benali@esprit.tn>
 ;; Homepage: https://grtcdr.tn/darkman.el/
 ;; Version: 0.4.0
+;; Package-Requires: ((emacs "28.1"))
 ;; Keywords: convenience
 
 ;; This file is not part of GNU Emacs.
@@ -109,13 +110,20 @@ when the mode is changed."
   "Get a theme from the ‘darkman-themes’ which corresponds to the current mode."
   (darkman--lookup-theme (darkman-get)))
 
-(defun darkman--mode-changed-signal-handler (new-mode)
-  "Handle the ModeChanged signal.  NEW-MODE is the new mode."
-  (let ((new-theme (darkman--lookup-theme new-mode)))
-    (unless darkman-switch-themes-silently
-      (message (format "Darkman switched to %s mode, switching to %s theme."
-		       new-mode new-theme)))
-    (load-theme new-theme)))
+(defun darkman--call-event-handler (interface property value)
+  "Handle method_call events on Darkman DBus.
+
+INTERFACE is the name of the interface that is the target of the event.
+PROPERTY is the property that is modified by the event.
+VALUE is the new value of PROPERTY."
+  (when (and (string-equal "Mode" property)
+             (equal darkman--dbus-service interface))
+    (let* ((new-mode (car value))
+           (new-theme (darkman--lookup-theme new-mode)))
+      (unless darkman-switch-themes-silently
+        (message (format "Darkman switched to %s mode, switching to %s theme."
+                         new-mode new-theme)))
+      (load-theme new-theme))))
 
 (defun darkman--check-dbus-service ()
   "Return non-nil if the Darkman service is available."
@@ -133,13 +141,14 @@ when the mode is changed."
       (progn
 	(and (darkman--check-dbus-service)
 	     (setq darkman--dbus-signal
-		   (dbus-register-signal
+		   (dbus-register-monitor
 		    :session
-		    darkman--dbus-service
-		    darkman--dbus-path
-		    darkman--dbus-interface
-		    "ModeChanged"
-		    #'darkman--mode-changed-signal-handler))
+                    #'darkman--call-event-handler
+                    :type "method_call"
+                    :destination darkman--dbus-service
+                    :path  darkman--dbus-path
+		    :interface "org.freedesktop.DBus.Properties"
+		    :member "Set"))
 	     (load-theme (darkman-get-theme)))
 	(when (daemonp)
 	  (remove-hook 'server-after-make-frame-hook #'darkman-mode)))
