@@ -39,6 +39,7 @@ jobs:
       - name: Compile LaTeX documents
         uses: xu-cheng/latex-action@v2
         with:
+          latexmk_use_lualatex: true
           working_directory: doc/site/public
           root_file: manual.tex
 
