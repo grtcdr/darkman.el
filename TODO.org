@@ -12,7 +12,7 @@
 - Items tagged with =help= are tasks we could use your help in
   accomplishing.
 
-* TODO Write up a Texinfo manual as an Org document
+* DONE Write up a Texinfo manual as an Org document
 We could use [[https://github.com/grtcdr/liaison/blob/main/doc/manual/liaison.org][this manual]] as a template.
 * BUG =load-theme= is called twice when =ModeChanged= is signaled      :help:
 This leads to a theme transition that isn't very smooth. I have no

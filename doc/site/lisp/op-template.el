@@ -1,6 +1,6 @@
 ;;; op-template.el  -*- lexical-binding:t -*-
 
-;; Copyright (C) 2023  Aziz Ben Ali
+;; Copyright (C) 2023 Aziz Ben Ali
 
 ;; Author: Aziz Ben Ali <tahaaziz.benali@esprit.tn>
 ;; Homepage: https://github.com/grtcdr/darkman.el
@@ -59,6 +59,7 @@
   "Define an XML template to be included as headers among publishing projects."
   (concat
    (op-template-stylesheet "https://grtcdr.tn/css/common.css")
+   (op-template-stylesheet "/darkman.el/css/main.css")
    (sexp->xml '(link ((rel . "icon")
 		      (type . "image/x-icon")
 		      (href . "https://grtcdr.tn/assets/favicon.ico"))))))

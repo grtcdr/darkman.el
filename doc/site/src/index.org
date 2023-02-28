@@ -1,13 +1,12 @@
-#+TITLE: darkman.el
+#+title: darkman.el
 
 This package provides seamless integration between [[https://darkman.whynothugo.nl][Darkman]] and [[https://gnu.org/software/emacs][Emacs]]
 using the [[https://www.freedesktop.org/wiki/Software/dbus/][D-Bus]] protocol.
 
-Read the handbook ([[file:handbook.org][HTML]], [[file:handbook.pdf][PDF]]) for instructions on using the package in
-your own configuration.
+Documentation is available in a number of formats:
+- [[file:manual.html][HTML]]
+- [[file:manual.pdf][PDF]]
+- Info -- which you can find in the source tree (under the =doc= directory)
 
-If you're experiencing any issues, consider going over the [[https://github.com/grtcdr/darkman.el#debugging][common debugging steps]].
-
-* Installation
-
-#+include: "./README.org::Installation" :only-contents t
+#+include: "README.org::*Contributors"
+#+include: "README.org::*Citing"

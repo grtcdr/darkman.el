@@ -1,6 +1,6 @@
 ;;; op-publish.el  -*- lexical-binding: t; -*-
 
-;; Copyright (C) 2022 Aziz Ben Ali
+;; Copyright (C) 2023 Aziz Ben Ali
 
 ;; Author: Aziz Ben Ali <tahaaziz.benali@esprit.tn>
 ;; Homepage: https://github.com/grtcdr/darkman.el
@@ -34,16 +34,15 @@
 (require 'op-template)
 (require 'op-package)
 
-(defun op-publish-handbook-function (plist filename pub-dir)
-  "Call the publishing functions used by the handbook."
+(defun op-publish-manual-function (plist filename pub-dir)
+  "Call the publishing functions used by the manual."
   (if (string= (getenv "CI") "true")
       (org-latex-publish-to-latex plist filename pub-dir)
     (org-latex-publish-to-pdf plist filename pub-dir))
   (org-html-publish-to-html plist filename pub-dir))
 
-(setq user-full-name "Aziz Ben Ali")
-
-(setq org-publish-timestamp-directory ".cache/"
+(setq user-full-name "Aziz Ben Ali"
+      org-publish-timestamp-directory ".cache/"
       org-src-fontify-natively t
       org-latex-src-block-backend 'engraved
       org-html-preamble nil
@@ -60,26 +59,21 @@
 	     :base-directory "src"
 	     :publishing-directory "public"
 	     :publishing-function 'org-html-publish-to-html
-	     :exclude "handbook.org"
 	     :html-preamble 'op-template-navbar
 	     :html-head (op-template-metadata)
 	     :with-toc nil
 	     :section-numbers nil)
-       (list "handbook"
+       (list "manual"
 	     :base-extension "org"
-	     :base-directory "src"
+	     :base-directory ".."
 	     :publishing-directory "public"
-	     :publishing-function 'op-publish-handbook-function
-	     :include '("handbook.org")
+	     :publishing-function 'op-publish-manual-function
+	     :include '("manual.org")
+	     :file-name "manual"
 	     :exclude ".*"
 	     :with-author t
 	     :with-date nil
 	     :html-head (op-template-metadata)
 	     :html-preamble 'op-template-navbar)
-       (list "stylesheets"
-	     :base-extension "css"
-	     :base-directory "src/css"
-	     :publishing-directory "public/css"
-	     :publishing-function 'org-publish-attachment)
        (list "all"
-	     :components '("root" "handbook" "stylesheets"))))
+	     :components '("root" "manual"))))

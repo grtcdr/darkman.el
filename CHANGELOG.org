@@ -6,6 +6,13 @@ This document tracks the most important changes of this package
 throughout time (in descending chronological order) and in between
 releases.
 
+* 0.5.0
+
++ [[user:aerz][Agustín Cisneros]]: Fix a bug that caused =load-theme= to be called
+  twice when =ModeChanged= is signaled ([[pull:11][#11]])
++ Write a multi-format manual replacing the single-format handbook
++ Simplify the README file
+
 * 0.4.0
 
 + [[user:aerz][Agustín Cisneros]]: Defer loading untrusted themes until the daemon is

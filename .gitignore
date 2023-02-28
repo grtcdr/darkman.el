@@ -1,0 +1,6 @@
+doc/site/public/
+doc/site/.cache/
+
+*.elc
+*.tex
+*.pdf

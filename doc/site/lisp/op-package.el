@@ -1,6 +1,9 @@
 ;;; op-package.el  -*- lexical-binding:t -*-
 
-;; Copyright (C) 2022 Aziz Ben Ali
+;; Copyright (C) 2023 Aziz Ben Ali
+
+;; Author: Aziz Ben Ali <tahaaziz.benali@esprit.tn>
+;; Homepage: https://github.com/grtcdr/darkman.el
 
 ;; This file is not part of GNU Emacs.
 

@@ -8,5 +8,4 @@ serve: build
 	@miniserve public/ --route-prefix=darkman.el --index=index.html
 
 clean:
-	@rm -rvf public/
-	@rm -rvf .cache/
+	@git clean -Xdf
