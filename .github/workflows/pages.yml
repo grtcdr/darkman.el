@@ -40,7 +40,7 @@ jobs:
         uses: xu-cheng/latex-action@v2
         with:
           working_directory: doc/site/public
-          root_file: handbook.tex
+          root_file: manual.tex
 
       - name: Upload website
         uses: actions/upload-pages-artifact@v1
