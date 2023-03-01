@@ -34,13 +34,6 @@
 (require 'op-template)
 (require 'op-package)
 
-(defun op-publish-manual-function (plist filename pub-dir)
-  "Call the publishing functions used by the manual."
-  (if (string= (getenv "CI") "true")
-      (org-latex-publish-to-latex plist filename pub-dir)
-    (org-latex-publish-to-pdf plist filename pub-dir))
-  (org-html-publish-to-html plist filename pub-dir))
-
 (setq user-full-name "Aziz Ben Ali"
       org-publish-timestamp-directory ".cache/"
       org-src-fontify-natively t
@@ -52,6 +45,11 @@
       org-html-head-include-scripts nil
       org-html-htmlize-output-type 'css)
 
+(defun op-publish-manual-function (plist filename pub-dir)
+  "Call the publishing functions used by the manual."
+  (org-latex-publish-to-latex plist filename pub-dir)
+  (org-html-publish-to-html plist filename pub-dir))
+
 (setq org-publish-project-alist
       (list
        (list "root"
@@ -59,21 +57,31 @@
 	     :base-directory "src"
 	     :publishing-directory "public"
 	     :publishing-function 'org-html-publish-to-html
-	     :html-preamble 'op-template-navbar
-	     :html-head (op-template-metadata)
 	     :with-toc nil
-	     :section-numbers nil)
+	     :section-numbers nil
+	     :html-head op-template-metadata
+	     :html-preamble op-template-navbar)
        (list "manual"
 	     :base-extension "org"
-	     :base-directory ".."
+	     :base-directory "../doc"
 	     :publishing-directory "public"
 	     :publishing-function 'op-publish-manual-function
-	     :include '("manual.org")
-	     :file-name "manual"
+	     :include '("darkman.org")
 	     :exclude ".*"
 	     :with-author t
 	     :with-date nil
-	     :html-head (op-template-metadata)
-	     :html-preamble 'op-template-navbar)
+	     :html-head op-template-metadata
+	     :html-preamble op-template-navbar)
+       (list "meta"
+	     :base-extension "org"
+	     :base-directory ".."
+	     :publishing-directory "public"
+	     :publishing-function 'org-html-publish-to-html
+	     :include '("CHANGELOG.org" "TODO.org")
+	     :exclude ".*"
+	     :with-toc nil
+	     :section-numbers nil
+	     :html-head op-template-metadata
+	     :html-preamble op-template-navbar)
        (list "all"
-	     :components '("root" "manual"))))
+	     :components '("root" "meta" "manual"))))

@@ -6,7 +6,7 @@ using the [[https://www.freedesktop.org/wiki/Software/dbus/][D-Bus]] protocol.
 Documentation is available in a number of formats:
 - [[https://grtcdr.tn/darkman.el/manual.html][HTML]]
 - [[https://grtcdr.tn/darkman.el/manual.pdf][PDF]]
-- Info -- which you can find in the source tree (under the =doc= directory)
+- Texinfo
 
 * Installation
 

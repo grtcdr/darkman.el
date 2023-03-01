@@ -20,7 +20,7 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout
+      - name: Checkout the repository
         uses: actions/checkout@v3
 
       - name: Configure GitHub Pages
@@ -31,22 +31,21 @@ jobs:
         with:
           version: snapshot
 
-      - name: Build website
+      - name: Build the website
         run: |
-             cd doc/site
-             make
+             make --directory=site
 
-      - name: Compile LaTeX documents
+      - name: Compile LaTeX documentation
         uses: xu-cheng/latex-action@v2
         with:
-          latexmk_use_lualatex: true
-          working_directory: doc/site/public
-          root_file: manual.tex
+          latexmk_use_xelatex: true
+          working_directory: site/public
+          root_file: darkman.tex
 
-      - name: Upload website
+      - name: Upload the website
         uses: actions/upload-pages-artifact@v1
         with:
-          path: doc/site/public
+          path: site/public
 
   deploy:
     environment:

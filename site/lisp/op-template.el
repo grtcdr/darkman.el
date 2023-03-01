@@ -29,17 +29,16 @@
 
 (require 'shr)
 
-(defalias 'sexp->xml #'shr-dom-to-xml)
+(defalias 'sxml #'shr-dom-to-xml)
 
 (defun op-template-stylesheet (href)
   "Format HREF as an HTML stylesheet."
-  (sexp->xml
+  (sxml
    `(link ((rel . "stylesheet")
 	   (href . ,href)))))
 
-(defun op-template-navbar (_)
-  "Define an XML template to be used as a preamble among publishing projects."
-  (sexp->xml
+(defvar op-template-navbar
+  (sxml
    '(nav nil
 	 (ul nil
 	     (li nil
@@ -53,16 +52,16 @@
 		    "To-dos"))
 	     (li nil
 		 (a ((href . "https://github.com/grtcdr/darkman.el"))
-		    "Development"))))))
+		    "Development")))))
+  "Define an XML template to be used as a preamble among publishing projects.")
 
-(defun op-template-metadata ()
-  "Define an XML template to be included as headers among publishing projects."
+(defvar op-template-metadata
   (concat
    (op-template-stylesheet "https://grtcdr.tn/css/common.css")
-   (op-template-stylesheet "/darkman.el/css/main.css")
-   (sexp->xml '(link ((rel . "icon")
+   (sxml '(link ((rel . "icon")
 		      (type . "image/x-icon")
-		      (href . "https://grtcdr.tn/assets/favicon.ico"))))))
+		      (href . "https://grtcdr.tn/assets/favicon.ico")))))
+  "Define an XML template to be included as headers among publishing projects.")
 
 (provide 'op-template)
-;; op-template.el ends here
+;;; op-template.el ends here

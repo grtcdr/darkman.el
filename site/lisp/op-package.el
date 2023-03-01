@@ -32,7 +32,7 @@
 
 (add-to-list 'package-archives '("melpa" . "https://melpa.org/packages/"))
 
-(defun op-package--initialize ()
+(defun op-package-initialize ()
   "Initialize the package manager and its archives."
   (package-initialize)
   (unless package-archive-contents
@@ -40,7 +40,7 @@
 
 (defun op-package-install (packages)
   "Install the list of PACKAGES."
-  (op-package--initialize)
+  (op-package-initialize)
   (dolist (pkg packages)
     (unless (package-installed-p pkg)
       (package-install pkg))))
@@ -48,3 +48,4 @@
 (op-package-install '(htmlize engrave-faces))
 
 (provide 'op-package)
+;;; op-package.el ends here

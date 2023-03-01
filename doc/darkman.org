@@ -1,10 +1,9 @@
 #+title:                darkman.el
 #+language:             en
 #+macro:                version 0.5.0
-#+macro:                release-date 2023-02-28
-#+texinfo_filename:     darkman.info
-#+texinfo_dir_title:    Seamless integration between Darkman and Emacs using the D-Bus protocol.
+#+texinfo_dir_desc:     Seamless integration between Darkman and Emacs using the D-Bus protocol.
 #+latex_class:          article
+#+latex_compiler:       lualatex
 #+latex_class_options:  [12pt, a4paper]
 #+latex_header_extra:   \usepackage{parskip}
 #+latex_header_extra:   \usepackage[utf8]{inputenc}
@@ -14,13 +13,12 @@
 
 @@latex:\clearpage@@
 
-This manual is a reference guide for Darkman {{{version}}}, first
-released on {{{release-date}}}.
+This is the manual for =darkman.el= version {{{version}}}.
 
 - Homepage: [[https://grtcdr.tn/darkman.el]]
 - Repository: [[https://github.com/grtcdr/darkman.el]]
 
-* Copying
+* GNU Free Documentation License
 :PROPERTIES:
 :COPYING:  t
 :END:
@@ -38,7 +36,7 @@ Documentation License".
 
 * Installation
 
-#+include: "README.org::*Installation" :only-contents t
+#+include: "../README.org::*Installation" :only-contents t
 
 * Usage
 
@@ -113,9 +111,9 @@ systemctl status dbus
 #+end_src
 
 #+begin_example
-● dbus.service - D-Bus System Message Bus
-     Loaded: loaded
-     Active: active (running)
+dbus.service - D-Bus System Message Bus
+   Loaded: loaded
+   Active: active (running)
 #+end_example
 
 ** Is Darkman running?
