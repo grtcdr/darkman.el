@@ -107,9 +107,6 @@ MODE can be ‘light’ or ‘dark’."
 	((string= mode "light") (plist-get darkman-themes :light))
 	(t (darkman--invalid-mode-error mode))))
 
-(defun darkman-get-theme ()
-  "Get a theme from the ‘darkman-themes’ which corresponds to the current mode."
-  (darkman--lookup-theme (darkman-get)))
 
 (defun darkman--call-event-handler (interface property value)
   "Handle method_call events on Darkman DBus.
@@ -150,7 +147,7 @@ VALUE is the new value of PROPERTY."
 		    :path  darkman--dbus-path
 		    :interface "org.freedesktop.DBus.Properties"
 		    :member "Set"))
-	     (load-theme (darkman-get-theme)))
+	     (load-theme (darkman--lookup-theme (darkman-get))))
 	(when (daemonp)
 	  (remove-hook 'server-after-make-frame-hook #'darkman-mode)))
     (dbus-unregister-object darkman--dbus-signal)
