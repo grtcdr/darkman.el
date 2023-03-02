@@ -51,7 +51,7 @@ symbol representing the name of the theme."
   :package-version '(darkman . "0.1.0"))
 
 (defcustom darkman-switch-themes-silently t
-  "Switch themes silently, as opposed to printing the switch action, when the mode is changed."
+  "Do not print the new mode and theme to the echo area."
   :type 'boolean
   :package-version '(darkman . "0.3.0"))
 
@@ -74,7 +74,9 @@ symbol representing the name of the theme."
     mode))
 
 (defun darkman-set (mode)
-  "Set the mode of the Darkman service to MODE which can either be ‘light’ or ‘dark’."
+  "Set the mode of the Darkman service to MODE.
+
+MODE can be ‘light’ or ‘dark’."
   (dbus-set-property :session
 		     darkman--dbus-service
 		     darkman--dbus-path
