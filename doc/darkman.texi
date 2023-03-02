@@ -213,9 +213,9 @@ systemctl status --user darkman
 @end example
 
 @example
-● darkman.service - Framework for dark-mode and light-mode transitions.
-     Loaded: loaded
-     Active: active (running)
+darkman.service - Framework for dark-mode and light-mode transitions.
+   Loaded: loaded
+   Active: active (running)
 @end example
 
 @node Is Emacs built with D-Bus support?
