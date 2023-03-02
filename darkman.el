@@ -45,14 +45,13 @@
 The two properties, ‘:light’ and ‘:dark’, expect as a value a
 symbol representing the name of the theme."
   :type `(plist :key-type (choice (const :tag "Light theme" :light)
-                                  (const :tag "Dark theme" :dark))
-          :value-type (choice ,@(mapcar (lambda (theme) (list 'const theme))
+				  (const :tag "Dark theme" :dark))
+	  :value-type (choice ,@(mapcar (lambda (theme) (list 'const theme))
 					(custom-available-themes))))
   :package-version '(darkman . "0.1.0"))
 
 (defcustom darkman-switch-themes-silently t
-  "Switch themes silently, as opposed to printing the switch action,
-when the mode is changed."
+  "Switch themes silently, as opposed to printing the switch action, when the mode is changed."
   :type 'boolean
   :package-version '(darkman . "0.3.0"))
 
@@ -74,8 +73,7 @@ when the mode is changed."
 		     "Mode"))
 
 (defun darkman-set (mode)
-  "Set the mode of the Darkman service to MODE which can either be
-‘light’ or ‘dark’."
+  "Set the mode of the Darkman service to MODE which can either be ‘light’ or ‘dark’."
   (dbus-set-property :session
 		     darkman--dbus-service
 		     darkman--dbus-path
@@ -117,12 +115,12 @@ INTERFACE is the name of the interface that is the target of the event.
 PROPERTY is the property that is modified by the event.
 VALUE is the new value of PROPERTY."
   (when (and (string-equal "Mode" property)
-             (equal darkman--dbus-service interface))
+	     (equal darkman--dbus-service interface))
     (let* ((new-mode (car value))
-           (new-theme (darkman--lookup-theme new-mode)))
+	   (new-theme (darkman--lookup-theme new-mode)))
       (unless darkman-switch-themes-silently
-        (message (format "Darkman switched to %s mode, switching to %s theme."
-                         new-mode new-theme)))
+	(message (format "Darkman switched to %s mode, switching to %s theme."
+			 new-mode new-theme)))
       (load-theme new-theme))))
 
 (defun darkman--check-dbus-service ()
@@ -143,10 +141,10 @@ VALUE is the new value of PROPERTY."
 	     (setq darkman--dbus-signal
 		   (dbus-register-monitor
 		    :session
-                    #'darkman--call-event-handler
-                    :type "method_call"
-                    :destination darkman--dbus-service
-                    :path  darkman--dbus-path
+		    #'darkman--call-event-handler
+		    :type "method_call"
+		    :destination darkman--dbus-service
+		    :path  darkman--dbus-path
 		    :interface "org.freedesktop.DBus.Properties"
 		    :member "Set"))
 	     (load-theme (darkman-get-theme)))
