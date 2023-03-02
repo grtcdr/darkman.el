@@ -64,13 +64,14 @@ symbol representing the name of the theme."
 (defun darkman-get ()
   "Get the mode of the Darkman service."
   (interactive)
-  (when (called-interactively-p 'interactive)
-    (message (format "Mode is currently set to %s." mode)))
-  (dbus-get-property :session
+  (let ((mode (dbus-get-property :session
 		     darkman--dbus-service
 		     darkman--dbus-path
 		     darkman--dbus-interface
-		     "Mode"))
+		     "Mode")))
+    (when (called-interactively-p 'interactive)
+      (message (format "Mode is currently set to %s." mode)))
+    mode))
 
 (defun darkman-set (mode)
   "Set the mode of the Darkman service to MODE which can either be ‘light’ or ‘dark’."
@@ -114,7 +115,7 @@ symbol representing the name of the theme."
 INTERFACE is the name of the interface that is the target of the event.
 PROPERTY is the property that is modified by the event.
 VALUE is the new value of PROPERTY."
-  (when (and (string-equal "Mode" property)
+  (when (and (string-equal property "Mode")
 	     (equal darkman--dbus-service interface))
     (let* ((new-mode (car value))
 	   (new-theme (darkman--lookup-theme new-mode)))
