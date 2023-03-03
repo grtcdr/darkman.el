@@ -69,9 +69,9 @@ symbol representing the name of the theme."
 				 darkman--dbus-path
 				 darkman--dbus-interface
 				 "Mode")))
-    (when (called-interactively-p 'interactive)
-      (message (format "Mode is currently set to %s." mode)))
-    mode))
+    (if (called-interactively-p 'interactive)
+	(message (format "Mode is currently set to %s." mode))
+      mode)))
 
 (defun darkman-set (mode)
   "Set the mode of the Darkman service to MODE.
