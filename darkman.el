@@ -151,7 +151,7 @@ VALUE is the new value of PROPERTY."
 	(when (daemonp)
 	  (remove-hook 'server-after-make-frame-hook #'darkman-mode)))
     (dbus-unregister-object darkman--dbus-monitor)
-    (setq darkman--dbus-signal nil)))
+    (setq darkman--dbus-monitor nil)))
 
 ;;;###autoload
 (when (daemonp) (add-hook 'server-after-make-frame-hook #'darkman-mode))
