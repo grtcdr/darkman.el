@@ -5,7 +5,7 @@
 ;; Author: Aziz Ben Ali <tahaaziz.benali@esprit.tn>
 ;; Maintainer: Aziz Ben Ali <tahaaziz.benali@esprit.tn>
 ;; Homepage: https://grtcdr.tn/darkman.el/
-;; Version: 0.5.0
+;; Version: 0.6.0
 ;; Package-Requires: ((emacs "28.1"))
 ;; Keywords: convenience
 
@@ -65,10 +65,10 @@ symbol representing the name of the theme."
   "Get the mode of the Darkman service."
   (interactive)
   (let ((mode (dbus-get-property :session
-		     darkman--dbus-service
-		     darkman--dbus-path
-		     darkman--dbus-interface
-		     "Mode")))
+				 darkman--dbus-service
+				 darkman--dbus-path
+				 darkman--dbus-interface
+				 "Mode")))
     (when (called-interactively-p 'interactive)
       (message (format "Mode is currently set to %s." mode)))
     mode))
