@@ -58,7 +58,7 @@ symbol representing the name of the theme."
 (defvar darkman--dbus-service "nl.whynothugo.darkman")
 (defvar darkman--dbus-path "/nl/whynothugo/darkman")
 (defvar darkman--dbus-interface darkman--dbus-service)
-(defvar darkman--dbus-signal nil)
+(defvar darkman--dbus-monitor nil)
 
 ;;;###autoload
 (defun darkman-get ()
@@ -107,21 +107,20 @@ MODE can be ‘light’ or ‘dark’."
 	((string= mode "light") (plist-get darkman-themes :light))
 	(t (darkman--invalid-mode-error mode))))
 
-
-(defun darkman--call-event-handler (interface property value)
-  "Handle method_call events on Darkman DBus.
+(defun darkman--event-handler (interface property value)
+  "Callback function for handling a change in mode.
 
 INTERFACE is the name of the interface that is the target of the event.
 PROPERTY is the property that is modified by the event.
 VALUE is the new value of PROPERTY."
-  (when (and (string-equal property "Mode")
-	     (equal darkman--dbus-service interface))
-    (let* ((new-mode (car value))
-	   (new-theme (darkman--lookup-theme new-mode)))
+  (when (and (string-equal interface darkman--dbus-service)
+	     (string-equal property "Mode"))
+    (let* ((mode (car value))
+	   (theme (darkman--lookup-theme mode)))
       (unless darkman-switch-themes-silently
 	(message (format "Darkman switched to %s mode, switching to %s theme."
-			 new-mode new-theme)))
-      (load-theme new-theme))))
+			 mode theme)))
+      (load-theme theme))))
 
 (defun darkman--check-dbus-service ()
   "Return non-nil if the Darkman service is available."
@@ -138,19 +137,20 @@ VALUE is the new value of PROPERTY."
   (if darkman-mode
       (progn
 	(and (darkman--check-dbus-service)
-	     (setq darkman--dbus-signal
-		   (dbus-register-monitor
-		    :session
-		    #'darkman--call-event-handler
-		    :type "method_call"
-		    :destination darkman--dbus-service
-		    :path  darkman--dbus-path
-		    :interface "org.freedesktop.DBus.Properties"
-		    :member "Set"))
+	     (unless darkman--dbus-monitor
+	       (setq darkman--dbus-monitor
+		     (dbus-register-monitor
+		      :session
+		      #'darkman--event-handler
+		      :type "method_call"
+		      :destination darkman--dbus-service
+		      :path darkman--dbus-path
+		      :interface "org.freedesktop.DBus.Properties"
+		      :member "Set")))
 	     (load-theme (darkman--lookup-theme (darkman-get))))
 	(when (daemonp)
 	  (remove-hook 'server-after-make-frame-hook #'darkman-mode)))
-    (dbus-unregister-object darkman--dbus-signal)
+    (dbus-unregister-object darkman--dbus-monitor)
     (setq darkman--dbus-signal nil)))
 
 ;;;###autoload
