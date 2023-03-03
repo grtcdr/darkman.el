@@ -19,7 +19,7 @@ method through which you can install the package, only the most basic.
 Begin by cloning the repository:
 
 #+begin_src sh
-git clone --branch 0.6.0 https://github.com/grtcdr/darkman.el darkman
+git clone --branch 0.7.0 https://github.com/grtcdr/darkman.el darkman
 #+end_src
 
 Next, add the package to your [[https://www.gnu.org/software/emacs/manual/html_node/emacs/Lisp-Libraries.html][load path]]:

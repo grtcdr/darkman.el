@@ -6,6 +6,10 @@ This document tracks the most important changes of this package
 throughout time (in descending chronological order) and in between
 releases.
 
+* 0.7.0
+
+- Fix assignment to free (now obsolete) variable ~darkman--dbus-signal~
+
 * 0.6.0
 
 - Protect the invocation of ~darkman-register-monitor~
