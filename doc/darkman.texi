@@ -37,7 +37,7 @@ Documentation License".
 
 
 
-This is the manual for @samp{darkman.el} version 0.5.0.
+This is the manual for @samp{darkman.el} version 0.6.0.
 
 @itemize
 @item
@@ -87,7 +87,7 @@ method through which you can install the package, only the most basic.
 Begin by cloning the repository:
 
 @example
-git clone --branch 0.5.0 https://github.com/grtcdr/darkman.el darkman
+git clone --branch 0.6.0 https://github.com/grtcdr/darkman.el darkman
 @end example
 
 Next, add the package to your @uref{https://www.gnu.org/software/emacs/manual/html_node/emacs/Lisp-Libraries.html, load path}:

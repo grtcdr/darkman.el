@@ -6,6 +6,11 @@ This document tracks the most important changes of this package
 throughout time (in descending chronological order) and in between
 releases.
 
+* 0.6.0
+
+- Protect the invocation of ~darkman-register-monitor~
+- Address linting errors to prepare for the submission of the package to MELPA
+
 * 0.5.0
 
 + [[user:aerz][Agustín Cisneros]]: Fix a bug that caused =load-theme= to be called
