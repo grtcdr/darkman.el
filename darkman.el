@@ -73,7 +73,7 @@ symbol representing the name of the theme."
 	(message (format "Mode is currently set to %s." mode))
       mode)))
 
-(defun darkman-set (mode)
+(defun darkman-set-mode (mode)
   "Set the mode of the Darkman service to MODE.
 
 MODE can be ‘light’ or ‘dark’."
