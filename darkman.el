@@ -51,7 +51,7 @@ symbol representing the name of the theme."
   :package-version '(darkman . "0.1.0"))
 
 (defcustom darkman-switch-themes-silently t
-  "Do not print the new mode and theme to the echo area."
+  "When non-nil, suppress the message indicating the new mode and theme."
   :type 'boolean
   :package-version '(darkman . "0.3.0"))
 
