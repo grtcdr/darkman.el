@@ -76,14 +76,14 @@ When MESSAGE is non-nil, print the current mode to the echo area instead."
 
 (defun darkman-set-mode (mode)
   "Set the mode of the Darkman service to MODE.
-
 MODE can be ‘light’ or ‘dark’."
   (dbus-set-property :session
 		     darkman--dbus-service
 		     darkman--dbus-path
 		     darkman--dbus-interface
-		     "Mode" (cond ((member mode '(dark light)) (symbol-name mode))
-				  (t (darkman--invalid-mode-error mode)))))
+		     "Mode" (if (member mode '(dark light))
+				(symbol-name mode)
+			      (darkman--invalid-mode-error mode))))
 
 ;;;###autoload
 (defun darkman-toggle ()
