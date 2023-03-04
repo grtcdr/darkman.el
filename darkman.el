@@ -61,16 +61,17 @@ symbol representing the name of the theme."
 (defvar darkman--dbus-monitor nil)
 
 ;;;###autoload
-(defun darkman-get ()
-  "Get the mode of the Darkman service."
-  (interactive)
+(defun darkman-current-mode (&optional message)
+  "Return the mode of the Darkman service.
+When MESSAGE is non-nil, print the current mode to the echo area instead."
+  (interactive (list t))
   (let ((mode (dbus-get-property :session
-				 darkman--dbus-service
-				 darkman--dbus-path
-				 darkman--dbus-interface
-				 "Mode")))
-    (if (called-interactively-p 'interactive)
-	(message (format "Mode is currently set to %s." mode))
+		     darkman--dbus-service
+		     darkman--dbus-path
+		     darkman--dbus-interface
+		     "Mode")))
+    (if message
+	(message "Mode is currently set to %s." mode)
       mode)))
 
 (defun darkman-set-mode (mode)
@@ -88,9 +89,9 @@ MODE can be ‘light’ or ‘dark’."
 (defun darkman-toggle ()
   "Toggle the mode of the Darkman service."
   (interactive)
-  (let ((mode (darkman-get)))
-    (cond ((string= mode "dark") (darkman-set 'light))
-	  ((string= mode "light") (darkman-set 'dark)))))
+  (let ((mode (darkman-current-mode)))
+    (cond ((string= mode "dark") (darkman-set-mode 'light))
+	  ((string= mode "light") (darkman-set-mode 'dark)))))
 
 (defun darkman--invalid-mode-error (mode)
   "Signal an error about an invalid mode.  MODE is the name of the invalid mode."
@@ -147,7 +148,7 @@ VALUE is the new value of PROPERTY."
 		      :path darkman--dbus-path
 		      :interface "org.freedesktop.DBus.Properties"
 		      :member "Set")))
-	     (load-theme (darkman--lookup-theme (darkman-get))))
+	     (load-theme (darkman--lookup-theme (darkman-current-mode))))
 	(when (daemonp)
 	  (remove-hook 'server-after-make-frame-hook #'darkman-mode)))
     (dbus-unregister-object darkman--dbus-monitor)
