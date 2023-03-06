@@ -6,6 +6,19 @@ This document tracks the most important changes of this package
 throughout time (in descending chronological order) and in between
 releases.
 
+* 1.0.0
+
+The changes in this tag were made following our [[https://github.com/melpa/melpa/pull/8423][submission for inclusion into MELPA]].
+
+- [[user:riscy][Chris Rayner]]: Do not use ~format~ when parameter is already an ~f-string~
+- [[user:progfolio][Nicolas Vollmer]]: Use meaningful and conventional function names and docstrings
+- [[user:progfolio][Nicolas Vollmer]]: Avoid the fragile ~called-interactively-p~ function
+- [[user:progfolio][Nicolas Vollmer]]: Prefer an ~if~ form in ~darkman-set-mode~
+- [[user:progfolio][Nicolas Vollmer]]: Combine ~when~ and ~let*~ forms into ~when-let*~ in
+  ~darkman--event-handler~
+- [[user:progfolio][Nicolas Vollmer]]: Do not make hooks on behalf of the user
+  =server-after-make-frame-hook= as it may be considered impolite
+
 * 0.7.0
 
 - Prefer if form in ~darkman-get~ function
