@@ -39,6 +39,8 @@ Finally, require the package like so:
 
 - Agustín Cisneros
 - Aleksei Fedotov
+- Chris Rayner
+- Nicolas Vollmer
 
 #+begin_quote
 Want to contribute to the package? Pick something from the [[https://grtcdr.tn/darkman.el/TODO.html][to-do list]].
