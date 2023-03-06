@@ -10,9 +10,12 @@ Documentation is available in a number of formats:
 
 * Installation
 
-This package is available from [[https://melpa.org][MELPA]] provided you've added it to the
-list of [[info:emacs#Packages][package archives]] to fetch from, you can install it using =M-x
-package-install RET darkman RET=.
+This package is available from [[https://melpa.org][MELPA]] provided you've added that to the
+list of [[info:emacs#Package Installation][package archives]] to fetch from, install it by evaluating:
+
+#+begin_src emacs-lisp
+(package-install 'darkman)
+#+end_src
 
 For a manual installation, begin by cloning the repository:
 
