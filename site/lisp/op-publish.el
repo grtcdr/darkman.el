@@ -28,11 +28,10 @@
 
 ;;; Code:
 
-(add-to-list 'load-path (file-name-concat default-directory "lisp/"))
-
 (require 'ox-publish)
-(require 'op-template)
-(require 'op-package)
+
+(load-file "lisp/op-template.el")
+(load-file "lisp/op-package.el")
 
 (setq user-full-name "Aziz Ben Ali"
       org-publish-timestamp-directory ".cache/"

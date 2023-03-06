@@ -62,6 +62,3 @@
 		      (type . "image/x-icon")
 		      (href . "https://grtcdr.tn/assets/favicon.ico")))))
   "Define an XML template to be included as headers among publishing projects.")
-
-(provide 'op-template)
-;;; op-template.el ends here

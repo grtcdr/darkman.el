@@ -46,6 +46,3 @@
       (package-install pkg))))
 
 (op-package-install '(htmlize engrave-faces))
-
-(provide 'op-package)
-;;; op-package.el ends here
