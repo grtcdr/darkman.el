@@ -12,7 +12,7 @@ Documentation is available in a number of formats:
 
 This package is available from [[https://melpa.org][MELPA]] provided you've added it to the
 list of [[info:emacs#Packages][package archives]] to fetch from, you can install it using =M-x
-package-install darkman RET=.
+package-install RET darkman RET=.
 
 For a manual installation, begin by cloning the repository:
 
