@@ -37,7 +37,7 @@ Documentation License".
 
 
 
-This is the manual for @samp{darkman.el} version 0.7.0.
+This is the manual for @samp{darkman.el} version 1.0.0.
 
 @itemize
 @item
@@ -77,17 +77,14 @@ Debugging
 @node Installation
 @chapter Installation
 
-@quotation
-In an effort to keep the instructions concise, portable and applicable
-no matter the situation, this section will not list every possible
-method through which you can install the package, only the most basic.
+This package is available from @uref{https://melpa.org, MELPA} provided you've added it to the
+list of @ref{Packages,package archives,,emacs,} to fetch from, you can install it using @samp{M-x
+package-install darkman RET}.
 
-@end quotation
-
-Begin by cloning the repository:
+For a manual installation, begin by cloning the repository:
 
 @example
-git clone --branch 0.7.0 https://github.com/grtcdr/darkman.el darkman
+git clone --branch 1.0.0 https://github.com/grtcdr/darkman.el darkman
 @end example
 
 Next, add the package to your @uref{https://www.gnu.org/software/emacs/manual/html_node/emacs/Lisp-Libraries.html, load path}:
@@ -158,10 +155,14 @@ they're absolutely necessary to preserve the security of your
 system. We have decided to work hand in hand with these pre-existing
 safety mechanisms in favor of implementing our own.
 
-Problems will arise if this package is loaded too early during the
-initialization phase, i.e. before @samp{custom-file}, you can @uref{https://github.com/grtcdr/darkman.el/pull/7#issuecomment-1422666665, prevent this
-from happening} by activating the mode only when the session has been
-fully initialized.
+Problems may arise @footnote{This is @uref{https://github.com/grtcdr/darkman.el/pull/7#issuecomment-1422666665, known to happen} in Doom Emacs.} if this package is loaded in a @ref{Emacs Server,server setting,,emacs,} and
+too early during the initialization phase, i.e. before @samp{custom-file},
+you can prevent this from happening by activating the mode @strong{only} when
+the session has been fully initialized:
+
+@lisp
+(when (daemonp) (add-hook 'server-after-make-frame-hook #'darkman-mode))
+@end lisp
 
 @node Disabling existing themes
 @section Disabling existing themes
