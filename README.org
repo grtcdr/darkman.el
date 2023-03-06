@@ -40,6 +40,7 @@ Finally, require the package like so:
 - Agustín Cisneros
 - Aleksei Fedotov
 - Chris Rayner
+- Jonas Bernoulli
 - Nicolas Vollmer
 
 #+begin_quote
