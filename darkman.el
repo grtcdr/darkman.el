@@ -95,12 +95,11 @@ MODE can be ‘light’ or ‘dark’."
 
 (defun darkman--invalid-mode-error (mode)
   "Signal an error about an invalid mode.  MODE is the name of the invalid mode."
-  (error (format "‘%s’ is not a valid mode." mode)))
+  (error "‘%s’ is not a valid mode." mode))
 
 (defun darkman--dbus-service-unavailable-error ()
   "Signal an error about the service being unavailable."
-  (error (format "%s D-Bus service not available."
-		 darkman--dbus-service)))
+  (error "%s D-Bus service not available." darkman--dbus-service))
 
 (defun darkman--lookup-theme (mode)
   "Return a theme from ‘darkman-themes’ that corresponds to string MODE."
@@ -118,8 +117,8 @@ VALUE is the new value of PROPERTY."
 	      (mode (car value))
 	      (theme (darkman--lookup-theme mode)))
     (unless darkman-switch-themes-silently
-      (message (format "Darkman switched to %s mode, switching to %s theme."
-		       mode theme)))
+      (message "Darkman switched to %s mode, switching to %s theme."
+	       mode theme))
     (load-theme theme)))
 
 (defun darkman--check-dbus-service ()
