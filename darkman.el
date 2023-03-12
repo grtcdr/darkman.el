@@ -147,8 +147,6 @@ VALUE is the new value of PROPERTY."
 		      :interface "org.freedesktop.DBus.Properties"
 		      :member "Set")))
 	     (load-theme (darkman--lookup-theme (darkman-current-mode))))
-	(when (daemonp)
-	  (remove-hook 'server-after-make-frame-hook #'darkman-mode)))
     (dbus-unregister-object darkman--dbus-monitor)
     (setq darkman--dbus-monitor nil)))
 
