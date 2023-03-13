@@ -123,7 +123,7 @@ VALUE is the new value of PROPERTY."
 
 (defun darkman--check-dbus-service ()
   "Return non-nil if the Darkman service is available."
-  (or (dbus-ping :session darkman--dbus-service 100)
+  (or (dbus-ping :session darkman--dbus-service 1000)
       (darkman--dbus-service-unavailable-error)))
 
 ;;;###autoload
@@ -134,21 +134,20 @@ VALUE is the new value of PROPERTY."
   :require 'dbus
   :version "0.1.0"
   (if darkman-mode
-      (progn
-	(and (darkman--check-dbus-service)
-	     (unless darkman--dbus-monitor
-	       (setq darkman--dbus-monitor
-		     (dbus-register-monitor
-		      :session
-		      #'darkman--event-handler
-		      :type "method_call"
-		      :destination darkman--dbus-service
-		      :path darkman--dbus-path
-		      :interface "org.freedesktop.DBus.Properties"
-		      :member "Set")))
-	     (load-theme (darkman--lookup-theme (darkman-current-mode))))
+      (unless (and darkman--dbus-monitor
+		   (not (darkman--check-dbus-service)))
+	(setq darkman--dbus-monitor
+	      (dbus-register-monitor
+	       :session
+	       #'darkman--event-handler
+	       :type "method_call"
+	       :destination darkman--dbus-service
+	       :path darkman--dbus-path
+	       :interface "org.freedesktop.DBus.Properties"
+	       :member "Set"))
+	(load-theme (darkman--lookup-theme (darkman-current-mode))))
     (dbus-unregister-object darkman--dbus-monitor)
-    (setq darkman--dbus-monitor nil))))
+    (setq darkman--dbus-monitor nil)))
 
 (provide 'darkman)
 ;;; darkman.el ends here
