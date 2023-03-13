@@ -148,7 +148,7 @@ VALUE is the new value of PROPERTY."
 		      :member "Set")))
 	     (load-theme (darkman--lookup-theme (darkman-current-mode))))
     (dbus-unregister-object darkman--dbus-monitor)
-    (setq darkman--dbus-monitor nil)))
+    (setq darkman--dbus-monitor nil))))
 
 (provide 'darkman)
 ;;; darkman.el ends here
