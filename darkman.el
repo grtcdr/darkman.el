@@ -58,7 +58,7 @@ symbol representing the name of the theme."
 (defvar darkman--dbus-service "nl.whynothugo.darkman")
 (defvar darkman--dbus-path "/nl/whynothugo/darkman")
 (defvar darkman--dbus-interface darkman--dbus-service)
-(defvar darkman--dbus-monitor nil)
+(defvar darkman--dbus-signal nil)
 
 ;;;###autoload
 (defun darkman-current-mode (&optional message)
@@ -107,15 +107,10 @@ MODE can be ‘light’ or ‘dark’."
 	((string= mode "light") (plist-get darkman-themes :light))
 	(t (darkman--invalid-mode-error mode))))
 
-(defun darkman--event-handler (interface property value)
+(defun darkman--signal-handler (mode)
   "Callback function for handling a change in mode.
-INTERFACE is the name of the interface that is the target of the event.
-PROPERTY is the property that is modified by the event.
-VALUE is the new value of PROPERTY."
-  (when-let* (((string-equal interface darkman--dbus-service))
-	      ((string-equal property "Mode"))
-	      (mode (car value))
-	      (theme (darkman--lookup-theme mode)))
+MODE is the new mode."
+  (let ((theme (darkman--lookup-theme mode)))
     (unless darkman-switch-themes-silently
       (message "Darkman switched to %s mode, switching to %s theme."
 	       mode theme))
@@ -134,20 +129,19 @@ VALUE is the new value of PROPERTY."
   :require 'dbus
   :version "0.1.0"
   (if darkman-mode
-      (unless (and darkman--dbus-monitor
+      (unless (and darkman--dbus-signal
 		   (not (darkman--check-dbus-service)))
-	(setq darkman--dbus-monitor
-	      (dbus-register-monitor
+	(setq darkman--dbus-signal
+	      (dbus-register-signal
 	       :session
-	       #'darkman--event-handler
-	       :type "method_call"
-	       :destination darkman--dbus-service
-	       :path darkman--dbus-path
-	       :interface "org.freedesktop.DBus.Properties"
-	       :member "Set"))
+	       darkman--dbus-service
+	       darkman--dbus-path
+	       darkman--dbus-interface
+	       "ModeChanged"
+	       #'darkman--signal-handler))
 	(load-theme (darkman--lookup-theme (darkman-current-mode))))
-    (dbus-unregister-object darkman--dbus-monitor)
-    (setq darkman--dbus-monitor nil)))
+    (dbus-unregister-object darkman--dbus-signal)
+    (setq darkman--dbus-signal nil)))
 
 (provide 'darkman)
 ;;; darkman.el ends here
