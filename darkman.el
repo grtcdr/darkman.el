@@ -129,18 +129,17 @@ MODE is the new mode."
   :require 'dbus
   :version "0.1.0"
   (if darkman-mode
-      (progn
-	(and (darkman--check-dbus-service)
-	     (unless darkman--dbus-signal
-	       (setq darkman--dbus-signal
-		     (dbus-register-signal
-		      :session
-		      darkman--dbus-service
-		      darkman--dbus-path
-		      darkman--dbus-interface
-		      "ModeChanged"
-		      #'darkman--signal-handler)))
-	     (load-theme (darkman--lookup-theme (darkman-current-mode)))))
+      (unless (and darkman--dbus-signal
+		   (not (darkman--check-dbus-service)))
+	(setq darkman--dbus-signal
+	      (dbus-register-signal
+	       :session
+	       darkman--dbus-service
+	       darkman--dbus-path
+	       darkman--dbus-interface
+	       "ModeChanged"
+	       #'darkman--signal-handler))
+	(load-theme (darkman--lookup-theme (darkman-current-mode))))
     (dbus-unregister-object darkman--dbus-signal)
     (setq darkman--dbus-signal nil)))
 

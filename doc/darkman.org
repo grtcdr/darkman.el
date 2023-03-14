@@ -87,7 +87,13 @@ you can prevent this from happening by activating the mode *only* when
 the session has been fully initialized:
 
 #+begin_src emacs-lisp
-(when (daemonp) (add-hook 'server-after-make-frame-hook #'darkman-mode))
+(when (daemonp)
+  (add-hook 'server-after-make-frame-hook #'darkman-mode)
+  (advice-add 'darkman-mode
+	      :after
+              (lambda ()
+                (remove-hook 'server-after-make-frame-hook
+			     #'darkman-mode))))
 #+end_src
 
 ** Disabling existing themes

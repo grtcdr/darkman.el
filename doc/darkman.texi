@@ -77,9 +77,12 @@ Debugging
 @node Installation
 @chapter Installation
 
-This package is available from @uref{https://melpa.org, MELPA} provided you've added it to the
-list of @ref{Packages,package archives,,emacs,} to fetch from, you can install it using @samp{M-x
-package-install darkman RET}.
+This package is available from @uref{https://melpa.org, MELPA} provided you've added that to the
+list of @ref{Package Installation,package archives,,emacs,} to fetch from, install it by evaluating:
+
+@lisp
+(package-install 'darkman)
+@end lisp
 
 For a manual installation, begin by cloning the repository:
 
@@ -161,7 +164,13 @@ you can prevent this from happening by activating the mode @strong{only} when
 the session has been fully initialized:
 
 @lisp
-(when (daemonp) (add-hook 'server-after-make-frame-hook #'darkman-mode))
+(when (daemonp)
+  (add-hook 'server-after-make-frame-hook #'darkman-mode)
+  (advice-add 'darkman-mode
+              :after
+              (lambda ()
+                (remove-hook 'server-after-make-frame-hook
+                             #'darkman-mode))))
 @end lisp
 
 @node Disabling existing themes
