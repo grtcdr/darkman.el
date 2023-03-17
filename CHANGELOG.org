@@ -6,6 +6,21 @@ This document tracks the most important changes of this package
 throughout time (in descending chronological order) and in between
 releases.
 
+* 1.0.1
+
+- Go back to using signals ([[pull:14][#14]])
+
+  [[pull:11][#11]] introduced a change that unintentionally misused a facility from
+  the D-Bus protocol to catch specific method calls (but is reserved
+  for debugging D-Bus services) emitted by Darkman; this was later
+  caught by [[user:aerz][Agustín Cisneros]] in [[pull:13][#13]].
+
+- Discard unnecessary call to ~remove-hook~ when the mode is enabled
+- Site-specific configuration files are now loaded via ~load-file~
+  instead of ~require~
+- [[user:tarsius][Jonas Bernoulli]]: Add =.nosearch= file in =site= directory to avoid
+  MELPA from indexing the directory
+
 * 1.0.0
 
 The changes in this tag were made following our [[https://github.com/melpa/melpa/pull/8423][submission for inclusion into MELPA]].
