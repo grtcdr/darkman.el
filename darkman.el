@@ -5,7 +5,7 @@
 ;; Author: Aziz Ben Ali <tahaaziz.benali@esprit.tn>
 ;; Maintainer: Aziz Ben Ali <tahaaziz.benali@esprit.tn>
 ;; Homepage: https://grtcdr.tn/darkman.el/
-;; Version: 1.0.0
+;; Version: 1.0.1
 ;; Package-Requires: ((emacs "28.1"))
 ;; Keywords: convenience
 
