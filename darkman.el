@@ -59,6 +59,7 @@ symbol representing the name of the theme."
 (defvar darkman--dbus-path "/nl/whynothugo/darkman")
 (defvar darkman--dbus-interface darkman--dbus-service)
 (defvar darkman--dbus-signal nil)
+(defvar darkman--theme nil)
 
 ;;;###autoload
 (defun darkman-current-mode (&optional message)
@@ -107,14 +108,25 @@ MODE can be ‘light’ or ‘dark’."
 	((string= mode "light") (plist-get darkman-themes :light))
 	(t (darkman--invalid-mode-error mode))))
 
+(defun darkman--lookup-mode (theme)
+  "Return the mode corresponding to a THEME."
+  (cond ((string= theme (plist-get darkman-themes :dark)) "dark")
+        ((string= theme (plist-get darkman-themes :light)) "light")))
+
+(defun darkman--load-theme (theme)
+  "Perform all operations required to load a THEME."
+  (load-theme theme)
+  (setq darkman--theme theme))
+
 (defun darkman--signal-handler (mode)
   "Callback function for handling a change in mode.
 MODE is the new mode."
-  (let ((theme (darkman--lookup-theme mode)))
-    (unless darkman-switch-themes-silently
-      (message "Darkman switched to %s mode, switching to %s theme."
-	       mode theme))
-    (load-theme theme)))
+  (when (not (string= mode (darkman--lookup-mode darkman--theme)))
+    (let ((theme (darkman--lookup-theme mode)))
+      (unless darkman-switch-themes-silently
+        (message "Darkman switched to %s mode, switching to %s theme."
+	         mode theme))
+      (darkman--load-theme theme))))
 
 (defun darkman--check-dbus-service ()
   "Return non-nil if the Darkman service is available."
@@ -139,7 +151,7 @@ MODE is the new mode."
 	       darkman--dbus-interface
 	       "ModeChanged"
 	       #'darkman--signal-handler))
-	(load-theme (darkman--lookup-theme (darkman-current-mode))))
+	(darkman--load-theme (darkman--lookup-theme (darkman-current-mode))))
     (dbus-unregister-object darkman--dbus-signal)
     (setq darkman--dbus-signal nil)))
 
