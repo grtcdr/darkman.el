@@ -46,8 +46,8 @@ The two properties, ‘:light’ and ‘:dark’, expect as a value a
 symbol representing the name of the theme."
   :type `(plist :key-type (choice (const :tag "Light theme" :light)
 				  (const :tag "Dark theme" :dark))
-	  :value-type (choice ,@(mapcar (lambda (theme) (list 'const theme))
-					(custom-available-themes))))
+		:value-type (choice ,@(mapcar (lambda (theme) (list 'const theme))
+					      (custom-available-themes))))
   :package-version '(darkman . "0.1.0"))
 
 (defcustom darkman-switch-themes-silently t
@@ -66,11 +66,12 @@ symbol representing the name of the theme."
   "Return the mode of the Darkman service.
 When MESSAGE is non-nil, print the current mode to the echo area instead."
   (interactive (list t))
-  (let ((mode (dbus-get-property :session
-		     darkman--dbus-service
-		     darkman--dbus-path
-		     darkman--dbus-interface
-		     "Mode")))
+  (let ((mode (dbus-get-property
+	       :session
+	       darkman--dbus-service
+	       darkman--dbus-path
+	       darkman--dbus-interface
+	       "Mode")))
     (if message
 	(message "Mode is currently set to %s." mode)
       mode)))
