@@ -8,8 +8,8 @@ releases.
 
 * 1.0.2
 
-- Keep track of the active theme as a workaround to ignoring
-  unwanted/duplicate signals ([[pull:16][#16]])
+- [[user:aerz][Agustín Cisneros]]: Keep track of the active theme as a workaround to
+  ignoring unwanted/duplicate signals ([[pull:16][#16]])
 
 * 1.0.1
 
