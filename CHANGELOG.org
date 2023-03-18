@@ -6,6 +6,11 @@ This document tracks the most important changes of this package
 throughout time (in descending chronological order) and in between
 releases.
 
+* 1.0.2
+
+- Keep track of the active theme as a workaround to ignoring
+  unwanted/duplicate signals ([[pull:16][#16]])
+
 * 1.0.1
 
 - Go back to using signals ([[pull:14][#14]])
