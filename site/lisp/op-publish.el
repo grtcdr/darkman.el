@@ -39,7 +39,6 @@
       org-latex-src-block-backend 'engraved
       org-html-preamble nil
       org-html-postamble nil
-      org-html-htmlize-output-type nil
       org-html-head-include-default-style nil
       org-html-head-include-scripts nil
       org-html-htmlize-output-type 'css)
