@@ -106,8 +106,7 @@ MODE can be ‘light’ or ‘dark’."
 (defun darkman--lookup-theme (mode)
   "Return a theme from ‘darkman-themes’ corresponding to MODE."
   (cond ((string= mode "dark") (plist-get darkman-themes :dark))
-	((string= mode "light") (plist-get darkman-themes :light))
-	(t (darkman--invalid-mode-error mode))))
+	((string= mode "light") (plist-get darkman-themes :light))))
 
 (defun darkman--lookup-mode (theme)
   "Return the mode corresponding to THEME."
