@@ -104,18 +104,18 @@ MODE can be ‘light’ or ‘dark’."
   (error "%s D-Bus service not available" darkman--dbus-service))
 
 (defun darkman--lookup-theme (mode)
-  "Return a theme from ‘darkman-themes’ that corresponds to string MODE."
+  "Return a theme from ‘darkman-themes’ corresponding to MODE."
   (cond ((string= mode "dark") (plist-get darkman-themes :dark))
 	((string= mode "light") (plist-get darkman-themes :light))
 	(t (darkman--invalid-mode-error mode))))
 
 (defun darkman--lookup-mode (theme)
-  "Return the mode corresponding to a THEME."
+  "Return the mode corresponding to THEME."
   (cond ((string= theme (plist-get darkman-themes :dark)) "dark")
         ((string= theme (plist-get darkman-themes :light)) "light")))
 
 (defun darkman--load-theme (theme)
-  "Perform all operations required to load a THEME."
+  "Load and set ‘darkman--theme’ to THEME."
   (load-theme theme)
   (setq darkman--theme theme))
 
