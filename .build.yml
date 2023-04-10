@@ -8,7 +8,9 @@ environment:
   site: grtcdr.srht.site
 tasks:
   - build: |
-      cd site && make
+      cd darkman.el
+      cd site
+      make
       cd public && tar -czf /home/build/html.tar.gz .
   - upload: |
       tar -ztvf html.tar.gz
