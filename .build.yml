@@ -1,0 +1,15 @@
+image: archlinux
+packages:
+  - emacs-nox
+oauth: pages.sr.ht/PAGES:RW
+sources:
+  - https://git.sr.ht/~grtcdr/darkman.el
+environment:
+  site: grtcdr.srht.site
+tasks:
+  - build: |
+      cd site && make
+      cd public && tar -czf /home/build/html.tar.gz .
+  - upload: |
+      tar -ztvf html.tar.gz
+      acurl --fail-with-body https://pages.sr.ht/publish/$site -Fcontent=@html.tar.gz
