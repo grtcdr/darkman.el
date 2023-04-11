@@ -1,4 +1,4 @@
-;;; op-template.el  -*- lexical-binding:t -*-
+;;; +template.el  -*- lexical-binding:t -*-
 
 ;; Copyright (C) 2023 Aziz Ben Ali
 
@@ -23,7 +23,7 @@
 
 ;;; Commentary:
 
-;; op-template.el provides the HTML templates of http://grtcdr.tn/darkman.el.
+;; +template.el provides the HTML templates of http://grtcdr.tn/darkman.el.
 
 ;;; Code:
 
@@ -31,13 +31,13 @@
 
 (defalias 'sxml #'shr-dom-to-xml)
 
-(defun op-template-stylesheet (href)
+(defun +template-stylesheet (href)
   "Format HREF as an HTML stylesheet."
   (sxml
    `(link ((rel . "stylesheet")
 	   (href . ,href)))))
 
-(defvar op-template-navbar
+(defvar +template-navbar
   (sxml
    '(nav nil
 	 (ul nil
@@ -55,9 +55,9 @@
 		    "Development")))))
   "Define an XML template to be used as a preamble among publishing projects.")
 
-(defvar op-template-metadata
+(defvar +template-metadata
   (concat
-   (op-template-stylesheet "https://grtcdr.tn/css/common.css")
+   (+template-stylesheet "https://grtcdr.tn/css/common.css")
    (sxml '(link ((rel . "icon")
 		      (type . "image/x-icon")
 		      (href . "https://grtcdr.tn/assets/favicon.ico")))))

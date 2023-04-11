@@ -1,4 +1,4 @@
-;;; op-publish.el  -*- lexical-binding: t; -*-
+;;; +publish.el  -*- lexical-binding: t; -*-
 
 ;; Copyright (C) 2023 Aziz Ben Ali
 
@@ -23,15 +23,15 @@
 
 ;;; Commentary:
 
-;; op-publish.el defines the specification of https://grtcdr.tn/darkman.el
+;; +publish.el defines the specification of https://grtcdr.tn/darkman.el
 ;; and should be used in conjunction with a build system.
 
 ;;; Code:
 
 (require 'ox-publish)
 
-(load-file "lisp/op-template.el")
-(load-file "lisp/op-package.el")
+(load-file "lisp/+template.el")
+(load-file "lisp/+package.el")
 
 (setq user-full-name "Aziz Ben Ali"
       org-publish-timestamp-directory ".cache/"
@@ -43,7 +43,7 @@
       org-html-head-include-scripts nil
       org-html-htmlize-output-type 'css)
 
-(defun op-publish-manual-function (plist filename pub-dir)
+(defun +publish-manual (plist filename pub-dir)
   "Call the publishing functions used by the manual."
   (org-latex-publish-to-latex plist filename pub-dir)
   (org-html-publish-to-html plist filename pub-dir))
@@ -57,19 +57,19 @@
 	     :publishing-function 'org-html-publish-to-html
 	     :with-toc nil
 	     :section-numbers nil
-	     :html-head op-template-metadata
-	     :html-preamble op-template-navbar)
+	     :html-head +template-metadata
+	     :html-preamble +template-navbar)
        (list "manual"
 	     :base-extension "org"
 	     :base-directory "../doc"
 	     :publishing-directory "public"
-	     :publishing-function 'op-publish-manual-function
+	     :publishing-function 'publish-manual
 	     :include '("darkman.org")
 	     :exclude ".*"
 	     :with-author t
 	     :with-date nil
-	     :html-head op-template-metadata
-	     :html-preamble op-template-navbar)
+	     :html-head +template-metadata
+	     :html-preamble +template-navbar)
        (list "meta"
 	     :base-extension "org"
 	     :base-directory ".."
@@ -79,7 +79,7 @@
 	     :exclude ".*"
 	     :with-toc nil
 	     :section-numbers nil
-	     :html-head op-template-metadata
-	     :html-preamble op-template-navbar)
+	     :html-head +template-metadata
+	     :html-preamble +template-navbar)
        (list "all"
 	     :components '("root" "meta" "manual"))))

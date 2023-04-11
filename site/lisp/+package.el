@@ -1,4 +1,4 @@
-;;; op-package.el  -*- lexical-binding:t -*-
+;;; +package.el  -*- lexical-binding:t -*-
 
 ;; Copyright (C) 2023 Aziz Ben Ali
 
@@ -23,7 +23,7 @@
 
 ;;; Commentary:
 
-;; op-package.el provides helper functions to handle the dependencies of
+;; +package.el provides helper functions to handle the dependencies of
 ;; https://grtcdr.tn/darkman.el.
 
 ;;; Code:
@@ -32,17 +32,17 @@
 
 (add-to-list 'package-archives '("melpa" . "https://melpa.org/packages/"))
 
-(defun op-package-initialize ()
+(defun +package-initialize ()
   "Initialize the package manager and its archives."
   (package-initialize)
   (unless package-archive-contents
     (package-refresh-contents)))
 
-(defun op-package-install (packages)
+(defun +package-install (packages)
   "Install the list of PACKAGES."
-  (op-package-initialize)
+  (+package-initialize)
   (dolist (pkg packages)
     (unless (package-installed-p pkg)
       (package-install pkg))))
 
-(op-package-install '(htmlize engrave-faces))
+(+package-install '(htmlize engrave-faces))
