@@ -1,6 +1,7 @@
 image: archlinux
 packages:
   - emacs-nox
+  - texlive-full
 oauth: pages.sr.ht/PAGES:RW
 sources:
   - https://git.sr.ht/~grtcdr/darkman.el
