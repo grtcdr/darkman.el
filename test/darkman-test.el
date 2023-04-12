@@ -39,4 +39,4 @@
   (let ((darkman-themes '(:light tango :dark tango-dark)))
     (should (equal (darkman--lookup-theme "dark") 'tango-dark))
     (should (equal (darkman--lookup-theme "light") 'tango))
-    (should-error (darkman--lookup-theme "dim"))))
+    (should (equal (darkman--lookup-theme "dim") nil))))
