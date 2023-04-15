@@ -1,11 +1,8 @@
 image: alpine/edge
 packages:
   - emacs-nox
-oauth: pages.sr.ht/PAGES:RW
 sources:
   - https://git.sr.ht/~grtcdr/darkman.el
-environment:
-  site: grtcdr.srht.site/darkman.el
 tasks:
   - test: |
       cd darkman.el
