@@ -1,12 +1,12 @@
 
 # Table of Contents
 
-1.  [Installation](#orgccc049a)
-2.  [Contributors](#org4a424dc)
-3.  [Citing](#orga4ec763)
+1.  [Installation](#org40261e3)
+2.  [Contributors](#org8ad1ed6)
+3.  [Citing](#org3862216)
 
-This package [which has recently migrated to SourceHut](https://git.sr.ht/~grtcdr/darkman.el) provides seamless
-integration between [Darkman](https://darkman.whynothugo.nl) and [Emacs](https://gnu.org/software/emacs) using the [D-Bus](https://www.freedesktop.org/wiki/Software/dbus/) protocol.
+This package provides seamless integration between [Darkman](https://darkman.whynothugo.nl) and [Emacs](https://gnu.org/software/emacs)
+using the [D-Bus](https://www.freedesktop.org/wiki/Software/dbus/) protocol.
 
 Documentation is available in a number of formats:
 
@@ -14,13 +14,18 @@ Documentation is available in a number of formats:
 -   [PDF](https://grtcdr.tn/darkman.el/darkman.pdf)
 -   Texinfo
 
+If you wish to contribute a patch or have any inquiries, send an email
+to [~grtcdr/pub@lists.sr.ht](mailto:~grtcdr/pub@lists.sr.ht). If you encounter any issues, file them in
+the project's [ticket tracker](https://todo.sr.ht/~grtcdr/darkman.el).
 
-<a id="orgccc049a"></a>
+
+<a id="org40261e3"></a>
 
 # Installation
 
 This package is available from [MELPA](https://melpa.org) provided you've added that to the
-list of [package archives](emacs#Package Installation) to fetch from, install it by evaluating:
+list of package archives to fetch from, install it by evaluating the
+following:
 
     (package-install 'darkman)
 
@@ -37,9 +42,11 @@ Finally, require the package like so:
     (require 'darkman)
 
 
-<a id="org4a424dc"></a>
+<a id="org8ad1ed6"></a>
 
 # Contributors
+
+> Want to contribute to the package? Pick something from the [to-do list](https://grtcdr.tn/darkman.el/TODO.html).
 
 -   Agustín Cisneros
 -   Aleksei Fedotov
@@ -47,10 +54,8 @@ Finally, require the package like so:
 -   Jonas Bernoulli
 -   Nicolas Vollmer
 
-> Want to contribute to the package? Pick something from the [to-do list](https://grtcdr.tn/darkman.el/TODO.html).
 
-
-<a id="orga4ec763"></a>
+<a id="org3862216"></a>
 
 # Citing
 
