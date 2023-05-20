@@ -1,4 +1,4 @@
-emacs = emacs --batch --eval "(add-to-list 'load-path default-directory)"
+emacs = emacs --batch --directory=.
 
 test: FORCE
 	$(emacs) -l test/darkman-test.el -f ert-run-tests-batch-and-exit
