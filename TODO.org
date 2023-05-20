@@ -14,7 +14,9 @@
 
 * TODO Increase test coverage
 This should help us catch the nasty bugs, though it'll be a challenge
-to do it correctly given most of this package is state-dependent.
+to do it correctly given most of this package is state-dependent.  The
+groundwork for test coverage has been layed with the addition of the
+new build manifest.
 * DONE Write up a Texinfo manual as an Org document
 We could use [[https://github.com/grtcdr/liaison/blob/main/doc/manual/liaison.org][this manual]] as a template.
 * DONE =load-theme= is called twice when =ModeChanged= is signaled     :help:
