@@ -23,7 +23,6 @@ Documentation License".
 @finalout
 @titlepage
 @title Darkman
-@author Aziz Ben Ali
 @page
 @vskip 0pt plus 1filll
 @insertcopying
@@ -37,7 +36,7 @@ Documentation License".
 
 
 
-This is the manual for @samp{darkman.el} version 1.0.2.
+This is the manual for @samp{darkman.el} version 1.0.3.
 
 @itemize
 @item
@@ -88,7 +87,7 @@ following:
 For a manual installation, begin by cloning the repository:
 
 @example
-git clone --branch 1.0.2 https://github.com/grtcdr/darkman.el darkman
+git clone --branch 1.0.3 https://github.com/grtcdr/darkman.el darkman
 @end example
 
 Next, add the package to your @uref{https://www.gnu.org/software/emacs/manual/html_node/emacs/Lisp-Libraries.html, load path}:

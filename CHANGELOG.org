@@ -13,7 +13,7 @@ releases.
 - Remove default condition from ~darkman--lookup-theme~ function
 - Use consistent docstrings
 
-* 1.0.2
+* 1.0.3
 
 - [[user:aerz][Agustín Cisneros]]: Keep track of the active theme as a workaround to
   ignoring unwanted/duplicate signals ([[pull:16][#16]])

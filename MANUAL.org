@@ -1,6 +1,6 @@
 #+title:                Darkman
 #+language:             en
-#+macro:                version 1.0.2
+#+macro:                version 1.0.3
 #+texinfo_dir_desc:     Seamless integration between Darkman and Emacs using the D-Bus protocol.
 #+texinfo_dir_title:    Darkman: (darkman)
 #+latex_class:          article

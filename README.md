@@ -18,7 +18,7 @@ following:
 
 For a manual installation, begin by cloning the repository:
 
-    git clone --branch 1.0.2 https://github.com/grtcdr/darkman.el darkman
+    git clone --branch 1.0.3 https://github.com/grtcdr/darkman.el darkman
 
 Next, add the package to your [load path](https://www.gnu.org/software/emacs/manual/html_node/emacs/Lisp-Libraries.html):
 
