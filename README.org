@@ -9,10 +9,6 @@ Documentation is available in a number of formats:
 - [[https://grtcdr.tn/darkman.el/darkman.pdf][PDF]]
 - Texinfo
 
-If you wish to contribute a patch or have any inquiries, send an email
-to [[mailto:~grtcdr/pub@lists.sr.ht][~grtcdr/pub@lists.sr.ht]]. If you encounter any issues, file them in
-the project's [[https://todo.sr.ht/~grtcdr/darkman.el][ticket tracker]].
-
 * Installation
 
 This package is available from [[https://melpa.org][MELPA]] provided you've added that to the
@@ -40,6 +36,13 @@ Finally, require the package like so:
 #+begin_src emacs-lisp
 (require 'darkman)
 #+end_src
+
+* Support
+
+If you wish to contribute a patch, inquire about something or share
+your feedback, you are welcome to send an email to
+[[mailto:~grtcdr/pub@lists.sr.ht][~grtcdr/pub@lists.sr.ht]]. If you encounter issues of any kind, please
+file them in the project's [[https://todo.sr.ht/~grtcdr/darkman.el][ticket tracker]].
 
 * Contributors
 

@@ -7,10 +7,6 @@ Documentation is available in a number of formats:
 -   [PDF](https://grtcdr.tn/darkman.el/darkman.pdf)
 -   Texinfo
 
-If you wish to contribute a patch or have any inquiries, send an email
-to [~grtcdr/pub@lists.sr.ht](mailto:~grtcdr/pub@lists.sr.ht). If you encounter any issues, file them in
-the project's [ticket tracker](https://todo.sr.ht/~grtcdr/darkman.el).
-
 
 # Installation
 
@@ -31,6 +27,14 @@ Next, add the package to your [load path](https://www.gnu.org/software/emacs/man
 Finally, require the package like so:
 
     (require 'darkman)
+
+
+# Support
+
+If you wish to contribute a patch, inquire about something or share
+your feedback, you are welcome to send an email to
+[~grtcdr/pub@lists.sr.ht](mailto:~grtcdr/pub@lists.sr.ht). If you encounter issues of any kind, please
+file them in the project's [ticket tracker](https://todo.sr.ht/~grtcdr/darkman.el).
 
 
 # Contributors
