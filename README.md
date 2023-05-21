@@ -1,10 +1,3 @@
-
-# Table of Contents
-
-1.  [Installation](#org40261e3)
-2.  [Contributors](#org8ad1ed6)
-3.  [Citing](#org3862216)
-
 This package provides seamless integration between [Darkman](https://darkman.whynothugo.nl) and [Emacs](https://gnu.org/software/emacs)
 using the [D-Bus](https://www.freedesktop.org/wiki/Software/dbus/) protocol.
 
@@ -18,8 +11,6 @@ If you wish to contribute a patch or have any inquiries, send an email
 to [~grtcdr/pub@lists.sr.ht](mailto:~grtcdr/pub@lists.sr.ht). If you encounter any issues, file them in
 the project's [ticket tracker](https://todo.sr.ht/~grtcdr/darkman.el).
 
-
-<a id="org40261e3"></a>
 
 # Installation
 
@@ -42,8 +33,6 @@ Finally, require the package like so:
     (require 'darkman)
 
 
-<a id="org8ad1ed6"></a>
-
 # Contributors
 
 > Want to contribute to the package? Pick something from the [to-do list](https://grtcdr.tn/darkman.el/TODO.html).
@@ -54,8 +43,6 @@ Finally, require the package like so:
 -   Jonas Bernoulli
 -   Nicolas Vollmer
 
-
-<a id="org3862216"></a>
 
 # Citing
 
