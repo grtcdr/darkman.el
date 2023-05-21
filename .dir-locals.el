@@ -1,1 +1,1 @@
-((nil . ((compile-command . "make --keep-going --directory=site"))))
+((nil . ((compile-command . "make test"))))
