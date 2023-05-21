@@ -3,9 +3,9 @@ using the [D-Bus](https://www.freedesktop.org/wiki/Software/dbus/) protocol.
 
 Documentation is available in a number of formats:
 
--   [HTML](https://grtcdr.tn/darkman.el/darkman.html)
--   [PDF](https://grtcdr.tn/darkman.el/darkman.pdf)
--   Texinfo
+-   [HTML](https://grtcdr.tn/darkman.el/MANUAL.html)
+-   [PDF](https://grtcdr.tn/darkman.el/MANUAL.pdf)
+-   [Texinfo](MANUAL.texi)
 
 
 # Installation
