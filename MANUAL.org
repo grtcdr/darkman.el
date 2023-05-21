@@ -1,9 +1,9 @@
-#+title:                darkman.el
+#+title:                Darkman
 #+language:             en
 #+macro:                version 1.0.2
 #+texinfo_dir_desc:     Seamless integration between Darkman and Emacs using the D-Bus protocol.
+#+texinfo_dir_title:    Darkman: (darkman)
 #+latex_class:          article
-#+latex_compiler:       lualatex
 #+latex_class_options:  [12pt, a4paper]
 #+latex_header_extra:   \usepackage{parskip}
 #+latex_header_extra:   \usepackage[utf8]{inputenc}
@@ -16,7 +16,7 @@
 This is the manual for =darkman.el= version {{{version}}}.
 
 - Homepage: [[https://grtcdr.tn/darkman.el]]
-- Repository: [[https://github.com/grtcdr/darkman.el]]
+- Repository: [[https://git.sr.ht/~grtcdr/darkman.el]]
 
 * GNU Free Documentation License
 :PROPERTIES:
@@ -36,7 +36,7 @@ Documentation License".
 
 * Installation
 
-#+include: "../README.org::*Installation" :only-contents t
+#+include: "README.org::*Installation" :only-contents t
 
 * Usage
 
