@@ -6,6 +6,13 @@ This document tracks the most important changes of this package
 throughout time (in descending chronological order) and in between
 releases.
 
+* 1.0.3
+
+- Restructure the project and apply new conventions
+- Lay the groundwork for unit testing using the new pipeline
+- Remove default condition from ~darkman--lookup-theme~ function
+- Use consistent docstrings
+
 * 1.0.2
 
 - [[user:aerz][Agustín Cisneros]]: Keep track of the active theme as a workaround to
