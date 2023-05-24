@@ -29,14 +29,6 @@ Finally, require the package like so:
     (require 'darkman)
 
 
-# Support
-
-If you wish to contribute a patch, inquire about something or share
-your feedback, you are welcome to send an email to
-[~grtcdr/pub@lists.sr.ht](mailto:~grtcdr/pub@lists.sr.ht). If you encounter issues of any kind, please
-file them in the project's [ticket tracker](https://todo.sr.ht/~grtcdr/darkman.el).
-
-
 # Contributors
 
 > Want to contribute to the package? Pick something from the [to-do list](https://grtcdr.tn/darkman.el/TODO.html).
@@ -46,6 +38,14 @@ file them in the project's [ticket tracker](https://todo.sr.ht/~grtcdr/darkman.e
 -   Chris Rayner
 -   Jonas Bernoulli
 -   Nicolas Vollmer
+
+
+# Support
+
+If you wish to contribute a patch, inquire about something or share
+your feedback, you are welcome to send an email to
+[~grtcdr/pub@lists.sr.ht](mailto:~grtcdr/pub@lists.sr.ht). If you encounter issues of any kind, please
+file them in the project's [ticket tracker](https://todo.sr.ht/~grtcdr/darkman.el).
 
 
 # Citing
