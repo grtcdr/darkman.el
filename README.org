@@ -5,8 +5,8 @@ This package provides seamless integration between [[https://darkman.whynothugo.
 using the [[https://www.freedesktop.org/wiki/Software/dbus/][D-Bus]] protocol.
 
 Documentation is available in a number of formats:
-- [[https://grtcdr.tn/darkman.el/MANUAL.html][HTML]]
-- [[https://grtcdr.tn/darkman.el/MANUAL.pdf][PDF]]
+- [[https://darkman.grtcdr.tn/MANUAL.html][HTML]]
+- [[https://darkman.grtcdr.tn/MANUAL.pdf][PDF]]
 - [[file:MANUAL.texi][Texinfo]]
 
 * Installation

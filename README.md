@@ -3,8 +3,8 @@ using the [D-Bus](https://www.freedesktop.org/wiki/Software/dbus/) protocol.
 
 Documentation is available in a number of formats:
 
--   [HTML](https://grtcdr.tn/darkman.el/MANUAL.html)
--   [PDF](https://grtcdr.tn/darkman.el/MANUAL.pdf)
+-   [HTML](https://darkman.grtcdr.tn/MANUAL.html)
+-   [PDF](https://darkman.grtcdr.tn/MANUAL.pdf)
 -   [Texinfo](MANUAL.texi)
 
 

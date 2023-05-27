@@ -4,7 +4,7 @@
 
 ;; Author: Aziz Ben Ali <tahaaziz.benali@esprit.tn>
 ;; Maintainer: Aziz Ben Ali <tahaaziz.benali@esprit.tn>
-;; Homepage: https://grtcdr.tn/darkman.el
+;; Homepage: https://darkman.grtcdr.tn
 ;; Version: 1.0.3
 ;; Keywords: convenience
 

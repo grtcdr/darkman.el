@@ -2,7 +2,7 @@
 
 This is the manual for `darkman.el` version 1.0.3.
 
--   Homepage: <https://grtcdr.tn/darkman.el>
+-   Homepage: <https://darkman.grtcdr.tn>
 -   Repository: <https://git.sr.ht/~grtcdr/darkman.el>
 
 
