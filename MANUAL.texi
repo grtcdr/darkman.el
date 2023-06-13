@@ -20,6 +20,11 @@ Documentation License".
 @end quotation
 @end copying
 
+@dircategory Emacs
+@direntry
+* Darkman: (darkman).   Seamless integration between Darkman and Emacs using the D-Bus protocol.
+@end direntry
+
 @finalout
 @titlepage
 @title Darkman

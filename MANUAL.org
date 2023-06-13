@@ -3,6 +3,7 @@
 #+macro:                version 1.0.3
 #+texinfo_dir_desc:     Seamless integration between Darkman and Emacs using the D-Bus protocol.
 #+texinfo_dir_title:    Darkman: (darkman)
+#+texinfo_dir_category: Emacs
 #+latex_class:          article
 #+latex_class_options:  [12pt, a4paper]
 #+latex_header_extra:   \usepackage{parskip}
