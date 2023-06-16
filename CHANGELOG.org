@@ -6,6 +6,14 @@ This document tracks the most important changes of this package
 throughout time (in descending chronological order) and in between
 releases.
 
+* 1.1.0
+
+- Remove unnecessary metadata from ~darkman-test.el~ file
+- Define a new function ~darkman-set-theme~
+- Add support links to the manual
+- Specify TEXINFO_DIR_CATEGORY in the manual
+- Point links in documentation to the new domain
+
 * 1.0.3
 
 - Restructure the project and apply new conventions
