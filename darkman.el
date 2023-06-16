@@ -95,6 +95,13 @@ MODE can be ‘light’ or ‘dark’."
     (cond ((string= mode "dark") (darkman-set-mode 'light))
 	  ((string= mode "light") (darkman-set-mode 'dark)))))
 
+;;;###autoload
+(defun darkman-set-theme ()
+  "Set the theme to match that of the current mode."
+  (interactive)
+  (let ((mode (darkman-current-mode)))
+    (darkman--load-theme (darkman--lookup-theme mode))))
+
 (defun darkman--invalid-mode-error (mode)
   "Signal an error about an invalid mode.  MODE is the name of the invalid mode."
   (error "‘%s’ is not a valid mode" mode))
@@ -151,7 +158,7 @@ MODE is the new mode."
 	       darkman--dbus-interface
 	       "ModeChanged"
 	       #'darkman--signal-handler))
-	(darkman--load-theme (darkman--lookup-theme (darkman-current-mode))))
+	(darkman-set-theme))
     (dbus-unregister-object darkman--dbus-signal)
     (setq darkman--dbus-signal nil)))
 
