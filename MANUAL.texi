@@ -48,6 +48,10 @@ This is the manual for @samp{darkman.el} version 1.0.3.
 Homepage: @uref{https://darkman.grtcdr.tn}
 @item
 Repository: @uref{https://git.sr.ht/~grtcdr/darkman.el}
+@item
+Mailing list: @uref{https://lists.sr.ht/~grtcdr/pub}
+@item
+Issue tracker: @uref{https://todo.sr.ht/~grtcdr/darkman.el}
 @end itemize
 @end ifnottex
 
