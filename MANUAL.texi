@@ -41,7 +41,7 @@ Documentation License".
 
 
 
-This is the manual for @samp{darkman.el} version 1.0.3.
+This is the manual for @samp{darkman.el} version 1.1.0.
 
 @itemize
 @item
