@@ -4,6 +4,8 @@ This is the manual for `darkman.el` version 1.0.3.
 
 -   Homepage: <https://darkman.grtcdr.tn>
 -   Repository: <https://git.sr.ht/~grtcdr/darkman.el>
+-   Mailing list: <https://lists.sr.ht/~grtcdr/pub>
+-   Issue tracker: <https://todo.sr.ht/~grtcdr/darkman.el>
 
 
 # GNU Free Documentation License
