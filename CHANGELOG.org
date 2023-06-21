@@ -11,7 +11,7 @@ releases.
 - Remove unnecessary metadata from ~darkman-test.el~ file
 - Define a new function ~darkman-set-theme~
 - Add support links to the manual
-- Specify TEXINFO_DIR_CATEGORY in the manual
+- Specify ~TEXINFO_DIR_CATEGORY~ in the manual
 - Point links in documentation to the new domain
 
 * 1.0.3
@@ -51,7 +51,7 @@ The changes in this tag were made following our [[https://github.com/melpa/melpa
 - [[user:progfolio][Nicolas Vollmer]]: Combine ~when~ and ~let*~ forms into ~when-let*~ in
   ~darkman--event-handler~
 - [[user:progfolio][Nicolas Vollmer]]: Do not make hooks on behalf of the user
-  =server-after-make-frame-hook= as it may be considered impolite
+  ~server-after-make-frame-hook~ as it may be considered impolite
 
 * 0.7.0
 
@@ -65,7 +65,7 @@ The changes in this tag were made following our [[https://github.com/melpa/melpa
 
 * 0.5.0
 
-+ [[user:aerz][Agustín Cisneros]]: Fix a bug that caused =load-theme= to be called
++ [[user:aerz][Agustín Cisneros]]: Fix a bug that caused ~load-theme~ to be called
   twice when =ModeChanged= is signaled ([[pull:11][#11]])
 + Write a multi-format manual replacing the single-format handbook
 + Simplify the README file
@@ -76,15 +76,15 @@ The changes in this tag were made following our [[https://github.com/melpa/melpa
 
 + [[user:aerz][Agustín Cisneros]]: Defer loading untrusted themes until the daemon is
   fully initialized
-+ Fix opposing behavior of =darkman-switch-themes-silently=
++ Fix opposing behavior of ~darkman-switch-themes-silently~
 + General improvements and more helpful additions to the documentation
   and the website which now supports syntax highlighting
 
 * 0.3.0
 
 + Refactor website structure
-+ Rename =darkman--get-assoc-theme= function to =darkman--lookup-theme=
-+ Add a new variable called =darkman-switch-themes-silently= which
++ Rename ~darkman--get-assoc-theme~ function to ~darkman--lookup-theme~
++ Add a new variable called ~darkman-switch-themes-silently~ which
   determines whether an entry is logged to the =*Messages*= buffer
   when the mode is toggled
 + General improvements to documentation
@@ -93,13 +93,13 @@ The changes in this tag were made following our [[https://github.com/melpa/melpa
 
 + Conform to [[info:elisp#Coding Conventions][Emacs Lisp code conventions]]
 + Move to an ISC license
-+ [[user:lexa][Aleksei Fedotov]]: Switch to the appropriate theme when =darkman-mode=
++ [[user:lexa][Aleksei Fedotov]]: Switch to the appropriate theme when ~darkman-mode~
   is enabled ([[pull:5][#5]])
-+ [[user:lexa][Aleksei Fedotov]]: Implement choosing the values of =darkman-themes=
++ [[user:lexa][Aleksei Fedotov]]: Implement choosing the values of ~darkman-themes~
   from the =customize= menu ([[pull:4][#4]])
 + Define a =customize= group
 + [[user:lexa][Aleksei Fedotov]]: Lazy-loaded functions ([[pull:1][#1]])
-+ Avoid loading themes twice when =darkman-toggle= is called
++ Avoid loading themes twice when ~darkman-toggle~ is called
 + Create a presentation website
 
 * 0.1.0
