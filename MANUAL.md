@@ -81,7 +81,7 @@ respectively.
 certain [security features](https://www.gnu.org/software/emacs/manual/html_node/emacs/Custom-Themes.html) that you may regard as inconvenient, but
 they're absolutely necessary to preserve the security of your
 system. We have decided to work hand in hand with these pre-existing
-safety mechanisms in favor of implementing our own.
+safety mechanisms in lieu of implementing our own.
 
 Problems may arise <sup><a id="fnr.1" class="footref" href="#fn.1" role="doc-backlink">1</a></sup> if this package is loaded in a [server setting](emacs#Emacs Server) and
 too early during the initialization phase, i.e. before `custom-file`,

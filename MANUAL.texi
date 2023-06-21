@@ -165,7 +165,7 @@ respectively.
 certain @uref{https://www.gnu.org/software/emacs/manual/html_node/emacs/Custom-Themes.html, security features} that you may regard as inconvenient, but
 they're absolutely necessary to preserve the security of your
 system. We have decided to work hand in hand with these pre-existing
-safety mechanisms in favor of implementing our own.
+safety mechanisms in lieu of implementing our own.
 
 Problems may arise @footnote{This is @uref{https://github.com/grtcdr/darkman.el/pull/7#issuecomment-1422666665, known to happen} in Doom Emacs.} if this package is loaded in a @ref{Emacs Server,server setting,,emacs,} and
 too early during the initialization phase, i.e. before @samp{custom-file},
