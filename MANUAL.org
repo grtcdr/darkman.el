@@ -1,9 +1,10 @@
 #+title:                Darkman
 #+language:             en
 #+macro:                version 1.1.0
-#+texinfo_dir_desc:     Seamless integration between Darkman and Emacs using the D-Bus protocol.
+#+texinfo_dir_desc:     Seamless integration with Darkman using the D-Bus protocol.
 #+texinfo_dir_title:    Darkman: (darkman)
 #+texinfo_dir_category: Emacs
+#+texinfo_filename:     darkman.info
 #+latex_class:          article
 #+latex_class_options:  [12pt, a4paper]
 #+latex_header_extra:   \usepackage{parskip}
@@ -44,8 +45,8 @@ Documentation License".
 * Usage
 
 In your =init.el= file, define which theme is associated with which
-mode. By default, /modus-themes/ will be used, but we'll choose the
-/tango/ variants in this example.
+mode. By default, =modus-themes= will be used, but we'll choose the
+=tango= variants in this example.
 
 #+begin_src emacs-lisp
 (setq darkman-themes '(:light tango :dark tango-dark))
@@ -54,7 +55,7 @@ mode. By default, /modus-themes/ will be used, but we'll choose the
 You can also use =M-x customize-group darkman RET= to customize the
 variable.
 
-=darkman.el= can listen for any signals to change the theme without
+~darkman~ can listen for any signals to change the theme without
 requiring you to manually create any scripts. You can enable this
 behavior by enabling the minor mode:
 
@@ -62,15 +63,15 @@ behavior by enabling the minor mode:
 (darkman-mode)
 #+end_src
 
-You should not call =load-theme= in your configuration as
-=darkman-mode= when enabled will do that for you, even on startup.
+You should not call ~load-theme~ in your configuration as
+~darkman-mode~ when enabled will do that for you, even on startup.
 
 ** Other functions
 
 =M-x darkman-toggle= will toggle the mode of the Darkman service from
 within Emacs.
 
-Additionally, you can use the =darkman-get= and =darkman-set=
+Additionally, you can use the ~darkman-get~ and ~darkman-set~
 functions to manually get and set the mode of the service
 respectively.
 
@@ -78,16 +79,16 @@ respectively.
 
 ** Working alongside the built-in safety features
 
-=load-theme= is part of the =custom.el= library and it comes with
-certain [[https://www.gnu.org/software/emacs/manual/html_node/emacs/Custom-Themes.html][security features]] that you may regard as inconvenient, but
-they're absolutely necessary to preserve the security of your
-system. We have decided to work hand in hand with these pre-existing
-safety mechanisms in lieu of implementing our own.
+~load-theme~ is part of the ~custom~ library and it comes with certain
+[[info:emacs#Custom Themes][security features]] that you may regard as inconvenient, but they're
+absolutely necessary to preserve the security of your system. We have
+decided to work hand in hand with these pre-existing safety mechanisms
+in lieu of implementing our own.
 
-Problems may arise [fn:1] if this package is loaded in a [[info:emacs#Emacs Server][server setting]] and
-too early during the initialization phase, i.e. before =custom-file=,
-you can prevent this from happening by activating the mode *only* when
-the session has been fully initialized:
+Problems may arise [fn:1] if this package is loaded in a [[info:emacs#Emacs Server][server
+setting]] and too early during the initialization phase, i.e. before
+~custom-file~, you can prevent this from happening by activating the
+mode *only* when the session has been fully initialized:
 
 #+begin_src emacs-lisp
 (when (daemonp)
@@ -103,8 +104,8 @@ the session has been fully initialized:
 
 Emacs does not by default disable the current theme when another one
 is loaded, and while this behavior might seem unintuitive, we can
-always advise =darkman-set= (and by extension =darkman-toggle=), or
-even =load-theme= if you prefer, to disable any existing themes first.
+always advise ~darkman-set~ (and by extension ~darkman-toggle~), or
+even ~load-theme~ if you prefer, to disable any existing themes first.
 
 #+begin_src elisp
 (defadvice darkman-set (before no-theme-stacking activate)

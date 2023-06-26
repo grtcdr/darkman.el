@@ -1,6 +1,6 @@
 \input texinfo    @c -*- texinfo -*-
 @c %**start of header
-@setfilename MANUAL.info
+@setfilename darkman.info
 @settitle Darkman
 @documentencoding UTF-8
 @documentlanguage en
@@ -22,7 +22,7 @@ Documentation License".
 
 @dircategory Emacs
 @direntry
-* Darkman: (darkman).   Seamless integration between Darkman and Emacs using the D-Bus protocol.
+* Darkman: (darkman).   Seamless integration with Darkman using the D-Bus protocol.
 @end direntry
 
 @finalout
@@ -115,8 +115,8 @@ Finally, require the package like so:
 @chapter Usage
 
 In your @samp{init.el} file, define which theme is associated with which
-mode. By default, @emph{modus-themes} will be used, but we'll choose the
-@emph{tango} variants in this example.
+mode. By default, @samp{modus-themes} will be used, but we'll choose the
+@samp{tango} variants in this example.
 
 @lisp
 (setq darkman-themes '(:light tango :dark tango-dark))
@@ -125,7 +125,7 @@ mode. By default, @emph{modus-themes} will be used, but we'll choose the
 You can also use @samp{M-x customize-group darkman RET} to customize the
 variable.
 
-@samp{darkman.el} can listen for any signals to change the theme without
+@code{darkman} can listen for any signals to change the theme without
 requiring you to manually create any scripts. You can enable this
 behavior by enabling the minor mode:
 
@@ -133,8 +133,8 @@ behavior by enabling the minor mode:
 (darkman-mode)
 @end lisp
 
-You should not call @samp{load-theme} in your configuration as
-@samp{darkman-mode} when enabled will do that for you, even on startup.
+You should not call @code{load-theme} in your configuration as
+@code{darkman-mode} when enabled will do that for you, even on startup.
 
 @menu
 * Other functions::
@@ -146,7 +146,7 @@ You should not call @samp{load-theme} in your configuration as
 @samp{M-x darkman-toggle} will toggle the mode of the Darkman service from
 within Emacs.
 
-Additionally, you can use the @samp{darkman-get} and @samp{darkman-set}
+Additionally, you can use the @code{darkman-get} and @code{darkman-set}
 functions to manually get and set the mode of the service
 respectively.
 
@@ -161,16 +161,16 @@ respectively.
 @node Working alongside the built-in safety features
 @section Working alongside the built-in safety features
 
-@samp{load-theme} is part of the @samp{custom.el} library and it comes with
-certain @uref{https://www.gnu.org/software/emacs/manual/html_node/emacs/Custom-Themes.html, security features} that you may regard as inconvenient, but
-they're absolutely necessary to preserve the security of your
-system. We have decided to work hand in hand with these pre-existing
-safety mechanisms in lieu of implementing our own.
+@code{load-theme} is part of the @code{custom} library and it comes with certain
+@ref{Custom Themes,security features,,emacs,} that you may regard as inconvenient, but they're
+absolutely necessary to preserve the security of your system. We have
+decided to work hand in hand with these pre-existing safety mechanisms
+in lieu of implementing our own.
 
-Problems may arise @footnote{This is @uref{https://github.com/grtcdr/darkman.el/pull/7#issuecomment-1422666665, known to happen} in Doom Emacs.} if this package is loaded in a @ref{Emacs Server,server setting,,emacs,} and
-too early during the initialization phase, i.e. before @samp{custom-file},
-you can prevent this from happening by activating the mode @strong{only} when
-the session has been fully initialized:
+Problems may arise @footnote{This is @uref{https://github.com/grtcdr/darkman.el/pull/7#issuecomment-1422666665, known to happen} in Doom Emacs.} if this package is loaded in a @ref{Emacs Server,server
+setting,,emacs,} and too early during the initialization phase, i.e. before
+@code{custom-file}, you can prevent this from happening by activating the
+mode @strong{only} when the session has been fully initialized:
 
 @lisp
 (when (daemonp)
@@ -187,8 +187,8 @@ the session has been fully initialized:
 
 Emacs does not by default disable the current theme when another one
 is loaded, and while this behavior might seem unintuitive, we can
-always advise @samp{darkman-set} (and by extension @samp{darkman-toggle}), or
-even @samp{load-theme} if you prefer, to disable any existing themes first.
+always advise @code{darkman-set} (and by extension @code{darkman-toggle}), or
+even @code{load-theme} if you prefer, to disable any existing themes first.
 
 @lisp
 (defadvice darkman-set (before no-theme-stacking activate)

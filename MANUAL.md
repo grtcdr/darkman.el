@@ -44,15 +44,15 @@ Finally, require the package like so:
 # Usage
 
 In your `init.el` file, define which theme is associated with which
-mode. By default, *modus-themes* will be used, but we'll choose the
-*tango* variants in this example.
+mode. By default, `modus-themes` will be used, but we'll choose the
+`tango` variants in this example.
 
     (setq darkman-themes '(:light tango :dark tango-dark))
 
 You can also use `M-x customize-group darkman RET` to customize the
 variable.
 
-`darkman.el` can listen for any signals to change the theme without
+`darkman` can listen for any signals to change the theme without
 requiring you to manually create any scripts. You can enable this
 behavior by enabling the minor mode:
 
@@ -77,16 +77,16 @@ respectively.
 
 ## Working alongside the built-in safety features
 
-`load-theme` is part of the `custom.el` library and it comes with
-certain [security features](https://www.gnu.org/software/emacs/manual/html_node/emacs/Custom-Themes.html) that you may regard as inconvenient, but
-they're absolutely necessary to preserve the security of your
-system. We have decided to work hand in hand with these pre-existing
-safety mechanisms in lieu of implementing our own.
+`load-theme` is part of the `custom` library and it comes with certain
+[security features](emacs#Custom Themes) that you may regard as inconvenient, but they're
+absolutely necessary to preserve the security of your system. We have
+decided to work hand in hand with these pre-existing safety mechanisms
+in lieu of implementing our own.
 
-Problems may arise <sup><a id="fnr.1" class="footref" href="#fn.1" role="doc-backlink">1</a></sup> if this package is loaded in a [server setting](emacs#Emacs Server) and
-too early during the initialization phase, i.e. before `custom-file`,
-you can prevent this from happening by activating the mode **only** when
-the session has been fully initialized:
+Problems may arise <sup><a id="fnr.1" class="footref" href="#fn.1" role="doc-backlink">1</a></sup> if this package is loaded in a [server
+setting](emacs#Emacs Server) and too early during the initialization phase, i.e. before
+`custom-file`, you can prevent this from happening by activating the
+mode **only** when the session has been fully initialized:
 
     (when (daemonp)
       (add-hook 'server-after-make-frame-hook #'darkman-mode)
