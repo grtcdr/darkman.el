@@ -53,8 +53,8 @@ Finally, require the package like so:
 If your research involves this project in any way, you may cite it
 like so:
 
-    @misc{ab23darkman,
-      author = {Aziz Ben Ali},
+    @misc{bta23darkman,
+      author = {Benali, T. A.},
        title = {Seamless integration between Darkman and Emacs using the D-Bus protocol},
          url = {https://grtcdr.tn/darkman.el/},
         year = 2023
