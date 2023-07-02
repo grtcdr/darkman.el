@@ -9,6 +9,13 @@ Documentation is available in a number of formats:
 - [[https://darkman.grtcdr.tn/MANUAL.pdf][PDF]]
 - [[file:MANUAL.texi][Texinfo]]
 
+* Support
+
+If you wish to contribute a patch, inquire about something or share
+your feedback, you are welcome to send an email to
+[[mailto:~grtcdr/pub@lists.sr.ht][~grtcdr/pub@lists.sr.ht]]. If you encounter issues of any kind, please
+file them in the project's [[https://todo.sr.ht/~grtcdr/darkman.el][ticket tracker]].
+
 * Installation
 
 This package is available from [[https://melpa.org][MELPA]] provided you've added that to the
@@ -48,13 +55,6 @@ Want to contribute to the package? Pick something from the [[https://grtcdr.tn/d
 - Chris Rayner
 - Jonas Bernoulli
 - Nicolas Vollmer
-
-* Support
-
-If you wish to contribute a patch, inquire about something or share
-your feedback, you are welcome to send an email to
-[[mailto:~grtcdr/pub@lists.sr.ht][~grtcdr/pub@lists.sr.ht]]. If you encounter issues of any kind, please
-file them in the project's [[https://todo.sr.ht/~grtcdr/darkman.el][ticket tracker]].
 
 * Citing
 

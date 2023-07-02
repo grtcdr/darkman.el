@@ -8,6 +8,14 @@ Documentation is available in a number of formats:
 -   [Texinfo](MANUAL.texi)
 
 
+# Support
+
+If you wish to contribute a patch, inquire about something or share
+your feedback, you are welcome to send an email to
+[~grtcdr/pub@lists.sr.ht](mailto:~grtcdr/pub@lists.sr.ht). If you encounter issues of any kind, please
+file them in the project's [ticket tracker](https://todo.sr.ht/~grtcdr/darkman.el).
+
+
 # Installation
 
 This package is available from [MELPA](https://melpa.org) provided you've added that to the
@@ -38,14 +46,6 @@ Finally, require the package like so:
 -   Chris Rayner
 -   Jonas Bernoulli
 -   Nicolas Vollmer
-
-
-# Support
-
-If you wish to contribute a patch, inquire about something or share
-your feedback, you are welcome to send an email to
-[~grtcdr/pub@lists.sr.ht](mailto:~grtcdr/pub@lists.sr.ht). If you encounter issues of any kind, please
-file them in the project's [ticket tracker](https://todo.sr.ht/~grtcdr/darkman.el).
 
 
 # Citing
