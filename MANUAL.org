@@ -90,7 +90,7 @@ setting]] and too early during the initialization phase, i.e. before
 ~custom-file~, you can prevent this from happening by activating the
 mode *only* when the session has been fully initialized:
 
-#+begin_src emacs-lisp
+#+begin_src emacs-lisp :eval no
 (when (daemonp)
   (add-hook 'server-after-make-frame-hook #'darkman-mode)
   (advice-add 'darkman-mode
@@ -120,7 +120,7 @@ even ~load-theme~ if you prefer, to disable any existing themes first.
 Use your service manager to verify whether the service is running,
 here's an example using =systemd=:
 
-#+begin_src sh
+#+begin_src sh :eval no
 systemctl status dbus
 #+end_src
 
@@ -135,7 +135,7 @@ dbus.service - D-Bus System Message Bus
 Use your service manager to verify whether the service is running,
 here's an example using =systemd=:
 
-#+begin_src sh
+#+begin_src sh :eval no
 systemctl status --user darkman
 #+end_src
 
