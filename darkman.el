@@ -1,9 +1,9 @@
 ;;; darkman.el --- Seamless integration with Darkman  -*- lexical-binding: t; -*-
 
-;; Copyright (C) 2023 Aziz Ben Ali
+;; Copyright (C) 2023 Taha Aziz Ben Ali
 
-;; Author: Aziz Ben Ali <tahaaziz.benali@esprit.tn>
-;; Maintainer: Aziz Ben Ali <tahaaziz.benali@esprit.tn>
+;; Author: Taha Aziz Ben Ali <tahaaziz.benali@esprit.tn>
+;; Maintainer: Taha Aziz Ben Ali <tahaaziz.benali@esprit.tn>
 ;; Homepage: https://darkman.grtcdr.tn
 ;; Version: 1.1.0
 ;; Package-Requires: ((emacs "28.1"))
