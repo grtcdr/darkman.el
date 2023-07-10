@@ -1,4 +1,5 @@
 #+title:                Darkman
+#+author:               Taha Aziz Ben Ali
 #+language:             en
 #+macro:                version 1.1.0
 #+texinfo_dir_desc:     Seamless integration with Darkman using the D-Bus protocol.
@@ -27,7 +28,7 @@ This is the manual for =darkman.el= version {{{version}}}.
 :COPYING:  t
 :END:
 
-Copyright (C) 2023 Aziz Ben Ali.
+Copyright (C) 2023 {{{author}}}.
 
 #+begin_quote
 Permission is granted to copy, distribute and/or modify this document

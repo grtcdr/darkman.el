@@ -5,7 +5,7 @@ Documentation is available in a number of formats:
 
 -   [HTML](https://darkman.grtcdr.tn/MANUAL.html)
 -   [PDF](https://darkman.grtcdr.tn/MANUAL.pdf)
--   [Texinfo](MANUAL.texi)
+-   Texinfo
 
 
 # Support
@@ -53,10 +53,11 @@ Finally, require the package like so:
 If your research involves this project in any way, you may cite it
 like so:
 
-    @misc{bta23darkman,
+    @software{benali2023darkman,
       author = {Benali, T. A.},
-       title = {Seamless integration between Darkman and Emacs using the D-Bus protocol},
-         url = {https://grtcdr.tn/darkman.el/},
-        year = 2023
+       title = {{Darkman for Emacs}},
+         url = {https://darkman.grtcdr.tn/},
+     version = {1.1.0},
+        year = {2023}
     }
 

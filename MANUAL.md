@@ -10,7 +10,7 @@ This is the manual for `darkman.el` version 1.1.0.
 
 # GNU Free Documentation License
 
-Copyright (C) 2023 Aziz Ben Ali.
+Copyright (C) 2023 Taha Aziz Ben Ali.
 
 > Permission is granted to copy, distribute and/or modify this document
 > under the terms of the GNU Free Documentation License, Version 1.3 or
