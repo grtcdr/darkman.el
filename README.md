@@ -1,11 +1,11 @@
+
+
+# Introduction
+
 This package provides seamless integration between [Darkman](https://darkman.whynothugo.nl) and [Emacs](https://gnu.org/software/emacs)
 using the [D-Bus](https://www.freedesktop.org/wiki/Software/dbus/) protocol.
 
-Documentation is available in a number of formats:
-
--   [HTML](https://darkman.grtcdr.tn/)
--   [PDF](https://darkman.grtcdr.tn/darkman.pdf)
--   Texinfo
+Documentation is available in [HTML](https://darkman.grtcdr.tn/), [PDF](https://darkman.grtcdr.tn/darkman.pdf) and Info.
 
 
 # Support

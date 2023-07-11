@@ -2,10 +2,13 @@
 #+author:               Taha Aziz Ben Ali
 #+language:             en
 #+macro:                version 1.1.0
+#+texinfo_filename:     darkman.info
+:texinfo_properties:
 #+texinfo_dir_desc:     Seamless integration with Darkman using the D-Bus protocol.
 #+texinfo_dir_title:    Darkman: (darkman)
 #+texinfo_dir_category: Emacs
-#+texinfo_filename:     darkman.info
+:end:
+:latex_properties:
 #+latex_class:          article
 #+latex_class_options:  [12pt, a4paper]
 #+latex_header_extra:   \usepackage{parskip}
@@ -13,6 +16,7 @@
 #+latex_header:         \usepackage[margin=3cm]{geometry}
 #+latex_header_extra:   \setlength{\parindent}{0pt}
 #+latex_header_extra:   \setlength{\parskip}{0.5em}
+:end:
 
 @@latex:\clearpage@@
 

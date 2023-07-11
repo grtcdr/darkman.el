@@ -1,5 +1,7 @@
 
 
+
+
 This is the manual for `darkman.el` version 1.1.0.
 
 -   Homepage: <https://darkman.grtcdr.tn>
