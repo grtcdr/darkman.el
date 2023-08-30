@@ -6,7 +6,7 @@
 #+texinfo_filename:     darkman.info
 #+texinfo_dir_desc:     Seamless integration with Darkman using the D-Bus protocol.
 #+texinfo_dir_title:    Darkman: (darkman)
-#+texinfo_dir_category: Emacs
+#+texinfo_dir_category: Emacs misc features
 :end:
 :latex_properties:
 #+latex_class:          article
