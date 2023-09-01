@@ -63,7 +63,7 @@ symbol representing the name of the theme."
 
 ;;;###autoload
 (defun darkman-current-mode (&optional message)
-  "Return the mode of the Darkman service.
+  "Return the mode of the service.
 When MESSAGE is non-nil, print the current mode to the echo area instead."
   (interactive (list t))
   (let ((mode (dbus-get-property
@@ -77,7 +77,7 @@ When MESSAGE is non-nil, print the current mode to the echo area instead."
       mode)))
 
 (defun darkman-set-mode (mode)
-  "Set the mode of the Darkman service to MODE.
+  "Set the mode of the service to MODE.
 MODE can be ‘light’ or ‘dark’."
   (dbus-set-property :session
 		     darkman--dbus-service
@@ -89,7 +89,7 @@ MODE can be ‘light’ or ‘dark’."
 
 ;;;###autoload
 (defun darkman-toggle ()
-  "Toggle the mode of the Darkman service."
+  "Toggle the mode of the service."
   (interactive)
   (let ((mode (darkman-current-mode)))
     (cond ((string= mode "dark") (darkman-set-mode 'light))
@@ -107,7 +107,7 @@ MODE can be ‘light’ or ‘dark’."
   (error "‘%s’ is not a valid mode" mode))
 
 (defun darkman--dbus-service-unavailable-error ()
-  "Signal an error about the service being unavailable."
+  "Signal an error about ‘darkman--dbus-service’ being unavailable."
   (error "%s D-Bus service not available" darkman--dbus-service))
 
 (defun darkman--lookup-theme (mode)
@@ -136,7 +136,7 @@ MODE is the new mode."
       (darkman--load-theme theme))))
 
 (defun darkman--check-dbus-service ()
-  "Return non-nil if the Darkman service is available."
+  "Return non-nil if ‘darkman--dbus-service’ is available."
   (or (dbus-ping :session darkman--dbus-service 1000)
       (darkman--dbus-service-unavailable-error)))
 
