@@ -11,9 +11,12 @@
 :latex_properties:
 #+latex_class:          article
 #+latex_class_options:  [12pt, a4paper]
-#+latex_header_extra:   \usepackage{parskip}
-#+latex_header_extra:   \usepackage[utf8]{inputenc}
+#+latex_header:         \usepackage{parskip}
+#+latex_header:         \usepackage[utf8]{inputenc}
+#+latex_header:         \usepackage[T1]{fontenc}
 #+latex_header:         \usepackage[margin=3cm]{geometry}
+#+latex_header:         \usepackage[sfdefault]{inter}
+#+latex_header:         \usepackage{DejaVuSansMono}
 #+latex_header_extra:   \setlength{\parindent}{0pt}
 #+latex_header_extra:   \setlength{\parskip}{0.5em}
 :end:
