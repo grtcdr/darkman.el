@@ -11,6 +11,7 @@
 :latex_properties:
 #+latex_class:          article
 #+latex_class_options:  [12pt, a4paper]
+#+latex_compiler:       pdflatex
 #+latex_header:         \usepackage{parskip}
 #+latex_header:         \usepackage[utf8]{inputenc}
 #+latex_header:         \usepackage[T1]{fontenc}
