@@ -34,7 +34,7 @@
 
 (require 'dbus)
 
-(defgroup darkman ()
+(defgroup darkman nil
   "Seamless integration with Darkman."
   :group 'convenience)
 

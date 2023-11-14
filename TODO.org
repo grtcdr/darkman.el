@@ -19,10 +19,9 @@ customizable variable ~darkman-themes~.
 Here are some of the bugs I've encountered when ~darkman-mode~ and
 ~spacious-padding-mode~ are both enabled:
 - Changing a theme may temporarily freeze Emacs
-- On startup, the ~window-divider~ face, i.e. the borders that
-  separates any adjacent windows uses incorrect foreground and
-  background attributes, =unspecified-fg= and =unspecified-bg=,
-  respectively.
+- On startup, the ~window-divider~ face, i.e. the borders that separate any
+  adjacent windows use incorrect foreground and background attributes,
+  =unspecified-fg= and =unspecified-bg=, respectively.
 * TODO Increase test coverage
 This should help us catch the nasty bugs, though it'll be a challenge
 to do it correctly given most of this package is state-dependent.  The
