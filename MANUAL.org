@@ -126,7 +126,7 @@ even ~load-theme~ if you prefer, to disable any existing themes first.
 
 ** Is D-Bus running?
 
-Use your service manager to verify whether the service is running,
+Use your service manager to verify whether the =darkman= service is running,
 here's an example using =systemd=:
 
 #+begin_src sh :eval no
@@ -141,7 +141,7 @@ dbus.service - D-Bus System Message Bus
 
 ** Is Darkman running?
 
-Use your service manager to verify whether the service is running,
+Use your service manager to verify whether the =darkman= service is running,
 here's an example using =systemd=:
 
 #+begin_src sh :eval no
