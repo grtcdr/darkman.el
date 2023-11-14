@@ -112,8 +112,8 @@ mode *only* when the session has been fully initialized:
 ** Disabling existing themes
 
 Emacs does not by default disable the current theme when another one
-is loaded, and while this behavior might seem unintuitive, we can
-always advise ~darkman-set~ (and by extension ~darkman-toggle~), or
+is loaded, and while this behavior might seem counter-intuitive, we
+can always advise ~darkman-set~ (and by extension ~darkman-toggle~), or
 even ~load-theme~ if you prefer, to disable any existing themes first.
 
 #+begin_src elisp
