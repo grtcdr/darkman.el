@@ -11,6 +11,10 @@
 - Items tagged with =help= are tasks we could use your help in
   accomplishing.
 
+* TODO Extend ~darkman-themes~ with ~setopt~ support
+Automatically reloading the current theme on evaluation of ~setopt~ does not
+seem like a bad idea.  This requires configuring the ~:set~ property for the
+customizable variable ~darkman-themes~.
 * TODO Investigate breakages when using [[https://elpa.gnu.org/devel/spacious-padding.html][spacious-padding]]              :help:
 Here are some of the bugs I've encountered when ~darkman-mode~ and
 ~spacious-padding-mode~ are both enabled:
@@ -26,7 +30,7 @@ groundwork for test coverage has been laid with the addition of the
 new build manifest.
 * DONE Write up a Texinfo manual as an Org document
 We could use [[https://github.com/grtcdr/liaison/blob/main/doc/manual/liaison.org][this manual]] as a template.
-* DONE =load-theme= is called twice when =ModeChanged= is signaled     :help:
+* DONE ~load-theme~ is called twice when =ModeChanged= is signaled :help:
 This leads to a theme transition that isn't very smooth. I have no
 idea what might be causing this, but a peek into Darkman's source code
 could be helpful.
