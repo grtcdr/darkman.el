@@ -102,8 +102,8 @@ mode **only** when the session has been fully initialized:
 ## Disabling existing themes
 
 Emacs does not by default disable the current theme when another one
-is loaded, and while this behavior might seem unintuitive, we can
-always advise `darkman-set` (and by extension `darkman-toggle`), or
+is loaded, and while this behavior might seem counter-intuitive, we
+can always advise `darkman-set` (and by extension `darkman-toggle`), or
 even `load-theme` if you prefer, to disable any existing themes first.
 
     (defadvice darkman-set (before no-theme-stacking activate)
@@ -116,7 +116,7 @@ even `load-theme` if you prefer, to disable any existing themes first.
 
 ## Is D-Bus running?
 
-Use your service manager to verify whether the service is running,
+Use your service manager to verify whether the `darkman` service is running,
 here's an example using `systemd`:
 
     systemctl status dbus
@@ -128,7 +128,7 @@ here's an example using `systemd`:
 
 ## Is Darkman running?
 
-Use your service manager to verify whether the service is running,
+Use your service manager to verify whether the `darkman` service is running,
 here's an example using `systemd`:
 
     systemctl status --user darkman

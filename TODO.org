@@ -1,8 +1,7 @@
 #+title: To-dos
 #+todo: TODO(t) DOING(-) BUG(b) | FIXED(f) DONE(d)
 #+tags: sug(s) help(h)
-#+link: pull https://github.com/grtcdr/darkman.el/pull/%s
-#+link: issue https://github.com/grtcdr/darkman.el/issues/%s
+#+link: issue https://todo.sr.ht/~grtcdr/<repo>/%s
 
 - Items tagged with =sug= are suggestions received from people from
   somewhere external to this repository. A tag immediately following
@@ -15,7 +14,7 @@
 Automatically reloading the current theme on evaluation of ~setopt~ does not
 seem like a bad idea.  This requires configuring the ~:set~ property for the
 customizable variable ~darkman-themes~.
-* TODO Investigate breakages when using [[https://elpa.gnu.org/devel/spacious-padding.html][spacious-padding]]              :help:
+* TODO Investigate breakages when using [[https://elpa.gnu.org/devel/spacious-padding.html][spacious-padding]] :help:
 Here are some of the bugs I've encountered when ~darkman-mode~ and
 ~spacious-padding-mode~ are both enabled:
 - Changing a theme may temporarily freeze Emacs
@@ -33,7 +32,7 @@ We could use [[https://github.com/grtcdr/liaison/blob/main/doc/manual/liaison.or
 This leads to a theme transition that isn't very smooth. I have no
 idea what might be causing this, but a peek into Darkman's source code
 could be helpful.
-* DONE Themes will sometimes switch infinitely                         :help:
+* DONE Themes will sometimes switch infinitely :help:
 This causes Emacs to go haywire. The first time this happened was a
 short time after merging [[pull:5][#5]]. I can reproduce it, but I haven't yet
 understood what exactly causes it to occur.
