@@ -38,12 +38,20 @@
   "Seamless integration with Darkman."
   :group 'convenience)
 
-(defcustom darkman-themes
-  '(:light modus-operandi :dark modus-vivendi)
+(defcustom darkman-themes '(:light modus-operandi :dark modus-vivendi)
   "A property list which maps modes to their corresponding themes.
 
-The two properties, ‘:light’ and ‘:dark’, expect as a value a
-symbol representing the name of the theme."
+The two properties, ‘:light’ and ‘:dark’, expect a valid theme
+symbol. Themes are considered valid if listed in the
+`custom-available-themes' variable or selectable via the
+`customize-themes' interface.
+
+Consider the following configuration:
+
+    (setq darkman-themes \\='(:light modus-operandi :dark modus-vivendi))
+
+That will set `modus-operandi' and `modus-vivendi' as the daytime
+and nighttime themes, respectively."
   :type `(plist :key-type (choice (const :tag "Light theme" :light)
 				  (const :tag "Dark theme" :dark))
 		:value-type (choice ,@(mapcar (lambda (theme) (list 'const theme))
