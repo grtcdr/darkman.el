@@ -24,9 +24,8 @@ Copyright (C) 2023 Taha Aziz Ben Ali.
 
 # Installation
 
-This package is available from [MELPA](https://melpa.org) provided you've added that to the
-list of package archives to fetch from, install it by evaluating the
-following:
+This package is available from [MELPA](https://melpa.org) provided you've added that to the list of
+package archives to fetch from, install it by evaluating the following:
 
     (package-install 'darkman)
 

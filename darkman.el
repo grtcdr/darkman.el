@@ -36,7 +36,8 @@
 
 (defgroup darkman nil
   "Seamless integration with Darkman."
-  :group 'convenience)
+  :group 'convenience
+  :prefix "darkman-")
 
 (defcustom darkman-themes '(:light modus-operandi :dark modus-vivendi)
   "A property list which maps modes to their corresponding themes.
