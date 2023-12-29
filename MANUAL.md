@@ -98,6 +98,23 @@ mode **only** when the session has been fully initialized:
                                  #'darkman-mode))))
 
 
+## Working alongside the third-party `spacious-padding` package
+
+`spacious-padding` significantly improves the aesthetics of our beloved Emacs by
+padding the windows and mode line. I've personally encountered an issue that
+made `spacious-padding` behave incorrectly when (1) used in conjuction with
+`darkman-mode` and (2) when Emacs is started as a daemon, resulting in
+window/mode line borders being assigned the wrong color.
+
+I found, through trial and error, that simply delaying the activation of
+`spacious-padding` when started in daemon mode until the first frame has
+appeared solved the problem.
+
+    (if (daemonp)
+        (add-hook 'server-after-make-frame-hook #'spacious-padding-mode)
+      (spacious-padding-mode))
+
+
 ## Disabling existing themes
 
 Emacs does not by default disable the current theme when another one
