@@ -10,8 +10,9 @@ Documentation is available in [HTML](https://darkman.grtcdr.tn/), [PDF](https://
 
 # Installation
 
-This package is available from [MELPA](https://melpa.org) provided you've added that to the list of
-package archives to fetch from, install it by evaluating the following:
+This package is available from [MELPA](https://melpa.org) provided you've added that to the
+list of package archives to fetch from, install it by evaluating the
+following:
 
     (package-install 'darkman)
 
@@ -30,9 +31,10 @@ Finally, require the package like so:
 
 # Support
 
-If you wish to contribute a patch, inquire about something or share your
-feedback, you are welcome to send an email to [~grtcdr/pub@lists.sr.ht](mailto:~grtcdr/pub@lists.sr.ht). If you
-encounter issues of any kind, please file them in the project's [ticket tracker](https://todo.sr.ht/~grtcdr/darkman.el).
+If you wish to contribute a patch, inquire about something or share
+your feedback, you are welcome to send an email to
+[~grtcdr/pub@lists.sr.ht](mailto:~grtcdr/pub@lists.sr.ht). If you encounter issues of any kind, please
+file them in the project's [ticket tracker](https://todo.sr.ht/~grtcdr/darkman.el).
 
 
 # Acknowledgment
