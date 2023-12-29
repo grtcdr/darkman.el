@@ -33,7 +33,7 @@ This leads to a theme transition that isn't very smooth. I have no
 idea what might be causing this, but a peek into Darkman's source code
 could be helpful.
 * DONE Themes will sometimes switch infinitely :help:
-This causes Emacs to go haywire. The first time this happened was a
-short time after merging [[pull:5][#5]]. I can reproduce it, but I haven't yet
-understood what exactly causes it to occur.
+This causes Emacs to go haywire. The first time this happened was a short time
+after merging [[https://github.com/grtcdr/darkman.el/pull/5][#5]]. I can reproduce it, but I haven't yet understood what exactly
+causes it to occur.
 
