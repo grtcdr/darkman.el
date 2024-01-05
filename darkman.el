@@ -39,6 +39,11 @@
   :group 'convenience
   :prefix "darkman-")
 
+(defcustom darkman-after-mode-changed-hook nil
+  "Hook run after the mode is changed."
+  :type 'hook
+  :group 'darkman)
+
 (defcustom darkman-themes '(:light modus-operandi :dark modus-vivendi)
   "A property list which maps modes to their corresponding themes.
 
@@ -142,7 +147,8 @@ MODE is the new mode."
       (unless darkman-switch-themes-silently
         (message "Darkman switched to %s mode, switching to %s theme."
 	         mode theme))
-      (darkman--load-theme theme))))
+      (darkman--load-theme theme)
+      (run-hooks 'darkman-after-mode-changed-hook))))
 
 (defun darkman--check-dbus-service ()
   "Return non-nil if ‘darkman--dbus-service’ is available."
