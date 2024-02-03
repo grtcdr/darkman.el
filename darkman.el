@@ -2,8 +2,8 @@
 
 ;; Copyright (C) 2023 Taha Aziz Ben Ali
 
-;; Author: Taha Aziz Ben Ali <tahaaziz.benali@esprit.tn>
-;; Maintainer: Taha Aziz Ben Ali <tahaaziz.benali@esprit.tn>
+;; Author: Taha Aziz Ben Ali <ba.tahaaziz@gmail.com>
+;; Maintainer: Taha Aziz Ben Ali <ba.tahaaziz@gmail.com>
 ;; Homepage: https://darkman.grtcdr.tn
 ;; Version: 1.1.0
 ;; Package-Requires: ((emacs "28.1"))
