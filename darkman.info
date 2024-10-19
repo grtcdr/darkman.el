@@ -192,12 +192,15 @@ File: darkman.info,  Node: Disabling existing themes,  Prev: Working alongside t
 
 Emacs does not by default disable the current theme when another one is
 loaded, and while this behavior might seem counter-intuitive, we can
-always advise ‘darkman-set’ (and by extension ‘darkman-toggle’), or even
-‘load-theme’ if you prefer, to disable any existing themes first.
+always advise ‘darkman-set-theme’ (and by extension ‘darkman-toggle’),
+or even ‘load-theme’ if you prefer, to disable any existing themes
+first.
 
-     (defadvice darkman-set (before no-theme-stacking activate)
-       "Disable the previous theme before loading a new one."
+     (defun disable-existing-themes ()
+       "Disable any activated themes before loading a new one."
        (mapc #'disable-theme custom-enabled-themes))
+
+     (advice-add #'darkman-set-theme :before #'disable-existing-themes)
 
 
 File: darkman.info,  Node: Debugging,  Prev: Tips,  Up: Top
@@ -263,10 +266,10 @@ Node: Working alongside the built-in safety features3490
 Ref: Working alongside the built-in safety features-Footnote-14717
 Node: Working alongside the third-party spacious-padding package4834
 Node: Disabling existing themes5843
-Node: Debugging6511
-Node: Is D-Bus running?6694
-Node: Is Darkman running?7082
-Node: Is Emacs built with D-Bus support?7557
+Node: Debugging6567
+Node: Is D-Bus running?6750
+Node: Is Darkman running?7138
+Node: Is Emacs built with D-Bus support?7613
 
 End Tag Table
 
