@@ -131,13 +131,15 @@ appeared solved the problem.
 
 Emacs does not by default disable the current theme when another one
 is loaded, and while this behavior might seem counter-intuitive, we
-can always advise ~darkman-set~ (and by extension ~darkman-toggle~), or
+can always advise ~darkman-set-theme~ (and by extension ~darkman-toggle~), or
 even ~load-theme~ if you prefer, to disable any existing themes first.
 
 #+begin_src elisp
-(defadvice darkman-set (before no-theme-stacking activate)
-  "Disable the previous theme before loading a new one."
+(defun disable-existing-themes ()
+  "Disable any activated themes before loading a new one."
   (mapc #'disable-theme custom-enabled-themes))
+
+(advice-add #'darkman-set-theme :before #'disable-existing-themes)
 #+end_src
 
 * Debugging
